@@ -71,9 +71,9 @@ module.exports = {
   },
   livereload: true,
   seedDB: {
-    seed: process.env.MONGO_SEED === 'false',
+    seed: process.env.MONGO_SEED === 'true',
     options: {
-      logResults: process.env.MONGO_SEED_LOG_RESULTS !== 'false',
+      logResults: process.env.MONGO_SEED_LOG_RESULTS === 'true',
       seedUser: {
         username: process.env.MONGO_SEED_USER_USERNAME || 'seeduser',
         provider: 'local',
