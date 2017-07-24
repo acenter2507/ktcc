@@ -40,6 +40,13 @@ gulp.task('env:dev', function () {
   process.env.NODE_ENV = 'development';
 });
 
+// Set NODE_ENV to 'development' and seed db
+gulp.task('env:seeddb', function () {
+  process.env.NODE_ENV = 'development';
+  process.env.MONGO_SEED = 'true';
+  process.env.MONGO_SEED_LOG_RESULTS = 'true';
+});
+
 // Set NODE_ENV to 'production'
 gulp.task('env:prod', function () {
   process.env.NODE_ENV = 'production';
@@ -442,6 +449,11 @@ gulp.task('test:coverage', function (done) {
 // Run the project in development mode
 gulp.task('default', function (done) {
   runSequence('env:dev', ['copyLocalEnvConfig', 'makeUploadsDir'], 'lint', ['nodemon', 'watch'], done);
+});
+
+// Run the project in development mode
+gulp.task('seeddb', function (done) {
+  runSequence('env:seeddb', ['copyLocalEnvConfig', 'makeUploadsDir'], 'lint', ['nodemon', 'watch'], done);
 });
 
 // Run the project in debug mode

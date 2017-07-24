@@ -63,6 +63,7 @@ module.exports = {
     browser: true,
     element: true,
     inject: true,
+    $: true,
     io: true,
     moment: true,
     Modernizr: true,
