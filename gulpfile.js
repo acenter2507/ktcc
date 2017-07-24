@@ -38,6 +38,7 @@ gulp.task('env:test', function () {
 // Set NODE_ENV to 'development'
 gulp.task('env:dev', function () {
   process.env.NODE_ENV = 'development';
+  process.env.MONGO_SEED = 'true';
 });
 
 // Set NODE_ENV to 'development' and seed db
