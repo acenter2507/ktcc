@@ -90,9 +90,9 @@ module.exports = {
     }
   },
   seedDB: {
-    seed: process.env.MONGO_SEED === 'true',
+    seed: process.env.MONGO_SEED === 'true' ? true : false,
     options: {
-      logResults: process.env.MONGO_SEED_LOG_RESULTS !== 'false',
+      logResults: process.env.MONGO_SEED_LOG_RESULTS !== 'false' ? true : false,
       seedUser: {
         username: process.env.MONGO_SEED_USER_USERNAME || 'seeduser',
         provider: 'local',
