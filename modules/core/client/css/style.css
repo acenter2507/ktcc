@@ -8691,7 +8691,7 @@ app-root {
       position: absolute;
       left: 50px;
       top: 0;
-      box-sizing: border-box;
+      box-sizing: content-box;
       /*width: 100% !important;*/
       /*margin: 0 12px !important;*/ }
     .app-header .navbar-nav {
