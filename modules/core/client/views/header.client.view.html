@@ -23,10 +23,10 @@
   <!--<ul class="nav navbar-nav ml-auto d-md-down-none">-->
   <ul class="nav navbar-nav ml-auto" ng-hide="vm.user">
     <li class="nav-item" ui-sref-active="active">
-      <a class="nav-link" ui-sref="authentication.signup">Sign Up</a>
-    </li>
-    <li class="nav-item" ui-sref-active="active">
       <a class="nav-link" ui-sref="authentication.signin">Sign In</a>
+    </li>
+    <li class="nav-item ml-1" ui-sref-active="active">
+      <a class="nav-link" ui-sref="authentication.signup">Sign Up</a>
     </li>
   </ul>
   <ul class="nav navbar-nav ml-auto mobile-navbar-nav" ng-show="vm.user">
