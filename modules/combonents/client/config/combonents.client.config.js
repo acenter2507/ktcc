@@ -25,7 +25,7 @@
     // Add the dropdown list item
     menuService.addSubMenuItem('topbar', 'combonents', {
       title: 'Social buttons',
-      state: 'combonents.social'
+      state: 'combonents.social-buttons'
     });
     // Add the dropdown list item
     menuService.addSubMenuItem('topbar', 'combonents', {

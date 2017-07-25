@@ -26,7 +26,7 @@
       })
       .state('combonents.social-buttons', {
         url: '/social',
-        templateUrl: '/modules/combonents/client/views/social.client.view.html',
+        templateUrl: '/modules/combonents/client/views/social-buttons.client.view.html',
         ncyBreadcrumb: {
           label: 'Social Buttons'
         }
