@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('workdates')
+    .module('templates')
     .run(menuConfig);
 
   menuConfig.$inject = ['menuService'];
