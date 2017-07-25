@@ -8691,15 +8691,14 @@ app-root {
       position: absolute;
       left: 50px;
       top: 0;
-      box-sizing: border-box;
-      
       /*width: 100% !important;*/
       /*margin: 0 12px !important;*/ }
     .app-header .navbar-nav {
       position: absolute;
       top: 0;
       right: 15px;
-      height: inherit; }
+      height: inherit;
+      margin: 0 auto !important; }
   .app-body {
     margin-top: 55px; }
   .sidebar {
