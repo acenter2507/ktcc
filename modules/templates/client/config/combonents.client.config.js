@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('templates')
+    .module('combonents')
     .run(menuConfig);
 
   menuConfig.$inject = ['menuService'];
@@ -10,42 +10,42 @@
   function menuConfig(menuService) {
     // Set top bar menu items
     menuService.addMenuItem('topbar', {
-      title: 'Templates',
-      state: 'templates',
+      title: 'Combonents',
+      state: 'combonents',
       type: 'dropdown',
       roles: ['*']
     });
 
     // Add the dropdown list item
-    menuService.addSubMenuItem('topbar', 'templates', {
+    menuService.addSubMenuItem('topbar', 'combonents', {
       title: 'Buttons',
-      state: 'templates.buttons'
+      state: 'combonents.buttons'
     });
 
     // Add the dropdown list item
-    menuService.addSubMenuItem('topbar', 'templates', {
+    menuService.addSubMenuItem('topbar', 'combonents', {
       title: 'Social buttons',
-      state: 'templates.social-buttons'
+      state: 'combonents.social'
     });
     // Add the dropdown list item
-    menuService.addSubMenuItem('topbar', 'templates', {
+    menuService.addSubMenuItem('topbar', 'combonents', {
       title: 'Cards',
-      state: 'templates.cards'
+      state: 'combonents.cards'
     });
     // Add the dropdown list item
-    menuService.addSubMenuItem('topbar', 'templates', {
+    menuService.addSubMenuItem('topbar', 'combonents', {
       title: 'Forms',
-      state: 'templates.forms'
+      state: 'combonents.forms'
     });
     // Add the dropdown list item
-    menuService.addSubMenuItem('topbar', 'templates', {
+    menuService.addSubMenuItem('topbar', 'combonents', {
       title: 'Tables',
-      state: 'templates.tables'
+      state: 'combonents.tables'
     });
     // Add the dropdown list item
-    menuService.addSubMenuItem('topbar', 'templates', {
+    menuService.addSubMenuItem('topbar', 'combonents', {
       title: 'Register',
-      state: 'templates.register'
+      state: 'combonents.register'
     });
   }
 }());

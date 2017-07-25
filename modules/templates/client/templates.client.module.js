@@ -1,5 +1,5 @@
 (function (app) {
   'use strict';
 
-  app.registerModule('templates');
+  app.registerModule('combonents');
 }(ApplicationConfiguration));
