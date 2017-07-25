@@ -6,22 +6,20 @@
     .config(pluginConfig)
     .run(scopeConfig);
 
-  // pluginConfig.$inject = ['cfpLoadingBarProvider', '$breadcrumbProvider', 'NotificationProvider'];
-  // pluginConfig.$inject = ['NotificationProvider'];
+  pluginConfig.$inject = ['cfpLoadingBarProvider', '$breadcrumbProvider', 'NotificationProvider'];
   scopeConfig.$inject = ['$rootScope', '$state', '$stateParams'];
 
-  // function pluginConfig(cfpLoadingBarProvider, $breadcrumbProvider, NotificationProvider) {
-  function pluginConfig(NotificationProvider) {
+  function pluginConfig(cfpLoadingBarProvider, $breadcrumbProvider, NotificationProvider) {
     // Loading bar
-    // cfpLoadingBarProvider.includeSpinner = false;
-    // cfpLoadingBarProvider.latencyThreshold = 1;
+    cfpLoadingBarProvider.includeSpinner = false;
+    cfpLoadingBarProvider.latencyThreshold = 1;
 
     // Breadcrumb
-    // $breadcrumbProvider.setOptions({
-    //   prefixStateName: 'home',
-    //   includeAbstract: true,
-    //   template: '<li class="breadcrumb-item" ng-repeat="step in steps" ng-class="{active: $last}" ng-switch="$last || !!step.abstract"><a ng-switch-when="false" href="{{step.ncyBreadcrumbLink}}">{{step.ncyBreadcrumbLabel}}</a><span ng-switch-when="true">{{step.ncyBreadcrumbLabel}}</span></li>'
-    // });
+    $breadcrumbProvider.setOptions({
+      prefixStateName: 'home',
+      includeAbstract: true,
+      template: '<li class="breadcrumb-item" ng-repeat="step in steps" ng-class="{active: $last}" ng-switch="$last || !!step.abstract"><a ng-switch-when="false" href="{{step.ncyBreadcrumbLink}}">{{step.ncyBreadcrumbLabel}}</a><span ng-switch-when="true">{{step.ncyBreadcrumbLabel}}</span></li>'
+    });
 
     // Notification
     NotificationProvider.setOptions({
