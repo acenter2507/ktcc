@@ -9,6 +9,8 @@ module.exports = {
         // bower:css
         'public/lib/bootstrap/dist/css/bootstrap.css',
         'public/lib/bootstrap/dist/css/bootstrap-theme.css',
+        'public/lib/font-awesome/css/font-awesome.css',
+        'public/lib/simple-line-icons/css/simple-line-icons.css',
         'public/lib/ng-img-crop/compile/unminified/ng-img-crop.css',
         'public/lib/angular-ui-notification/dist/angular-ui-notification.css'
         // endbower
