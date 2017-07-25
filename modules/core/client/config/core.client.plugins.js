@@ -3,11 +3,9 @@
 
   angular
     .module('core')
-    .config(pluginConfig)
-    .run(scopeConfig);
+    .config(pluginConfig);
 
   pluginConfig.$inject = ['cfpLoadingBarProvider', '$breadcrumbProvider', 'NotificationProvider'];
-  scopeConfig.$inject = ['$rootScope', '$state', '$stateParams'];
 
   function pluginConfig(cfpLoadingBarProvider, $breadcrumbProvider, NotificationProvider) {
     // Loading bar
@@ -31,14 +29,5 @@
       positionX: 'right',
       positionY: 'bottom'
     });
-  }
-
-  function scopeConfig($rootScope, $state, $stateParams) {
-    $rootScope.$on('$stateChangeSuccess', function () {
-      document.body.scrollTop = document.documentElement.scrollTop = 0;
-    });
-    $rootScope.$state = $state;
-    $rootScope.$stateParams = $stateParams;
-    return;
   }
 }());

@@ -49,9 +49,6 @@
     }
 
     // Then init the app
-    angular.element(document).ready(function () {
-      angular.bootstrap(document, [app.applicationModuleName]);
-    });
-    // angular.bootstrap(document, [app.applicationModuleName]);
+    angular.bootstrap(document, [app.applicationModuleName]);
   }
 }(ApplicationConfiguration));
