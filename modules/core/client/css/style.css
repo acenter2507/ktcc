@@ -8697,7 +8697,8 @@ app-root {
       position: absolute;
       top: 0;
       right: 15px;
-      height: inherit;}
+      height: inherit;
+      margin: 0 auto !important; }
   .app-body {
     margin-top: 55px; }
   .sidebar {
