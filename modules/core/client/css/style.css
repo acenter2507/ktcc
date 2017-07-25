@@ -8683,14 +8683,15 @@ app-root {
       position: absolute;
       top: 0;
       left: 0;
-      width: 70px;
+      width: 50px;
       height: inherit; }
     .app-header .navbar-toggler {
       color: rgba(0, 0, 0, 0.3); }
     .app-header .navbar-brand {
       position: absolute;
-      left: 5rem;
+      left: 50px;
       top: 0;
+      box-sizing: border-box;
       /*width: 100% !important;*/
       /*margin: 0 12px !important;*/ }
     .app-header .navbar-nav {
