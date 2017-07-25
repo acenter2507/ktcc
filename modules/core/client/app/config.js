@@ -2,11 +2,21 @@
   'use strict';
 
   var applicationModuleName = 'mean';
-
+  var plugins = [
+    'ngResource',
+    'ngAnimate',
+    'ngMessages',
+    'ui.router',
+    'ui.bootstrap',
+    'ngFileUpload',
+    'ngImgCrop',
+    'ui-notification',
+    'ncy-angular-breadcrumb'
+  ];
   var service = {
     applicationEnvironment: window.env,
     applicationModuleName: applicationModuleName,
-    applicationModuleVendorDependencies: ['ngResource', 'ngAnimate', 'ngMessages', 'ui.router', 'ui.bootstrap', 'ngFileUpload', 'ngImgCrop', 'ui-notification'],
+    applicationModuleVendorDependencies: plugins,
     registerModule: registerModule
   };
 
