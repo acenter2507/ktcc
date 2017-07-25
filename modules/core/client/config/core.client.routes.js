@@ -5,9 +5,9 @@
     .module('core.routes')
     .config(routeConfig);
 
-  routeConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
+  routeConfig.$inject = ['$stateProvider', '$urlRouterProvider', '$breadcrumbProvider'];
 
-  function routeConfig($stateProvider, $urlRouterProvider) {
+  function routeConfig($stateProvider, $urlRouterProvider, $breadcrumbProvider) {
     $urlRouterProvider.rule(function ($injector, $location) {
       var path = $location.path();
       var hasTrailingSlash = path.length > 1 && path[path.length - 1] === '/';
@@ -24,6 +24,13 @@
       $injector.get('$state').transitionTo('not-found', null, {
         location: false
       });
+    });
+
+    // Breadcrumb
+    $breadcrumbProvider.setOptions({
+      prefixStateName: 'home',
+      includeAbstract: true,
+      template: '<li class="breadcrumb-item" ng-repeat="step in steps" ng-class="{active: $last}" ng-switch="$last || !!step.abstract"><a ng-switch-when="false" href="{{step.ncyBreadcrumbLink}}">{{step.ncyBreadcrumbLabel}}</a><span ng-switch-when="true">{{step.ncyBreadcrumbLabel}}</span></li>'
     });
 
     $stateProvider
