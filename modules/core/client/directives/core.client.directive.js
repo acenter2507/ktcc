@@ -9,9 +9,9 @@ angular
   .directive('div', bootstrapCarouselDirective)
   .directive('toggle', bootstrapTooltipsPopoversDirective)
   .directive('tab', bootstrapTabsDirective)
-  .directive('button', cardCollapseDirective)
+  .directive('button', cardCollapseDirective);
 
-//Prevent click if href="#"
+// Prevent click if href="#"
 function preventClickDirective() {
   var directive = {
     restrict: 'E',
@@ -28,7 +28,7 @@ function preventClickDirective() {
   }
 }
 
-//Bootstrap Collapse
+// Bootstrap Collapse
 function bootstrapCollapseDirective() {
   var directive = {
     restrict: 'E',
@@ -37,7 +37,7 @@ function bootstrapCollapseDirective() {
   return directive;
 
   function link(scope, element, attrs) {
-    if (attrs.toggle == 'collapse') {
+    if (attrs.toggle === 'collapse') {
       element.attr('href', 'javascript;;').attr('data-target', attrs.href.replace('index.html', ''));
     }
   }
@@ -69,7 +69,7 @@ function navigationDirective() {
   }
 }
 
-//Dynamic resize .sidebar-nav
+// Dynamic resize .sidebar-nav
 sidebarNavDynamicResizeDirective.$inject = ['$window', '$timeout'];
 function sidebarNavDynamicResizeDirective($window, $timeout) {
   var directive = {
@@ -108,7 +108,7 @@ function sidebarNavDynamicResizeDirective($window, $timeout) {
   }
 }
 
-//LayoutToggle
+// LayoutToggle
 layoutToggleDirective.$inject = ['$interval'];
 function layoutToggleDirective($interval) {
   var directive = {
@@ -131,7 +131,7 @@ function layoutToggleDirective($interval) {
   }
 }
 
-//Collapse menu toggler
+// Collapse menu toggler
 function collapseMenuTogglerDirective() {
   var directive = {
     restrict: 'E',
@@ -148,7 +148,7 @@ function collapseMenuTogglerDirective() {
   }
 }
 
-//Bootstrap Carousel
+// Bootstrap Carousel
 function bootstrapCarouselDirective() {
   var directive = {
     restrict: 'E',
@@ -157,7 +157,7 @@ function bootstrapCarouselDirective() {
   return directive;
 
   function link(scope, element, attrs) {
-    if (attrs.ride == 'carousel') {
+    if (attrs.ride === 'carousel') {
       element.find('a').each(function () {
         $(this).attr('data-target', $(this).attr('href').replace('index.html', '')).attr('href', 'javascript;;')
       });
@@ -165,7 +165,7 @@ function bootstrapCarouselDirective() {
   }
 }
 
-//Bootstrap Tooltips & Popovers
+// Bootstrap Tooltips & Popovers
 function bootstrapTooltipsPopoversDirective() {
   var directive = {
     restrict: 'A',
@@ -174,16 +174,16 @@ function bootstrapTooltipsPopoversDirective() {
   return directive;
 
   function link(scope, element, attrs) {
-    if (attrs.toggle == 'tooltip') {
+    if (attrs.toggle === 'tooltip') {
       angular.element(element).tooltip();
     }
-    if (attrs.toggle == 'popover') {
+    if (attrs.toggle === 'popover') {
       angular.element(element).popover();
     }
   }
 }
 
-//Bootstrap Tabs
+// Bootstrap Tabs
 function bootstrapTabsDirective() {
   var directive = {
     restrict: 'A',
@@ -199,7 +199,7 @@ function bootstrapTabsDirective() {
   }
 }
 
-//Card Collapse
+// Card Collapse
 function cardCollapseDirective() {
   var directive = {
     restrict: 'E',
@@ -208,19 +208,19 @@ function cardCollapseDirective() {
   return directive;
 
   function link(scope, element, attrs) {
-    if (attrs.toggle == 'collapse' && element.parent().hasClass('card-actions')) {
+    if (attrs.toggle === 'collapse' && element.parent().hasClass('card-actions')) {
 
       if (element.parent().parent().parent().find('.card-block').hasClass('in')) {
         element.find('i').addClass('r180');
       }
 
       var id = 'collapse-' + Math.floor((Math.random() * 1000000000) + 1);
-      element.attr('data-target', '#' + id)
+      element.attr('data-target', '#' + id);
       element.parent().parent().parent().find('.card-block').attr('id', id);
 
       element.on('click', function () {
         element.find('i').toggleClass('r180');
-      })
+      });
     }
   }
 }
