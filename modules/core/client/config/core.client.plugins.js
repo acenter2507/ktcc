@@ -11,7 +11,7 @@
   scopeConfig.$inject = ['$rootScope', '$state', '$stateParams'];
 
   // function pluginConfig(cfpLoadingBarProvider, $breadcrumbProvider, NotificationProvider) {
-  function pluginConfig(cNotificationProvider) {
+  function pluginConfig(NotificationProvider) {
     // Loading bar
     // cfpLoadingBarProvider.includeSpinner = false;
     // cfpLoadingBarProvider.latencyThreshold = 1;
