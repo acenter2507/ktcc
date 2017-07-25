@@ -5,17 +5,14 @@
     .module('combonents')
     .config(routeConfig);
 
-  routeConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
+  routeConfig.$inject = ['$stateProvider'];
 
-  function routeConfig($stateProvider, $urlRouterProvider) {
+  function routeConfig($stateProvider) {
     $stateProvider
       .state('combonents', {
         abstract: true,
         url: '/combonents',
-        ncyBreadcrumb: {
-          label: 'combonents'
-        },
-        template: '<ui-view></ui-view>'
+        template: '<ui-view/>'
       })
       .state('combonents.buttons', {
         url: '/buttons',
@@ -24,7 +21,7 @@
           label: 'Buttons'
         }
       })
-      .state('combonents.social-buttons', {
+      .state('combonents.social', {
         url: '/social',
         templateUrl: 'modules/combonents/client/views/social.client.view.html',
         ncyBreadcrumb: {
