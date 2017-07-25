@@ -38,6 +38,7 @@
       document.body.scrollTop = document.documentElement.scrollTop = 0;
     });
     $rootScope.$state = $state;
-    return $rootScope.$stateParams = $stateParams;
+    $rootScope.$stateParams = $stateParams;
+    return;
   }
 }());
