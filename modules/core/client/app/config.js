@@ -11,7 +11,8 @@
     'ngFileUpload',
     'ngImgCrop',
     'ui-notification',
-    'ncy-angular-breadcrumb'
+    'ncy-angular-breadcrumb',
+    'angular-loading-bar'
   ];
   var service = {
     applicationEnvironment: window.env,
