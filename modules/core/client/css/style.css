@@ -7550,7 +7550,7 @@ base-chart.chart {
   .app-header.navbar .navbar-brand {
     display: inline-block;
     width: 155px;
-    height: 55px;
+    height: 54px;
     padding: 0.5rem 1rem;
     margin-right: 0;
     background-color: #fff;
@@ -8691,7 +8691,8 @@ app-root {
       position: absolute;
       left: 50px;
       top: 0;
-      box-sizing: content-box;
+      box-sizing: border-box;
+      
       /*width: 100% !important;*/
       /*margin: 0 12px !important;*/ }
     .app-header .navbar-nav {
