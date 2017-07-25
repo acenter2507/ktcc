@@ -40,6 +40,7 @@
     function stateChangeSuccess(event, toState, toParams, fromState, fromParams) {
       // Record previous state
       storePreviousState(fromState, fromParams);
+      // Custom
       document.body.scrollTop = document.documentElement.scrollTop = 0;
       $rootScope.$state = $state;
       $rootScope.$stateParams = $stateParams;

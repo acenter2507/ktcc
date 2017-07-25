@@ -36,13 +36,35 @@
 </head>
 
 <!--<body class="ng-cloak">-->
-<body class="ng-cloak">
-  <header ng-include="'/modules/core/client/views/header.client.view.html'" class="navbar navbar-fixed-top navbar-inverse"></header>
-  <section class="content">
-    <section class="container">
-      {{{block "content"}}}
-    </section>
-  </section>
+<body class="ng-cloak app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
+  <div ng-include="'/modules/core/client/views/header.client.view.html'"></div>
+  <!--<header ng-include="'/modules/core/client/views/header.client.view.html'" class="navbar navbar-fixed-top navbar-inverse"></header>-->
+  <div class="app-body">
+    <div ng-include="'/modules/core/client/views/sidebar.client.view.html'"></div>
+    <main class="main">
+      <ol class="breadcrumb" breadcrumb>
+        <ncy-breadcrumb></ncy-breadcrumb>
+        <!-- Breadcrumb Menu-->
+        <li class="breadcrumb-menu">
+          <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+            <a class="btn btn-secondary" href="#"><i class="icon-speech"></i></a>
+            <a class="btn btn-secondary" ui-sref="app.main"><i class="icon-graph"></i> &nbsp;Dashboard</a>
+            <a class="btn btn-secondary" ui-sref="app.main"><i class="icon-settings"></i> &nbsp;Settings</a>
+          </div>
+        </li>
+      </ol>
+      <div class="container-fluid">
+        {{{block "content"}}}
+      </div>
+
+      <div ng-include="'/modules/core/client/views/aside.client.view.html'"></div>
+  </div>
+  <!--<section class="content">
+    <section class="container">-->
+    <!--{{{block "content"}}}-->
+    <!--</section>
+  </section>-->
+  <div ng-include="'/modules/core/client/views/footer.client.view.html'"></div>
   <noscript>
     <style>
       [ng\:cloak], [ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {

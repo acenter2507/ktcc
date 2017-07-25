@@ -9,7 +9,7 @@
 
   function pluginConfig(cfpLoadingBarProvider, $breadcrumbProvider, NotificationProvider) {
     // Loading bar
-    cfpLoadingBarProvider.includeSpinner = false;
+    cfpLoadingBarProvider.includeSpinner = true;
     cfpLoadingBarProvider.latencyThreshold = 1;
 
     // Breadcrumb
