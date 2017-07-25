@@ -142,7 +142,7 @@ function collapseMenuTogglerDirective() {
   function link(scope, element, attrs) {
     element.on('click', function () {
       if (element.hasClass('navbar-toggler') && !element.hasClass('layout-toggler')) {
-        angular.element('body').toggleClass('sidebar-mobile-show')
+        angular.element('body').toggleClass('sidebar-mobile-show');
       }
     });
   }
@@ -159,7 +159,7 @@ function bootstrapCarouselDirective() {
   function link(scope, element, attrs) {
     if (attrs.ride === 'carousel') {
       element.find('a').each(function () {
-        $(this).attr('data-target', $(this).attr('href').replace('index.html', '')).attr('href', 'javascript;;')
+        $(this).attr('data-target', $(this).attr('href').replace('index.html', '')).attr('href', 'javascript;;');
       });
     }
   }
