@@ -42,6 +42,5 @@
       state: 'settings.accounts',
       icon: 'fa fa-cog'
     });
-    
   }
 }());
