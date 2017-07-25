@@ -21,13 +21,21 @@
     </li>
   </ul>
   <!--<ul class="nav navbar-nav ml-auto d-md-down-none">-->
-  <ul class="nav navbar-nav ml-auto">
+  <ul class="nav navbar-nav ml-auto" ng-hide="vm.user">
+    <li class="nav-item" ui-sref-active="active">
+      <a class="nav-link" ui-sref="authentication.signup">Sign Up</a>
+    </li>
+    <li class="nav-item" ui-sref-active="active">
+      <a class="nav-link" ui-sref="authentication.signin">Sign In</a>
+    </li>
+  </ul>
+  <ul class="nav navbar-nav ml-auto" ng-show="vm.user">
     <li class="nav-item">
       <a class="nav-link" href="#"><i class="icon-bell"></i><span class="badge badge-pill badge-danger">5</span></a>
     </li>
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-        <img src="/modules/users/client/img/profile/default.png" class="img-avatar" alt="admin@bootstrapmaster.com">
+        <img ng-src="/{{vm.user.profileImageURL}}" alt="{{vm.user.displayName}}" class="img-avatar">
           <!--<span class="d-md-down-none">admin</span>-->
         <span ng-bind="vm.user.displayName"></span>
       </a>
