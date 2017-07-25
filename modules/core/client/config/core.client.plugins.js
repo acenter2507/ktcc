@@ -34,11 +34,11 @@
   }
 
   function scopeConfig($rootScope, $state, $stateParams) {
-    $rootScope.$on('$stateChangeSuccess', function () {
-      document.body.scrollTop = document.documentElement.scrollTop = 0;
-    });
-    $rootScope.$state = $state;
-    $rootScope.$stateParams = $stateParams;
+    // $rootScope.$on('$stateChangeSuccess', function () {
+    //   document.body.scrollTop = document.documentElement.scrollTop = 0;
+    // });
+    // $rootScope.$state = $state;
+    // $rootScope.$stateParams = $stateParams;
     return;
   }
 }());
