@@ -8689,6 +8689,7 @@ app-root {
       color: rgba(0, 0, 0, 0.3); }
     .app-header .navbar-brand {
       /*width: 100% !important;*/
+      background-color: #a0cf3c;
       margin: 0 auto !important; }
     .app-header .navbar-nav {
       position: absolute;
