@@ -12,6 +12,7 @@
 
     vm.accountMenu = menuService.getMenu('account').items[0];
     vm.authentication = Authentication;
+    vm.user = vm.authentication.user;
     vm.isCollapsed = false;
     vm.menu = menuService.getMenu('topbar');
 
