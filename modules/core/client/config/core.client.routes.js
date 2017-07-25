@@ -34,7 +34,7 @@
         controllerAs: 'vm',
         ncyBreadcrumb: {
           label: 'Home'
-        },
+        }
       })
       .state('not-found', {
         url: '/not-found',
