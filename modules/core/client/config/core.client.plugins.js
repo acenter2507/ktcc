@@ -6,13 +6,22 @@
     .config(pluginConfig)
     .run(scopeConfig);
 
-  pluginConfig.$inject = ['cfpLoadingBarProvider', 'NotificationProvider'];
+  // pluginConfig.$inject = ['cfpLoadingBarProvider', '$breadcrumbProvider', 'NotificationProvider'];
+  // pluginConfig.$inject = ['NotificationProvider'];
   scopeConfig.$inject = ['$rootScope', '$state', '$stateParams'];
 
-  function pluginConfig(cfpLoadingBarProvider, NotificationProvider) {
+  // function pluginConfig(cfpLoadingBarProvider, $breadcrumbProvider, NotificationProvider) {
+  function pluginConfig(cNotificationProvider) {
     // Loading bar
-    cfpLoadingBarProvider.includeSpinner = false;
-    cfpLoadingBarProvider.latencyThreshold = 1;
+    // cfpLoadingBarProvider.includeSpinner = false;
+    // cfpLoadingBarProvider.latencyThreshold = 1;
+
+    // Breadcrumb
+    // $breadcrumbProvider.setOptions({
+    //   prefixStateName: 'home',
+    //   includeAbstract: true,
+    //   template: '<li class="breadcrumb-item" ng-repeat="step in steps" ng-class="{active: $last}" ng-switch="$last || !!step.abstract"><a ng-switch-when="false" href="{{step.ncyBreadcrumbLink}}">{{step.ncyBreadcrumbLabel}}</a><span ng-switch-when="true">{{step.ncyBreadcrumbLabel}}</span></li>'
+    // });
 
     // Notification
     NotificationProvider.setOptions({
@@ -27,11 +36,11 @@
   }
 
   function scopeConfig($rootScope, $state, $stateParams) {
-    // $rootScope.$on('$stateChangeSuccess', function () {
-    //   document.body.scrollTop = document.documentElement.scrollTop = 0;
-    // });
-    // $rootScope.$state = $state;
-    // $rootScope.$stateParams = $stateParams;
+    $rootScope.$on('$stateChangeSuccess', function () {
+      document.body.scrollTop = document.documentElement.scrollTop = 0;
+    });
+    $rootScope.$state = $state;
+    $rootScope.$stateParams = $stateParams;
     return;
   }
 }());

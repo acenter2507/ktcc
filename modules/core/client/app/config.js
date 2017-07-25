@@ -10,9 +10,9 @@
     'ui.bootstrap',
     'ngFileUpload',
     'ngImgCrop',
-    'ui-notification',
-    'ncy-angular-breadcrumb',
-    'angular-loading-bar'
+    'ui-notification'
+    // 'ncy-angular-breadcrumb',
+    // 'angular-loading-bar'
   ];
   var service = {
     applicationEnvironment: window.env,
