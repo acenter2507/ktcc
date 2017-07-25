@@ -5,54 +5,87 @@
     .module('combonents')
     .config(routeConfig);
 
-  routeConfig.$inject = ['$stateProvider'];
+  routeConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 
-  function routeConfig($stateProvider) {
+  function routeConfig($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('combonents', {
         abstract: true,
         url: '/combonents',
-        template: '<ui-view/>'
+        ncyBreadcrumb: {
+          label: 'combonents'
+        },
+        template: '<ui-view></ui-view>'
       })
       .state('combonents.buttons', {
         url: '/buttons',
-        template: '<h1>buttons</h1>'
+        templateUrl: '/modules/combonents/client/views/buttons.client.view.html',
+        ncyBreadcrumb: {
+          label: 'Buttons'
+        }
       })
-      .state('combonents.social', {
+      .state('combonents.social-buttons', {
         url: '/social',
-        template: '<h1>social</h1>'
+        templateUrl: '/modules/combonents/client/views/social.client.view.html',
+        ncyBreadcrumb: {
+          label: 'Social Buttons'
+        }
       })
       .state('combonents.cards', {
         url: '/cards',
-        template: '<h1>cards</h1>'
+        templateUrl: '/modules/combonents/client/views/cards.client.view.html',
+        ncyBreadcrumb: {
+          label: 'Cards'
+        }
       })
       .state('combonents.forms', {
         url: '/forms',
-        template: '<h1>forms</h1>'
+        templateUrl: '/modules/combonents/client/views/forms.client.view.html',
+        ncyBreadcrumb: {
+          label: 'Forms'
+        }
       })
       .state('combonents.switches', {
         url: '/switches',
-        template: '<h1>switches</h1>'
+        templateUrl: '/modules/combonents/client/views/switches.client.view.html',
+        ncyBreadcrumb: {
+          label: 'Switches'
+        }
       })
       .state('combonents.tables', {
         url: '/tables',
-        template: '<h1>tables</h1>'
+        templateUrl: '/modules/combonents/client/views/tables.client.view.html',
+        ncyBreadcrumb: {
+          label: 'Tables'
+        }
       })
       .state('combonents.login', {
         url: '/login',
-        template: '<h1>login</h1>'
+        templateUrl: '/modules/combonents/client/views/login.client.view.html',
+        ncyBreadcrumb: {
+          label: 'Login'
+        }
       })
       .state('combonents.register', {
         url: '/register',
-        template: '<h1>register</h1>'
+        templateUrl: '/modules/combonents/client/views/register.client.view.html',
+        ncyBreadcrumb: {
+          label: 'Register'
+        }
       })
       .state('combonents.404', {
         url: '/404',
-        template: '<h1>404</h1>'
+        templateUrl: '/modules/combonents/client/views/404.client.view.html',
+        ncyBreadcrumb: {
+          label: '404'
+        }
       })
       .state('combonents.500', {
         url: '/500',
-        template: '<h1>500</h1>'
+        templateUrl: '/modules/combonents/client/views/500.client.view.html',
+        ncyBreadcrumb: {
+          label: '500'
+        }
       });
   }
 }());
