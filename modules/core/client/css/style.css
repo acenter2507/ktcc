@@ -8688,7 +8688,9 @@ app-root {
     .app-header .navbar-toggler {
       color: rgba(0, 0, 0, 0.3); }
     .app-header .navbar-brand {
-      float: left !important;
+      position: absolute;
+      left: 0;
+      top: 0;
       /*width: 100% !important;*/
       /*margin: 0 12px !important;*/ }
     .app-header .navbar-nav {
