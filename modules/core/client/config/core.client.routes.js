@@ -31,7 +31,10 @@
         url: '/',
         templateUrl: '/modules/core/client/views/home.client.view.html',
         controller: 'HomeController',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        ncyBreadcrumb: {
+          label: 'Home'
+        },
       })
       .state('not-found', {
         url: '/not-found',
@@ -39,7 +42,7 @@
         controller: 'ErrorController',
         controllerAs: 'vm',
         params: {
-          message: function($stateParams) {
+          message: function ($stateParams) {
             return $stateParams.message;
           }
         },
@@ -54,7 +57,7 @@
         controller: 'ErrorController',
         controllerAs: 'vm',
         params: {
-          message: function($stateParams) {
+          message: function ($stateParams) {
             return $stateParams.message;
           }
         },
