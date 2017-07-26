@@ -1,7 +1,4 @@
 <header class="app-header navbar" ng-controller="HeaderController as vm">
-  <button class="navbar-toggler mobile-sidebar-toggler d-lg-none" type="button">
-    <i class="fa fa-outdent"></i>
-  </button>
   <a class="navbar-brand" ui-sref="home"></a>
 
   <ul class="nav navbar-nav d-md-down-none">
@@ -21,7 +18,7 @@
     </li>
   </ul>
   <!--<ul class="nav navbar-nav ml-auto d-md-down-none">-->
-  <ul class="nav navbar-nav ml-auto" ng-hide="vm.user">
+  <ul class="nav navbar-nav ml-auto d-md-down-none" ng-hide="vm.user">
     <li class="nav-item" ui-sref-active="active">
       <a class="nav-link mr-2" ui-sref="authentication.signin">Sign In</a>
     </li>
@@ -32,7 +29,7 @@
       <a class="nav-link navbar-toggler aside-menu-toggler" href="#"><i class="fa fa-outdent"></i></a>
     </li>
   </ul>
-  <ul class="nav navbar-nav ml-auto" ng-show="vm.user">
+  <ul class="nav navbar-nav ml-auto d-md-down-none" ng-show="vm.user">
     <li class="nav-item">
       <a class="nav-link" href="#"><i class="icon-bell"></i><span class="badge badge-pill badge-danger">5</span></a>
     </li>
@@ -65,8 +62,11 @@
         <a class="dropdown-item" href="#"><i class="fa fa-lock"></i> Logout</a>
       </div>
     </li>
-    <li class="nav-item d-md-down-none">
+    <!--<li class="nav-item d-md-down-none">
       <a class="nav-link navbar-toggler aside-menu-toggler" href="#"><i class="fa fa-outdent"></i></a>
-    </li>
+    </li>-->
   </ul>
+  <button class="navbar-toggler mobile-sidebar-toggler d-lg-none ml-auto" type="button">
+    <i class="fa fa-outdent"></i>
+  </button>
 </header>
