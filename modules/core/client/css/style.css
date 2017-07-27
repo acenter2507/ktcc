@@ -8690,8 +8690,7 @@ app-root {
       color: rgba(0, 0, 0, 0.3); }
     .app-header .navbar-brand {
       width: 100% !important;
-      left: 0; /*new*/
-      /*margin: 0 auto !important;*/ }
+      margin: 0 auto !important; }
     .app-header .navbar-nav {
       position: absolute;
       top: 0;
