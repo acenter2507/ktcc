@@ -7665,11 +7665,13 @@ base-chart.chart {
     .sidebar .sidebar-close:hover {
       opacity: 1; }
   .sidebar .profile {
-    width: 220px;
-    height: 100px;
     position: absolute;
     top: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 1;
     background-color: white;
+    clear: both;
   }
   .sidebar .sidebar-nav {
     position: relative;
