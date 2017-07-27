@@ -34,6 +34,9 @@
         controllerAs: 'vm',
         ncyBreadcrumb: {
           label: 'Home'
+        },
+        data: {
+          roles: ['user']
         }
       })
       .state('not-found', {
