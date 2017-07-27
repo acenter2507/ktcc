@@ -33,7 +33,7 @@
         controller: 'HomeController',
         controllerAs: 'vm',
         ncyBreadcrumb: {
-          label: 'Home'
+          label: 'ホーム'
         },
         data: {
           roles: ['user']
