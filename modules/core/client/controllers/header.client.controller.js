@@ -9,8 +9,11 @@
 
   function HeaderController($rootScope, $scope, $state, Authentication, menuService) {
     var vm = this;
-    vm.user = Authentication.user;
-    vm.isLogged = (vm.user);
+    init();
+    function init() {
+      vm.user = Authentication.user;
+      vm.isLogged = (vm.user);
+    }
 
     vm.accountMenu = menuService.getMenu('account').items[0];
     vm.isCollapsed = false;
@@ -23,7 +26,7 @@
       vm.isCollapsed = false;
     }
     $rootScope.$on('loginSuccess', () => {
-      console.log(Authentication.user);
+      init();
     });
   }
 }());
