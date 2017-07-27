@@ -10,13 +10,62 @@ var mongoose = require('mongoose'),
  * Workdate Schema
  */
 var WorkdateSchema = new Schema({
-  name: {
+  date: {
+    type: Date,
+    required: 'Please fill Workdate date',
+  },
+  // 業務内容
+  work: {
     type: String,
     default: '',
-    required: 'Please fill Workdate name',
+    required: 'Please fill Workdate work content',
     trim: true
   },
+  // 開始
+  start: {
+    type: Date,
+    required: 'Please fill Workdate start'
+  },
+  // 終了
+  end: {
+    type: Date,
+    required: 'Please fill Workdate end'
+  },
+  // 休憩 (hour)
+  middleRest: {
+    type: Number,
+    default: 1
+  },
+  // 時間外
+  overtime: {
+    type: Number,
+    default: 0
+  },
+  // 深夜
+  late: {
+    type: Number,
+    default: 0
+  },
+  // Approve, reject, waiting
+  status: {
+    type: Number,
+    default: 1
+  },
+  // 休日形態
+  restmode: {
+    type: Schema.ObjectId,
+    ref: 'Restmode'
+  },
+  // 振替
+  transfer: {
+    type: Boolean,
+    default: false
+  },
   created: {
+    type: Date,
+    default: Date.now
+  },
+  updated: {
     type: Date,
     default: Date.now
   },
