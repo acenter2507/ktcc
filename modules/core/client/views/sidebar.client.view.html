@@ -1,17 +1,34 @@
 <div class="sidebar" ng-controller="SidebarController as vm">
-  <div class="profile d-lg-none">
+  <div class="profile d-lg-none" ng-if=" vm.isLogged">
     <img ng-src="/{{vm.user.profileImageURL}}" alt="{{vm.user.displayName}}" class="avatar">
   </div>
   <nav class="sidebar-nav">
     <ul class="nav">
+      <li class="nav-title" ng-if="vm.isLogged">プロファイル</li>
+      <li class="nav-item nav-dropdown" ng-class="{open: $state.includes('profile')}" ng-if="vm.isLogged">
+        <a class="nav-link nav-dropdown-toggle" ng-class="{active: $state.includes('profile')}" href="#"><i class="icon-puzzle"></i> プロファイル</a>
+        <ul class="nav-dropdown-items">
+          <li class="nav-item">
+            <a class="nav-link" ui-sref-active="active" ui-sref="profile.view"><i class="icon-puzzle"></i> {{vm.user.displayName}}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" ui-sref-active="active" ui-sref="profile.edit"><i class="icon-puzzle"></i> 情報編集</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" ui-sref-active="active" ui-sref="profile.config"><i class="icon-puzzle"></i> 設定</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" ui-sref-active="active" ui-sref="profile.logout"><i class="icon-puzzle"></i> ログアウト</a>
+          </li>
+        </ul>
+      </li>
+
       <li class="nav-item">
         <a class="nav-link" ui-sref-active="active" ui-sref="home"><i class="icon-home"></i> ホーム</a>
       </li>
 
       <li class="divider"></li>
-      <li class="nav-title">
-        Combonents
-      </li>
+      <li class="nav-title">Combonents</li>
       <li class="nav-item nav-dropdown" ng-class="{open: $state.includes('combonents')}">
         <a class="nav-link nav-dropdown-toggle" ng-class="{active: $state.includes('combonents')}" href="#"><i class="icon-puzzle"></i> Combonents</a>
         <ul class="nav-dropdown-items">
@@ -49,6 +66,12 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" ui-sref-active="active" ui-sref="app.widgets"><i class="icon-calculator"></i> Widgets</a>
+      </li>
+      <li class="nav-item" ng-if="!vm.isLogged">
+        <a class="nav-link" ui-sref-active="active" ui-sref="authentication.signin">Sign In</a>
+      </li>
+      <li class="nav-item" ng-if="!vm.isLogged">
+        <a class="nav-link" ui-sref-active="active" ui-sref="authentication.signup">Sign Up</a>
       </li>
     </ul>
   </nav>
