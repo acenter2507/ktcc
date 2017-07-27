@@ -8678,7 +8678,7 @@ app-root {
 .main,
 .aside-menu {
   transition: margin-left 0.25s, margin-right 0.25s, width 0.25s, flex 0.25s; }
-/* Mobile */
+
 @media (max-width: 991px) {
   .app-header {
     position: fixed !important;
@@ -8708,7 +8708,7 @@ app-root {
     margin-top: 55px; }
   .sidebar {
     position: fixed;
-    width: 250px;
+    width: 220px;
     height: 100%;
     margin-left: -220px; }
     .sidebar .sidebar-nav,
@@ -8726,7 +8726,6 @@ app-root {
   .sidebar-mobile-show .main {
     margin-right: -220px !important;
     margin-left: 220px !important; } }
-
 
 hr.transparent {
   border-top: 1px solid transparent; }
