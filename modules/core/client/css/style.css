@@ -9,7 +9,6 @@
 html {
   font-family: sans-serif;
   line-height: 1.15;
-  font-size: 16px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%; }
 
@@ -3085,7 +3084,6 @@ tbody.collapse.show {
 .breadcrumb {
   padding: 0.75rem 1rem;
   margin-bottom: 1rem;
-  border-radius: 0 !important;
   list-style: none;
   background-color: #fff; }
   .breadcrumb::after {
@@ -6092,7 +6090,6 @@ body {
 
 .breadcrumb {
   position: relative;
-  border-radius: 0 !important;
   margin-bottom: 1.5rem;
   border-bottom: 1px solid #cfd8dc; }
 
@@ -7552,7 +7549,7 @@ base-chart.chart {
   .app-header.navbar .navbar-brand {
     display: inline-block;
     width: 155px;
-    height: 54px;
+    height: 55px;
     padding: 0.5rem 1rem;
     margin-right: 0;
     background-color: #fff;
@@ -8601,10 +8598,9 @@ app-root {
   .sidebar-fixed .sidebar .sidebar-nav {
     height: calc(100vh - 55px); }
 
-/* Tách footer vào 200px*/
 .sidebar-fixed .main, .sidebar-fixed .app-footer {
   margin-left: 200px; }
-/* Trả về vị trí cũ */
+
 .sidebar-fixed.sidebar-hidden .main, .sidebar-fixed.sidebar-hidden .app-footer {
   margin-left: 0; }
 
@@ -8644,8 +8640,6 @@ app-root {
   position: fixed;
   right: 0;
   height: 100%; }
-  .aside-menu-fixed .aside-menu {
-    height: calc(100vh - 55px); }
   .aside-menu-fixed .aside-menu .tab-content {
     height: calc(100vh - 2.375rem - 55px); }
 
@@ -8688,27 +8682,23 @@ app-root {
       position: absolute;
       top: 0;
       left: 0;
-      width: 50px;
+      width: 70px;
       height: inherit; }
     .app-header .navbar-toggler {
       color: rgba(0, 0, 0, 0.3); }
     .app-header .navbar-brand {
-      position: absolute;
-      left: 50px;
-      top: 0;
-      /*width: 100% !important;*/
-      /*margin: 0 12px !important;*/ }
+      width: 100% !important;
+      margin: 0 auto !important; }
     .app-header .navbar-nav {
       position: absolute;
       top: 0;
       right: 15px;
-      height: inherit;
-      margin: 0 auto !important; }
+      height: inherit; }
   .app-body {
     margin-top: 55px; }
   .sidebar {
     position: fixed;
-    width: 350px;
+    width: 220px;
     height: 100%;
     margin-left: -220px; }
     .sidebar .sidebar-nav,
