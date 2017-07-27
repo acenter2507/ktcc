@@ -12,7 +12,8 @@
     'ngImgCrop',
     'ui-notification',
     'ncy-angular-breadcrumb',
-    'angular-loading-bar'
+    'angular-loading-bar',
+    'angularMoment'
   ];
   var service = {
     applicationEnvironment: window.env,
