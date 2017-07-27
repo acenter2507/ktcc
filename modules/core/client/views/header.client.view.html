@@ -17,6 +17,18 @@
       <a class="nav-link" ui-sref="home">休暇深刻</a>
     </li>
   </ul>
+  <!--<ul class="nav navbar-nav ml-auto d-md-down-none">-->
+  <ul class="nav navbar-nav ml-auto d-md-down-none" ng-hide="vm.isLogged">
+    <li class="nav-item" ui-sref-active="active">
+      <a class="nav-link mr-2" ui-sref="authentication.signin">Sign In</a>
+    </li>
+    <li class="nav-item" ui-sref-active="active">
+      <a class="nav-link" ui-sref="authentication.signup">Sign Up</a>
+    </li>
+    <!--<li class="nav-item d-md-down-none">
+      <a class="nav-link navbar-toggler aside-menu-toggler" href="#"><i class="fa fa-outdent"></i></a>
+    </li>-->
+  </ul>
   <ul class="nav navbar-nav ml-auto d-md-down-none" ng-show="vm.isLogged">
     <li class="nav-item">
       <a class="nav-link" href="#"><i class="icon-bell"></i><span class="badge badge-pill badge-danger">5</span></a>
