@@ -1,5 +1,7 @@
 <div class="sidebar" ng-controller="SidebarController as vm">
-  <div class="profile d-lg-none"></div>
+  <div class="profile d-lg-none">
+    <img ng-src="/{{vm.user.profileImageURL}}" alt="{{vm.user.displayName}}" class="avatar">
+  </div>
   <nav class="sidebar-nav">
     <ul class="nav">
       <li class="nav-item">
