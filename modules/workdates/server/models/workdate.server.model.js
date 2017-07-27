@@ -12,7 +12,7 @@ var mongoose = require('mongoose'),
 var WorkdateSchema = new Schema({
   date: {
     type: Date,
-    required: 'Please fill Workdate date',
+    required: 'Please fill Workdate date'
   },
   // 業務内容
   work: {
