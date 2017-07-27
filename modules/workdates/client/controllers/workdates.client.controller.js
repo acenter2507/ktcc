@@ -21,7 +21,7 @@
     function remove() {
       if ($window.confirm('Are you sure you want to delete?')) {
         vm.workdate.$remove(() => {
-          $state.go('workdates.list')
+          $state.go('workdates.list');
           Notification.success({ message: '<i class="glyphicon glyphicon-ok"></i> Workdate deleted successfully!' });
         });
       }
