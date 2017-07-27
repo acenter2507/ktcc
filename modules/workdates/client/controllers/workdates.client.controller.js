@@ -6,14 +6,13 @@
     .module('workdates')
     .controller('WorkdatesController', WorkdatesController);
 
-  WorkdatesController.$inject = ['$scope', '$state', '$window', 'Authentication', 'workdateResolve'];
+  WorkdatesController.$inject = ['$scope', '$state', '$window', 'Authentication', 'workdateResolve', 'Notification'];
 
-  function WorkdatesController ($scope, $state, $window, Authentication, workdate) {
+  function WorkdatesController ($scope, $state, $window, Authentication, workdate, Notification) {
     var vm = this;
 
-    vm.authentication = Authentication;
     vm.workdate = workdate;
-    vm.error = null;
+    vm.authentication = Authentication;
     vm.form = {};
     vm.remove = remove;
     vm.save = save;
@@ -21,7 +20,10 @@
     // Remove existing Workdate
     function remove() {
       if ($window.confirm('Are you sure you want to delete?')) {
-        vm.workdate.$remove($state.go('workdates.list'));
+        vm.workdate.$remove(() => {
+          $state.go('workdates.list')
+          Notification.success({ message: '<i class="glyphicon glyphicon-ok"></i> Workdate deleted successfully!' });
+        });
       }
     }
 
@@ -31,22 +33,19 @@
         $scope.$broadcast('show-errors-check-validity', 'vm.form.workdateForm');
         return false;
       }
-
-      // TODO: move create/update logic to service
-      if (vm.workdate._id) {
-        vm.workdate.$update(successCallback, errorCallback);
-      } else {
-        vm.workdate.$save(successCallback, errorCallback);
-      }
+      vm.workdate.createOrUpdate()
+        .then(successCallback)
+        .catch(errorCallback);
 
       function successCallback(res) {
         $state.go('workdates.view', {
           workdateId: res._id
         });
+        Notification.success({ message: '<i class="glyphicon glyphicon-ok"></i> Workdate saved successfully!' });
       }
 
       function errorCallback(res) {
-        vm.error = res.data.message;
+        Notification.error({ message: res.data.message, title: '<i class="glyphicon glyphicon-remove"></i> Workdate save error!' });
       }
     }
   }

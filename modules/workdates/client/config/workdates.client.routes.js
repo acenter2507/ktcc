@@ -12,15 +12,25 @@
       .state('workdates', {
         abstract: true,
         url: '/workdates',
-        template: '<ui-view/>'
+        template: '<ui-view/>',
+        ncyBreadcrumb: {
+          label: '勤務時間'
+        },
+        data: {
+          roles: ['admin', 'user']
+        }
       })
       .state('workdates.list', {
         url: '',
         templateUrl: '/modules/workdates/client/views/list-workdates.client.view.html',
         controller: 'WorkdatesListController',
         controllerAs: 'vm',
+        ncyBreadcrumb: {
+          label: '一覧'
+        },
         data: {
-          pageTitle: 'Workdates List'
+          roles: ['admin', 'user'],
+          pageTitle: '勤務時間一覧'
         }
       })
       .state('workdates.create', {
@@ -28,12 +38,15 @@
         templateUrl: '/modules/workdates/client/views/form-workdate.client.view.html',
         controller: 'WorkdatesController',
         controllerAs: 'vm',
+        ncyBreadcrumb: {
+          label: '登録'
+        },
         resolve: {
           workdateResolve: newWorkdate
         },
         data: {
           roles: ['user', 'admin'],
-          pageTitle: 'Workdates Create'
+          pageTitle: '勤務時間登録'
         }
       })
       .state('workdates.edit', {
@@ -41,12 +54,15 @@
         templateUrl: '/modules/workdates/client/views/form-workdate.client.view.html',
         controller: 'WorkdatesController',
         controllerAs: 'vm',
+        ncyBreadcrumb: {
+          label: '編集'
+        },
         resolve: {
           workdateResolve: getWorkdate
         },
         data: {
           roles: ['user', 'admin'],
-          pageTitle: 'Edit Workdate {{ workdateResolve.name }}'
+          pageTitle: '勤務時間編集'
         }
       })
       .state('workdates.view', {
@@ -54,11 +70,15 @@
         templateUrl: '/modules/workdates/client/views/view-workdate.client.view.html',
         controller: 'WorkdatesController',
         controllerAs: 'vm',
+        ncyBreadcrumb: {
+          label: '詳細'
+        },
         resolve: {
           workdateResolve: getWorkdate
         },
         data: {
-          pageTitle: 'Workdate {{ workdateResolve.name }}'
+          roles: ['admin', 'user'],
+          pageTitle: '勤務時間詳細'
         }
       });
   }
