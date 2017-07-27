@@ -9,7 +9,7 @@
   WorkdatesService.$inject = ['$resource', '$log'];
 
   function WorkdatesService($resource, $log) {
-    var Workdate = $resource('api/workdates/:workdateId', {
+    var Workdate = $resource('/api/workdates/:workdateId', {
       workdateId: '@_id'
     }, {
       update: {
