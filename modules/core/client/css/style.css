@@ -8717,8 +8717,16 @@ app-root {
       height: 75px;
       z-index: 1;
       background-color: #1a2327;
-      clear: both;
-    }
+      clear: both; }
+        .sidebar .profile .avatar {
+          width: 70px;
+          height: 70px;
+          line-height: 70px;
+          font-size: 4rem;
+          position: absolute;
+          bottom: -22px;
+          left: 75px;
+          border-radius: 50%; }
   .main, .app-footer {
     margin-left: 0 !important; }
   .aside-menu {
