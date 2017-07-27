@@ -5,11 +5,17 @@
     .module('core')
     .controller('SidebarController', SidebarController);
 
-  SidebarController.$inject = ['$scope', '$state', 'Authentication', 'menuService'];
+  SidebarController.$inject = ['$rootScope', '$scope', '$state', 'Authentication', 'menuService'];
 
-  function SidebarController($scope, $state, Authentication, menuService) {
+  function SidebarController($rootScope, $scope, $state, Authentication, menuService) {
     var vm = this;
-    vm.user = Authentication.user;
-    vm.isLogged = (vm.user);
+    init();
+    function init() {
+      vm.user = Authentication.user;
+      vm.isLogged = (vm.user);
+    }
+    $rootScope.$on('loginSuccess', () => {
+      init();
+    });
   }
 }());
