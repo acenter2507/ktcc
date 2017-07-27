@@ -8712,7 +8712,8 @@ app-root {
     margin-right: -250px; }
   .sidebar-mobile-show .sidebar {
     width: 220px;
-    margin-left: 0; }
+   /* margin-left: 0;*/
+    margin-right: 0; }
     .sidebar-mobile-show .sidebar .sidebar-nav {
       height: calc(100vh - 55px); }
   .sidebar-mobile-show .main {
