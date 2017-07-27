@@ -8699,6 +8699,7 @@ app-root {
     margin-top: 55px; }
   .sidebar {
     position: fixed;
+    right: 0;
     width: 220px;
     height: 100%;
     margin-right: -220px;
