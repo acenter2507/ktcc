@@ -8,23 +8,41 @@
         <a class="nav-link" ui-sref-active="active" ui-sref="home"><i class="icon-home"></i> ホーム</a>
       </li>
       <li class="divider d-lg-none"></li>
-      <li class="nav-title d-lg-none" ng-if="vm.isLogged">プロファイル</li>
       <li class="nav-item nav-dropdown d-lg-none" ng-class="{open: $state.includes('profile')}" ng-if="vm.isLogged">
-        <a class="nav-link nav-dropdown-toggle" ng-class="{active: $state.includes('profile')}" href="#"><i class="icon-puzzle"></i> プロファイル</a>
+        <a class="nav-link nav-dropdown-toggle" ng-class="{active: $state.includes('profile')}" href="#"><i class="icon-puzzle"></i> アカウント</a>
         <ul class="nav-dropdown-items">
           <li class="nav-item">
-            <a class="nav-link" ui-sref-active="active" ui-sref="profile.view"><i class="icon-puzzle"></i> {{vm.user.displayName}}</a>
+            <a class="nav-link" ui-sref-active="active" ui-sref="profile.view"><i class="fa fa-bell-o"></i> お知らせ</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" ui-sref-active="active" ui-sref="profile.edit"><i class="icon-puzzle"></i> 情報編集</a>
+            <a class="nav-link" ui-sref-active="active" ui-sref="profile.view"><i class="fa fa-envelope-o"></i> メッセージ</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" ui-sref-active="active" ui-sref="profile.config"><i class="icon-puzzle"></i> 設定</a>
+            <a class="nav-link" ui-sref-active="active" ui-sref="profile.view"><i class="fa fa-tasks"></i> タスク</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" ui-sref-active="active" href="/api/auth/signout" target="_self"><i class="icon-puzzle"></i> ログアウト</a>
+            <a class="nav-link" ui-sref-active="active" ui-sref="profile.view"><i class="fa fa-comments"></i> チャット</a>
           </li>
         </ul>
+      </li>
+      <li class="divider d-lg-none"></li>
+      <li class="nav-item nav-dropdown d-lg-none" ng-class="{open: $state.includes('profile')}" ng-if="vm.isLogged">
+        <a class="nav-link nav-dropdown-toggle" ng-class="{active: $state.includes('profile')}" href="#"><i class="icon-puzzle"></i> システム</a>
+        <ul class="nav-dropdown-items">
+          <li class="nav-item">
+            <a class="nav-link" ui-sref-active="active" ui-sref="profile.view"><i class="fa fa-user"></i> プロファイル管理</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" ui-sref-active="active" ui-sref="profile.view"><i class="fa fa-wrench"></i> 設定</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" ui-sref-active="active" ui-sref="profile.view"><i class="fa fa-file"></i> プロジェクト</a>
+          </li>
+        </ul>
+      </li>
+      <li class="divider"></li>
+      <li class="nav-item">
+        <a class="nav-link" ui-sref-active="active" href="/api/auth/signout" target="_self"><i class="fa fa-sign-out"></i> ログアウト</a>
       </li>
       <li class="divider"></li>
       <li class="nav-title">Combonents</li>
@@ -62,12 +80,6 @@
             <a class="nav-link" ui-sref-active="active" ui-sref="combonents.500"><i class="icon-star"></i> Error 500</a>
           </li>
         </ul>
-      </li>
-      <li class="nav-item" ng-if="!vm.isLogged">
-        <a class="nav-link" ui-sref-active="active" ui-sref="authentication.signin">Sign In</a>
-      </li>
-      <li class="nav-item" ng-if="!vm.isLogged">
-        <a class="nav-link" ui-sref-active="active" ui-sref="authentication.signup">Sign Up</a>
       </li>
     </ul>
   </nav>

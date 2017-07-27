@@ -20,11 +20,11 @@
   <!--<ul class="nav navbar-nav ml-auto d-md-down-none">-->
   <ul class="nav navbar-nav ml-auto d-md-down-none" ng-hide="vm.isLogged">
     <li class="nav-item" ui-sref-active="active">
-      <a class="nav-link mr-2" ui-sref="authentication.signin">Sign In</a>
+      <a class="nav-link" ui-sref="authentication.signin">ログイン</a>
     </li>
-    <li class="nav-item" ui-sref-active="active">
+    <!--<li class="nav-item" ui-sref-active="active">
       <a class="nav-link" ui-sref="authentication.signup">Sign Up</a>
-    </li>
+    </li>-->
     <!--<li class="nav-item d-md-down-none">
       <a class="nav-link navbar-toggler aside-menu-toggler" href="#"><i class="fa fa-outdent"></i></a>
     </li>-->
@@ -41,25 +41,23 @@
       </a>
       <div class="dropdown-menu dropdown-menu-right mt-2">
         <div class="dropdown-header text-center">
-          <strong>Account</strong>
+          <strong>アカウント</strong>
         </div>
 
-        <a class="dropdown-item" href="#"><i class="fa fa-bell-o"></i> Updates<span class="badge badge-info">42</span></a>
-        <a class="dropdown-item" href="#"><i class="fa fa-envelope-o"></i> Messages<span class="badge badge-success">42</span></a>
-        <a class="dropdown-item" href="#"><i class="fa fa-tasks"></i> Tasks<span class="badge badge-danger">42</span></a>
-        <a class="dropdown-item" href="#"><i class="fa fa-comments"></i> Comment<span class="badge badge-warning">42</span></a>
+        <a class="dropdown-item" href="#"><i class="fa fa-bell-o"></i> お知らせ<span class="badge badge-info">42</span></a>
+        <a class="dropdown-item" href="#"><i class="fa fa-envelope-o"></i> メッセージ<span class="badge badge-success">42</span></a>
+        <a class="dropdown-item" href="#"><i class="fa fa-tasks"></i> タスク<span class="badge badge-danger">42</span></a>
+        <a class="dropdown-item" href="#"><i class="fa fa-comments"></i> チャット<span class="badge badge-danger">42</span></a>
 
         <div class="dropdown-header text-center">
-          <strong>Settings</strong>
+          <strong>システム</strong>
         </div>
 
-        <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile</a>
-        <a class="dropdown-item" href="#"><i class="fa fa-wrench"></i> Setting</a>
-        <a class="dropdown-item" href="#"><i class="fa fa-usd"></i> Payments<span class="badge badge-default">42</span></a>
-        <a class="dropdown-item" href="#"><i class="fa fa-file"></i> Projects<span class="badge badge-primary">42</span></a>
+        <a class="dropdown-item" href="#"><i class="fa fa-user"></i> プロファイル管理</a>
+        <a class="dropdown-item" href="#"><i class="fa fa-wrench"></i> 設定</a>
+        <a class="dropdown-item" href="#"><i class="fa fa-file"></i> プロジェクト<span class="badge badge-primary">42</span></a>
         <div class="divider"></div>
-        <a class="dropdown-item" href="#"><i class="fa fa-shield"></i> Lock account</a>
-        <a class="dropdown-item"  href="/api/auth/signout" target="_self"><i class="fa fa-lock"></i> Logout</a>
+        <a class="dropdown-item"  href="/api/auth/signout" target="_self"><i class="fa fa-sign-out"></i> ログアウト</a>
       </div>
     </li>
     <!--<li class="nav-item d-md-down-none">
