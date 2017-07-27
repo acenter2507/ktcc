@@ -3083,7 +3083,7 @@ tbody.collapse.show {
       width: 100%; } }
 
 .breadcrumb {
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 0 0.75rem 1rem;
   margin-bottom: 1rem;
   list-style: none;
   background-color: #fff; }
@@ -7544,7 +7544,7 @@ base-chart.chart {
   flex-direction: row;
   height: 55px;
   margin: 0;
-  padding: 0 1rem 0 0;
+  padding: 0 0.75rem 0 0;
   background-color: #fff;
   border-bottom: 1px solid #cfd8dc; }
   .app-header.navbar .navbar-brand {
