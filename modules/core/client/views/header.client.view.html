@@ -17,6 +17,16 @@
       <a class="nav-link" ui-sref="home">休暇深刻</a>
     </li>
   </ul>
+  <ul class="nav navbar-nav d-md-down-none" ng-if="vm.menu.shouldRender(vm.user);">
+    <li ng-repeat="item in vm.menu.items | orderBy: 'position'" ng-if="item.shouldRender(vm.user);" ng-switch="item.type"
+      ng-class="{ dropdown: item.type === 'dropdown' }" ui-sref-active="active" class="{{item.class}}">
+      <a ng-switch-when="dropdown" class="dropdown-toggle" data-toggle="dropdown" href="#"  role="button">{{::item.title}}&nbsp;<span class="caret"></span></a>
+      <div ng-switch-when="dropdown" class="dropdown-menu mt-2">
+        <a ng-repeat="subitem in item.items | orderBy: 'position'" ng-if="subitem.shouldRender(vm.user);" class="dropdown-item" ui-sref="{{subitem.state}}({{subitem.params}})" ng-bind="subitem.title">
+      </div>
+      <a ng-switch-default ui-sref="{{item.state}}" ng-bind="item.title"></a>
+    </li>
+  </ul>
   <!--<ul class="nav navbar-nav ml-auto d-md-down-none">-->
   <ul class="nav navbar-nav ml-auto d-md-down-none" ng-hide="vm.isLogged">
     <li class="nav-item" ui-sref-active="active">
@@ -57,7 +67,7 @@
         <a class="dropdown-item" href="#"><i class="fa fa-wrench"></i> 設定</a>
         <a class="dropdown-item" href="#"><i class="fa fa-file"></i> プロジェクト<span class="badge badge-primary">42</span></a>
         <div class="divider"></div>
-        <a class="dropdown-item"  href="/api/auth/signout" target="_self"><i class="fa fa-sign-out"></i> ログアウト</a>
+        <a class="dropdown-item" href="/api/auth/signout" target="_self"><i class="fa fa-sign-out"></i> ログアウト</a>
       </div>
     </li>
     <!--<li class="nav-item d-md-down-none">

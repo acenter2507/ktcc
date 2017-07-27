@@ -11,6 +11,7 @@
     // Set top bar menu items
     menuService.addMenuItem('topbar', {
       title: 'Chat',
+      class: 'nav-item',
       state: 'chat'
     });
   }

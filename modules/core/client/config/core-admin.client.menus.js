@@ -11,6 +11,7 @@
     menuService.addMenuItem('topbar', {
       title: 'Admin',
       state: 'admin',
+      class: 'nav-item',
       type: 'dropdown',
       roles: ['admin']
     });
