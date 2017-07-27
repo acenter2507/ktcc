@@ -7664,6 +7664,13 @@ base-chart.chart {
     opacity: .8; }
     .sidebar .sidebar-close:hover {
       opacity: 1; }
+  .sidebar .profile {
+    width: 220px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    background-color: white;
+  }
   .sidebar .sidebar-nav {
     position: relative;
     overflow-x: hidden;
