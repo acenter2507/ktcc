@@ -8708,7 +8708,7 @@ app-root {
     margin-top: 55px; }
   .sidebar {
     position: fixed;
-    width: 250px;
+    width: 220px;
     height: 100%;
     margin-left: -220px; }
     .sidebar .sidebar-nav,
