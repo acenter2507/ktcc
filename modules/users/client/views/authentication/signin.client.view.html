@@ -8,21 +8,22 @@
             <span ng-bind="vm.error"></span>
           </uib-alert>
           <label for="usernameOrEmail">Username or Email</label>
-          <input type="text" id="usernameOrEmail" name="usernameOrEmail" class="form-control" ng-model="vm.credentials.usernameOrEmail" placeholder="Username or Email" required autofocus>
+          <input type="text" id="usernameOrEmail" name="usernameOrEmail" class="form-control" ng-model="vm.credentials.usernameOrEmail"
+            placeholder="Username or Email" required autofocus>
           <div ng-messages="vm.userForm.usernameOrEmail.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Username or Email is required.</p>
           </div>
         </div>
         <div class="form-group" show-errors>
           <label for="password">Password</label>
-          <input type="password" id="password" name="password" class="form-control" ng-model="vm.credentials.password" placeholder="Password" required>
+          <input type="password" id="password" name="password" class="form-control" ng-model="vm.credentials.password" placeholder="Password"
+            required>
           <div ng-messages="vm.userForm.password.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Password is required.</p>
           </div>
         </div>
         <div class="text-center form-group">
-          <button type="submit" class="btn btn-primary">Sign in</button>
-          &nbsp; or&nbsp;
+          <button type="submit" class="btn btn-primary">Sign in</button> &nbsp; or&nbsp;
           <a ui-sref="authentication.signup">Sign up</a>
         </div>
         <div class="text-center forgot-password">
@@ -40,26 +41,41 @@
         <div class="card-group mb-0">
           <div class="card p-4">
             <div class="card-block">
-              <h1>Login</h1>
-              <p class="text-muted">Sign In to your account</p>
-              <div class="input-group mb-3">
-                <span class="input-group-addon"><i class="icon-user"></i>
-                                </span>
-                <input type="text" class="form-control" placeholder="Username">
-              </div>
-              <div class="input-group mb-4">
-                <span class="input-group-addon"><i class="icon-lock"></i>
-                                </span>
-                <input type="password" class="form-control" placeholder="Password">
-              </div>
-              <div class="row">
-                <div class="col-6">
-                  <button type="button" class="btn btn-primary px-4">Login</button>
+              <h1>ログイン</h1>
+              <p class="text-muted">ユーザ名とパスワードを入力してログインしてください。</p>
+              <form name="vm.userForm" ng-submit="vm.signin(vm.userForm.$valid)" novalidate autocomplete="off">
+                <div class="form-group" show-errors>
+                  <uib-alert type="danger" ng-show="vm.error" class="text-center text-danger">
+                    <span ng-bind="vm.error"></span>
+                  </uib-alert>
+                  <div class="input-group mb-3"><span class="input-group-addon"><i class="icon-user"></i></span>
+                    <input type="text" id="usernameOrEmail" name="usernameOrEmail" class="form-control" ng-model="vm.credentials.usernameOrEmail"
+                      placeholder="ユーザー名" required autofocus>
+                  </div>
+                  <div ng-messages="vm.userForm.usernameOrEmail.$error" role="alert">
+                    <p class="help-block error-text" ng-message="required">Username or Email is required.</p>
+                  </div>
                 </div>
-                <div class="col-6 text-right">
-                  <button type="button" class="btn btn-link px-0">Forgot password?</button>
+                <div class="form-group" show-errors>
+                  <div class="input-group mb-4">
+                    <span class="input-group-addon"><i class="icon-lock"></i></span>
+                    <input type="password" id="password" name="password" class="form-control" ng-model="vm.credentials.password" placeholder="パスワード"
+                      required>
+                  </div>
+                  <div ng-messages="vm.userForm.password.$error" role="alert">
+                    <p class="help-block error-text" ng-message="required">Password is required.</p>
+                  </div>
                 </div>
-              </div>
+
+                <div class="row">
+                  <div class="col-6">
+                    <button type="submit" class="btn btn-primary px-4">ログイン</button>
+                  </div>
+                  <div class="col-6 text-right">
+                    <button type="button" class="btn btn-link px-0">パスワードを忘れました?</button>
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
           <div class="card card-inverse card-primary py-5 d-md-down-none" style="width:44%">
