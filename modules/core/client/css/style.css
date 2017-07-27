@@ -8728,7 +8728,8 @@ app-root {
    /* margin-left: 0;*/
     margin-right: 0; }
     .sidebar-mobile-show .sidebar .sidebar-nav {
-      height: calc(100vh - 55px - 75px); }
+      margin-top: 75px; /*new*/
+      height: calc(100vh - 55px); }
   .sidebar-mobile-show .main {
     /*margin-right: -220px !important;
     margin-left: 220px !important;*/
