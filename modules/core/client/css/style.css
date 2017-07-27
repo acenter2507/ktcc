@@ -8701,7 +8701,8 @@ app-root {
     position: fixed;
     width: 220px;
     height: 100%;
-    margin-left: -220px; }
+     margin-right: -250px;
+    /*margin-left: -220px;*/ }
     .sidebar .sidebar-nav,
     .sidebar .nav {
       width: 220px !important; }
@@ -8715,8 +8716,10 @@ app-root {
     .sidebar-mobile-show .sidebar .sidebar-nav {
       height: calc(100vh - 55px); }
   .sidebar-mobile-show .main {
-    margin-right: -220px !important;
-    margin-left: 220px !important; } }
+    /*margin-right: -220px !important;
+    margin-left: 220px !important;*/
+    margin-right: 220px !important;
+    margin-left: -220px !important; } }
 
 hr.transparent {
   border-top: 1px solid transparent; }
