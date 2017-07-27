@@ -8601,9 +8601,10 @@ app-root {
   .sidebar-fixed .sidebar .sidebar-nav {
     height: calc(100vh - 55px); }
 
+/* Tách footer vào 200px*/
 .sidebar-fixed .main, .sidebar-fixed .app-footer {
   margin-left: 200px; }
-
+/* Trả về vị trí cũ */
 .sidebar-fixed.sidebar-hidden .main, .sidebar-fixed.sidebar-hidden .app-footer {
   margin-left: 0; }
 
@@ -8643,6 +8644,8 @@ app-root {
   position: fixed;
   right: 0;
   height: 100%; }
+  .aside-menu-fixed .aside-menu {
+    height: calc(100vh - 55px); }
   .aside-menu-fixed .aside-menu .tab-content {
     height: calc(100vh - 2.375rem - 55px); }
 
@@ -8675,7 +8678,7 @@ app-root {
 .main,
 .aside-menu {
   transition: margin-left 0.25s, margin-right 0.25s, width 0.25s, flex 0.25s; }
-
+/* Mobile */
 @media (max-width: 991px) {
   .app-header {
     position: fixed !important;
@@ -8705,7 +8708,7 @@ app-root {
     margin-top: 55px; }
   .sidebar {
     position: fixed;
-    width: 220px;
+    width: 250px;
     height: 100%;
     margin-left: -220px; }
     .sidebar .sidebar-nav,
@@ -8723,6 +8726,7 @@ app-root {
   .sidebar-mobile-show .main {
     margin-right: -220px !important;
     margin-left: 220px !important; } }
+
 
 hr.transparent {
   border-top: 1px solid transparent; }
