@@ -7664,15 +7664,6 @@ base-chart.chart {
     opacity: .8; }
     .sidebar .sidebar-close:hover {
       opacity: 1; }
-  .sidebar .profile {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100px;
-    z-index: 1;
-    background-color: white;
-    clear: both;
-  }
   .sidebar .sidebar-nav {
     position: relative;
     overflow-x: hidden;
@@ -8719,6 +8710,15 @@ app-root {
     .sidebar .sidebar-nav,
     .sidebar .nav {
       width: 220px !important; }
+    .sidebar .profile {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 75px;
+      z-index: 1;
+      background-color: #1a2327;
+      clear: both;
+    }
   .main, .app-footer {
     margin-left: 0 !important; }
   .aside-menu {
@@ -8728,7 +8728,7 @@ app-root {
    /* margin-left: 0;*/
     margin-right: 0; }
     .sidebar-mobile-show .sidebar .sidebar-nav {
-      height: calc(100vh - 55px); }
+      height: calc(100vh - 55px - 75px); }
   .sidebar-mobile-show .main {
     /*margin-right: -220px !important;
     margin-left: 220px !important;*/
