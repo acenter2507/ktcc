@@ -7709,7 +7709,7 @@ base-chart.chart {
         transition: max-height .3s ease-in-out; }
         .sidebar .nav .nav-item ul li {
           list-style: none; }
-          .sidebar .nav .nav-item ul li a..nav-item {
+          .sidebar .nav .nav-item ul li a.nav-item {
           padding-left: 0.75rem; }
       .sidebar .nav .nav-item .nav-link, .sidebar .nav .nav-item .navbar .dropdown-toggle, .navbar .sidebar .nav .nav-item .dropdown-toggle {
         display: block;
