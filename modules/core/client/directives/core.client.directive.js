@@ -11,8 +11,7 @@ angular
   .directive('tab', bootstrapTabsDirective)
   .directive('button', cardCollapseDirective)
   .directive('a', dropdownDirective)
-  .directive('button', dropdownDirective)
-  .directive('html', hideDropdownDirective);
+  .directive('button', dropdownDirective);
 
 // Prevent click if href="#"
 function preventClickDirective() {
@@ -62,25 +61,6 @@ function dropdownDirective() {
     }
   }
 }
-// Dropdown disappear
-function hideDropdownDirective() {
-  var directive = {
-    restrict: 'E',
-    link: link
-  };
-  return directive;
-
-  function link(scope, element, attrs) {
-    element.on('click', function (event) {
-      var isClickedElementChildOfPopup = element
-        .find(event.target)
-        .length > 0;
-      if (isClickedElementChildOfPopup) return;
-      element.find('.dropdown.open').removeClass('open');
-    });
-  }
-}
-
 
 /**
 * @desc Genesis main navigation - Siedebar menu
