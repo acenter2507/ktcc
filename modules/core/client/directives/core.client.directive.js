@@ -9,7 +9,9 @@ angular
   .directive('div', bootstrapCarouselDirective)
   .directive('toggle', bootstrapTooltipsPopoversDirective)
   .directive('tab', bootstrapTabsDirective)
-  .directive('button', cardCollapseDirective);
+  .directive('button', cardCollapseDirective)
+  .directive('a', dropdownDirective)
+  .directive('button', dropdownDirective);
 
 // Prevent click if href="#"
 function preventClickDirective() {
@@ -39,6 +41,23 @@ function bootstrapCollapseDirective() {
   function link(scope, element, attrs) {
     if (attrs.toggle === 'collapse') {
       element.attr('href', 'javascript;;').attr('data-target', attrs.href.replace('index.html', ''));
+    }
+  }
+}
+
+// Dropdown
+function dropdownDirective() {
+  var directive = {
+    restrict: 'E',
+    link: link
+  };
+  return directive;
+
+  function link(scope, element, attrs) {
+    if (element.hasClass('dropdown-toggle')) {
+      element.on('click', function () {
+        element.parent().toggleClass('open').find('.open').removeClass('open');
+      });
     }
   }
 }
