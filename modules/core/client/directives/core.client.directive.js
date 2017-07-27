@@ -71,7 +71,11 @@ function hideDropdownDirective() {
   return directive;
 
   function link(scope, element, attrs) {
-    element.on('click', function () {
+    element.on('click', function (event) {
+      var isClickedElementChildOfPopup = element
+        .find(event.target)
+        .length > 0;
+      if (isClickedElementChildOfPopup) return;
       element.find('.dropdown.open').removeClass('open');
     });
   }
