@@ -9,6 +9,8 @@
 
   function HeaderController($scope, $state, Authentication, menuService) {
     var vm = this;
+    vm.user = vm.authentication.user;
+    vm.isLogged = (vm.authentication.user);
 
     vm.accountMenu = menuService.getMenu('account').items[0];
     vm.authentication = Authentication;
