@@ -9,5 +9,6 @@
 
   function SidebarController($scope, $state, Authentication, menuService) {
     var vm = this;
+    vm.user = Authentication.user;
   }
 }());
