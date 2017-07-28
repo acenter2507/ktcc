@@ -13,7 +13,7 @@
     vm.isLogged = (vm.user);
 
     vm.currentYear = null;
-    vm.monthOfYears = [];
+    vm.monthsOfYear = [];
     vm.months = [];
     vm.datas = [];
     initParams();
