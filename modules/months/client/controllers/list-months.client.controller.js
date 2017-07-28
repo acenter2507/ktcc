@@ -82,7 +82,7 @@
     };
     vm.createMonth = month => {
       var time = moment().utc().year(vm.currentYear.format('YYYY')).month(month).startOf('month');
-      console.log(time);
+      console.log(time.format());
       var rs_month = new MonthsService({ time: time.format() });
       rs_month.$save(res => {
         console.log(res);
