@@ -5,12 +5,13 @@
     .module('workdates')
     .controller('WorkdatesListController', WorkdatesListController);
 
-  WorkdatesListController.$inject = ['WorkdatesService', 'Authentication', '$window'];
+  WorkdatesListController.$inject = ['WorkdatesService', 'Authentication', '$stateParams'];
 
-  function WorkdatesListController(WorkdatesService, Authentication, $window) {
+  function WorkdatesListController(WorkdatesService, Authentication, $stateParams) {
     var vm = this;
     vm.user = Authentication.user;
     vm.isLogged = (vm.user);
+    
     vm.currentMonth = moment(new Date(), 'YYYY/MM');
     if (vm.currentMonth.date() > 20) {
       vm.currentMonth.add(1, 'months');
@@ -29,10 +30,14 @@
         vm.daysOfMonth.push(item);
       }
     }
-    vm.isWeeken = isWeeken;
-    function isWeeken(date) {
-      return date.day() > 5;
-    }
+
+
+
+
+
+
+
+
     // console.log(vm.startDate.format('LLLL'));
     // console.log(vm.endDate.format('LLLL'));
     // console.log(vm.currentMonth.startOf('month').format('LLLL'));
