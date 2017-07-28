@@ -6,6 +6,7 @@
 var path = require('path'),
   mongoose = require('mongoose'),
   Month = mongoose.model('Month'),
+  Workdate = mongoose.model('Workdate'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
   _ = require('lodash'),
   moment = require('moment');
@@ -126,7 +127,37 @@ exports.byyear = function (req, res) {
   // var mm = moment().utc().year(year).startOf('month');
   Month.find({ year: year, user: req.user._id }).exec()
     .then(months => {
-      console.log(months);
+      if (months.length === 0) return res.jsonp([]);
+      var length = months.length;
+      var counter = 0;
+      months.forEach(function (instance, index, array) {
+        array[index] = instance.toObject();
+        get_workdates_by_monthId(array[index]._id)
+          .then(result => {
+            array[index].workdates = result || [];
+            if (++counter === length) {
+              res.jsonp(months);
+            }
+          })
+          .catch(handleError);
+      });
+    }, handleError);
+  function handleError(err) {
+    return res.status(400).send({
+      message: errorHandler.getErrorMessage(err)
     });
-  res.jsonp([]);
+  }
 };
+
+exports.get_workdates_by_monthId = get_workdates_by_monthId;
+function get_workdates_by_monthId(monthId) {
+  return new Promise((resolve, reject) => {
+    Workdate.find({ month: monthId }).sort('time').exec((err, workdates) => {
+      if (err) {
+        return reject(err);
+      } else {
+        return resolve(workdates);
+      }
+    });
+  });
+}
