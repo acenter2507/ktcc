@@ -12,6 +12,6 @@
 
     vm.workdates = WorkdatesService.query();
     moment.locale('ja');
-    vm.currentMonth = moment(new Date(), 'YYYY/MM');
+    vm.currentMonth = moment(new Date()).format('YYYY/MM');
   }
 }());
