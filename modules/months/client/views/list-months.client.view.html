@@ -34,7 +34,7 @@
                 </td>
                 <td>
                   <div class="form-group mb-0">
-                    <button type="button" class="btn btn-default" ng-if="!item.data._id" ng-click="vm.createMonth(item.month)">作成</button>
+                    <button type="button" class="btn btn-outline-default" ng-if="!item.data._id" ng-click="vm.createMonth(item.month)">作成</button>
                     <button type="button" class="btn btn-primary" ng-if="item.data.status === 1" ng-click="vm.sendMonth()">送信</button></button>
                     <button type="button" class="btn btn-success" ng-if="item.data.status === 1 || item.data.status === 2 || item.data.status === 4"
                       ng-click="vm.editMonth()">編集</button>
