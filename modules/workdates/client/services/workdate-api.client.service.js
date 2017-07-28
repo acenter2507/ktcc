@@ -12,5 +12,6 @@
     this.get_workdates_by_month = month => {
       return $http.get('/api/workdates/months', { params: { month: month } });
     };
+    return this;
   }
 }());
