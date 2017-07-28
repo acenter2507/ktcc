@@ -33,6 +33,19 @@
           pageTitle: '勤務時間一覧'
         }
       })
+      .state('workdates.month', {
+        url: '/list?mount',
+        templateUrl: '/modules/workdates/client/views/month-workdates.client.view.html',
+        controller: 'MonthWorkdatesController',
+        controllerAs: 'vm',
+        ncyBreadcrumb: {
+          label: '勤務表'
+        },
+        data: {
+          roles: ['admin', 'user'],
+          pageTitle: '勤務表'
+        }
+      })
       .state('workdates.create', {
         url: '/create',
         templateUrl: '/modules/workdates/client/views/form-workdate.client.view.html',
