@@ -6,17 +6,33 @@
     .module('months')
     .controller('MonthsController', MonthsController);
 
-  MonthsController.$inject = ['$scope', '$state', '$window', 'Authentication', 'MonthResolve', 'Notification'];
+  MonthsController.$inject = ['$scope', '$state', '$window', 'Authentication', 'MonthResolve', 'Notification', 'MonthsService', 'MonthApi', 'ngDialog', 'SystemConfig'];
 
-  function MonthsController ($scope, $state, $window, Authentication, month, Notification) {
+  function MonthsController ($scope, $state, $window, Authentication, month, Notification, MonthsService, MonthApi, ngDialog, SystemConfig) {
     var vm = this;
 
     vm.month = month;
     vm.authentication = Authentication;
-    vm.form = {};
     vm.remove = remove;
     vm.save = save;
 
+    vm.currentMonth = {};
+    vm.daysOfMonth = [];
+    init();
+    init_daysOfMonth();
+    function init() {
+      vm.currentMonth = moment(vm.month.time, 'YYYY/MM');
+      console.log(vm.currentMonth);
+    }
+    function init_daysOfMonth() {
+      vm.startDate = moment(vm.currentMonth).subtract(1, 'months').date(SystemConfig.startDayOfMonth + 1);
+      vm.endDate = moment(vm.currentMonth).date(SystemConfig.startDayOfMonth);
+      var durration = vm.endDate.diff(vm.startDate, 'days');
+      for (var index = 0; index <= durration; index++) {
+        var item = vm.startDate.clone().add(index, 'days');
+        vm.daysOfMonth.push(item);
+      }
+    }
     // Remove existing month
     function remove() {
       if ($window.confirm('Are you sure you want to delete?')) {

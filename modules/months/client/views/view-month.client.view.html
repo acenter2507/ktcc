@@ -1,4 +1,80 @@
+<div class="animated fadeIn">
+  <div class="row pb-3">
+    <div class="col-lg-12 text-center">
+        <button type="button" class="btn btn-outline-primary" ng-click="vm.lastMonth()">前</button>
+        <span class="h2 mx-3" ng-bind="vm.currentMonth.format('YYYY[年]MMMM')"></span>
+        <button type="button" class="btn btn-outline-primary" ng-click="vm.nextMonth()">次</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-8">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-calendar"></i> 勤務表
+        </div>
+        <div class="card-block">
+          <table class="table table-bordered table-sm">
+            <thead>
+              <tr>
+                <th>日付</th>
+                <th>曜日</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="day in vm.daysOfMonth" ng-class="{'bg-danger': day.day() === 0, 'bg-warning': day.day() === 6 }">
+                <td ng-bind="day.format('MMMM D[日]')"></td>
+                <td ng-bind="day.format('dddd')"></td>
+              </tr>
+            </tbody>
+          </table>
+          <nav>
+            <ul class="pagination">
+              <li class="page-item"><a class="page-link" href="#">Prev</a>
+              </li>
+              <li class="page-item active">
+                <a class="page-link" href="#">1</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">2</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">3</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">4</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">Next</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="col-4 d-sm-down-none">
+    </div>
+  </div>
+</div>
+<!--
 <section>
+  <div class="page-header">
+    <h1>Workdates</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="workdate in vm.workdates" ui-sref="workdates.view({ workdateId: workdate._id })" class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="workdate.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="workdate.user" ng-bind="workdate.user.displayName"></span>
+        <span ng-if="!workdate.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="workdate.name"></h4>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" ng-if="vm.workdates.$resolved && !vm.workdates.length">
+    No Workdates yet, why don't you <a ui-sref="workdates.create">create one</a>?
+  </div>
+</section>-->
+
+
+<!--<section>
   <div class="page-header">
     <h1 ng-bind="vm.workdate.name"></h1>
   </div>
@@ -23,4 +99,4 @@
     </em>
   </small>
   <p class="lead" ng-bind="vm.workdate.content"></p>
-</section>
+</section>-->

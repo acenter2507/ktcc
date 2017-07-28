@@ -71,14 +71,14 @@
         controller: 'MonthsController',
         controllerAs: 'vm',
         ncyBreadcrumb: {
-          label: '詳細'
+          label: '勤務表'
         },
         resolve: {
           monthResolve: getMonth
         },
         data: {
           roles: ['admin', 'user'],
-          pageTitle: '勤務時間詳細'
+          pageTitle: '勤務表'
         }
       });
   }
