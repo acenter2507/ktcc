@@ -5,9 +5,9 @@
     .module('months')
     .controller('MonthsListController', MonthsListController);
 
-  MonthsListController.$inject = ['MonthsService', 'Authentication', '$stateParams', 'MonthApi', 'Notification'];
+  MonthsListController.$inject = ['$state', 'MonthsService', 'Authentication', '$stateParams', 'MonthApi', 'Notification'];
 
-  function MonthsListController(MonthsService, Authentication, $stateParams, MonthApi, Notification) {
+  function MonthsListController($state, MonthsService, Authentication, $stateParams, MonthApi, Notification) {
     var vm = this;
     vm.user = Authentication.user;
     vm.isLogged = (vm.user);

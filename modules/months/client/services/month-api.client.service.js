@@ -6,7 +6,7 @@
     .module('months')
     .factory('MonthApi', MonthApi);
 
- MonthApi.$inject = ['$http'];
+  MonthApi.$inject = ['$http'];
 
   function MonthApi($http) {
     this.get_months_by_year = year => {

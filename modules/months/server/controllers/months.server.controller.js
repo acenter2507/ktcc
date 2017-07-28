@@ -7,17 +7,17 @@ var path = require('path'),
   mongoose = require('mongoose'),
   Month = mongoose.model('Month'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
-  _ = require('lodash')
+  _ = require('lodash'),
   moment = require('moment');
 
 /**
  * Create a month
  */
-exports.create = function(req, res) {
+exports.create = function (req, res) {
   var month = new Month(req.body);
   month.user = req.user;
 
-  month.save(function(err) {
+  month.save(function (err) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
@@ -31,7 +31,7 @@ exports.create = function(req, res) {
 /**
  * Show the current Month
  */
-exports.read = function(req, res) {
+exports.read = function (req, res) {
   // convert mongoose document to JSON
   var month = req.month ? req.month.toJSON() : {};
 
@@ -45,12 +45,12 @@ exports.read = function(req, res) {
 /**
  * Update a month
  */
-exports.update = function(req, res) {
+exports.update = function (req, res) {
   var month = req.month;
 
   month = _.extend(month, req.body);
 
-  month.save(function(err) {
+  month.save(function (err) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
@@ -64,10 +64,10 @@ exports.update = function(req, res) {
 /**
  * Delete an month
  */
-exports.delete = function(req, res) {
+exports.delete = function (req, res) {
   var month = req.month;
 
-  month.remove(function(err) {
+  month.remove(function (err) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
@@ -81,8 +81,8 @@ exports.delete = function(req, res) {
 /**
  * List of months
  */
-exports.list = function(req, res) {
-  Month.find().sort('-created').populate('user', 'displayName').exec(function(err, months) {
+exports.list = function (req, res) {
+  Month.find().sort('-created').populate('user', 'displayName').exec(function (err, months) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
@@ -96,7 +96,7 @@ exports.list = function(req, res) {
 /**
  * month middleware
  */
-exports.monthByID = function(req, res, next, id) {
+exports.monthByID = function (req, res, next, id) {
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return res.status(400).send({
@@ -121,7 +121,7 @@ exports.monthByID = function(req, res, next, id) {
 /**
  * Get list of month by year
  */
-exports.byyear = function(req, res) {
+exports.byyear = function (req, res) {
   var year = req.params.year;
   console.log(year);
   res.jsonp([]);

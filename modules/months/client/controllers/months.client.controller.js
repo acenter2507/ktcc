@@ -8,7 +8,7 @@
 
   MonthsController.$inject = ['$scope', '$state', '$window', 'Authentication', 'MonthResolve', 'Notification'];
 
-  function MonthsController ($scope, $state, $window, Authentication, Month, Notification) {
+  function MonthsController ($scope, $state, $window, Authentication, month, Notification) {
     var vm = this;
 
     vm.month = month;
