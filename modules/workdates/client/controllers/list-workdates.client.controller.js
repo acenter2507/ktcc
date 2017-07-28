@@ -11,7 +11,7 @@
     var vm = this;
     vm.user = Authentication.user;
     vm.isLogged = (vm.user);
-    
+
     vm.currentMonth = moment(new Date(), 'YYYY/MM');
     if (vm.currentMonth.date() > 20) {
       vm.currentMonth.add(1, 'months');
@@ -40,6 +40,7 @@
 
     vm.lastMonth = () => {
       var lastMonth = vm.currentMonth.subtract(1, 'months');
+
     }
   }
 }());

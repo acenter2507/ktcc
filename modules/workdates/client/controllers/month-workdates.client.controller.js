@@ -5,13 +5,12 @@
     .module('workdates')
     .controller('MonthWorkdatesController', MonthWorkdatesController);
 
-  WorkdatesListController.$inject = ['$stateParams', '$state', 'WorkdatesService', 'Authentication', 'SystemConfig'];
+  MonthWorkdatesController.$inject = ['$stateParams', '$state', 'WorkdatesService', 'Authentication', 'SystemConfig'];
 
   function MonthWorkdatesController($stateParams, $state, WorkdatesService, Authentication, SystemConfig) {
     var vm = this;
     vm.user = Authentication.user;
     vm.isLogged = (vm.user);
-    
     vm.currentMonth = ($stateParams.mount) ? moment($stateParams.mount, 'YYYY/MM') : moment(new Date(), 'YYYY/MM');
     console.log(vm.currentMonth);
     // vm.currentMonth = moment(new Date(), 'YYYY/MM');
@@ -44,13 +43,13 @@
       var lastMonth = vm.currentMonth.subtract(1, 'months');
       $state.go({
         month: lastMonth.formart('YYYY/MM')
-      })
+      });
     }
     vm.nextMonth = () => {
       var nextMonth = vm.currentMonth.add(1, 'months');
       $state.go({
         month: nextMonth.formart('YYYY/MM')
-      })
+      });
     }
   }
 }());
