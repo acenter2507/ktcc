@@ -58,7 +58,7 @@
         let monthNumber = vm.monthsOfYear[index];
         var hasItem = {};
         for (var subIndex = 0; subIndex < vm.months.length; subIndex++) {
-          let month = vm.months[subIndex].time;
+          let month = parseInt(vm.months[subIndex].month, 10);
           if (month.month() === monthNumber) {
             hasItem = vm.months[subIndex];
             break;
