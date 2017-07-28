@@ -21,22 +21,10 @@
     function init_daysOfMonth() {
       var durration = vm.endDate.diff(vm.startDate, 'days');
       console.log(durration);
-
       for (var index = 0; index <= durration; index++) {
         vm.daysOfMonth.push(vm.startDate.clone().add(index, 'days'));
       }
-      
       console.log(vm.daysOfMonth);
-      // var startDate = vm.startDate.clone().startOf('day');
-      // var lastDate = vm.endDate.clone().startOf('day');
-
-
-      // vm.daysOfMonth.push(startDate.clone());
-      // while (startDate.add(1, 'days').diff(lastDate) < 0) {
-      //   console.log(startDate.add(1, 'days'));
-      //   vm.daysOfMonth.push(startDate.clone());
-      // }
-      // vm.daysOfMonth.push(lastDate.clone());
     }
 
     // console.log(vm.startDate.format('LLLL'));
