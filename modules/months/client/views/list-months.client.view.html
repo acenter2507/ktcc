@@ -25,12 +25,12 @@
               <tr ng-repeat="item in vm.datas">
                 <td class="text-center">{{ item.month + 1 }}</td>
                 <td class="text-center">
-                  <span ng-if="!item.data._id">未作成</span>
-                  <span ng-if="item.data.status === 1">見送信</span>
-                  <span ng-if="item.data.status === 2">確認待ち</span>
-                  <span ng-if="item.data.status === 3">確認済</span>
-                  <span ng-if="item.data.status === 4">拒否</span>
-                  <span ng-if="item.data.status === 5">完成</span>
+                  <span class="badge badge-default" ng-if="!item.data._id">未作成</span>
+                  <span class="badge badge-info" ng-if="item.data.status === 1">見送信</span>
+                  <span class="badge badge-warning" ng-if="item.data.status === 2">確認待ち</span>
+                  <span class="badge badge-success" ng-if="item.data.status === 3">確認済</span>
+                  <span class="badge badge-danger" ng-if="item.data.status === 4">拒否</span>
+                  <span class="badge badge-primary" ng-if="item.data.status === 5">完成</span>
                 </td>
                 <td>
                   <div class="form-group mb-0">
