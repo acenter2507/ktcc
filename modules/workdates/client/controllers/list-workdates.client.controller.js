@@ -14,7 +14,7 @@
     vm.currentMonth = moment(new Date(), 'YYYY/MM');
 
     vm.daysOfMonth = [];
-    function init_daysOfMonth() {}
+    function init_daysOfMonth() { }
 
 
 
