@@ -42,13 +42,13 @@
     vm.lastMonth = () => {
       var lastMonth = vm.currentMonth.subtract(1, 'months');
       $state.go('workdates.month', {
-        month: lastMonth.formart('YYYY/MM')
+        month: lastMonth.format('YYYY/MM')
       });
     };
     vm.nextMonth = () => {
       var nextMonth = vm.currentMonth.add(1, 'months');
       $state.go('workdates.month', {
-        month: nextMonth.formart('YYYY/MM')
+        month: nextMonth.format('YYYY/MM')
       });
     };
   }
