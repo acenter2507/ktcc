@@ -23,9 +23,9 @@
     function initParams() {
       var param = $stateParams.year;
       if (param) {
-        vm.currentYear = moment($stateParams.month, 'YYYY');
+        vm.currentYear = moment().year($stateParams.month);
       } else {
-        vm.currentYear = moment(new Date(), 'YYYY');
+        vm.currentYear = moment(new Date());
       }
     }
 
@@ -74,13 +74,13 @@
     vm.lastYear = () => {
       var lastYear = vm.currentYear.subtract(1, 'years');
       $state.go('months.list', {
-        year: lastYear.format()
+        year: lastYear.format('YYYY')
       });
     };
     vm.nextYear = () => {
       var nextYear = vm.currentYear.add(1, 'years');
       $state.go('months.list', {
-        year: nextYear.format()
+        year: nextYear.format('YYYY')
       });
     };
   }
