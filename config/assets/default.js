@@ -34,6 +34,7 @@ module.exports = {
         'public/lib/moment/moment.js',
         'public/lib/moment/locale/ja.js',
         'public/lib/angular-moment/angular-moment.js',
+        'public/lib/moment-timezone/moment-timezone.js',
         // endbower
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']
