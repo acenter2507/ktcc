@@ -23,9 +23,9 @@
     function initParams() {
       var param = $stateParams.year;
       if (param) {
-        vm.currentYear = moment().year($stateParams.month);
+        vm.currentYear = moment(param, 'YYYY');
       } else {
-        vm.currentYear = moment(new Date());
+        vm.currentYear = moment(new Date(), 'YYYY');
       }
     }
 

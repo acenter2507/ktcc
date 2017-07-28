@@ -20,7 +20,7 @@
     function initParams() {
       var param = $stateParams.month;
       if (param) {
-        vm.currentMonth = moment($stateParams.month, 'YYYY/MM');
+        vm.currentMonth = moment(param, 'YYYY/MM');
       } else {
         vm.currentMonth = moment(new Date(), 'YYYY/MM');
         if (vm.currentMonth.date() > 20) {
