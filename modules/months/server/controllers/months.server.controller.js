@@ -124,7 +124,7 @@ exports.monthByID = function (req, res, next, id) {
 exports.byyear = function (req, res) {
   console.log(req.query);
   var year = req.query.year;
-  var mm = moment().year(year);
+  var mm = moment().year(year).utc();
   console.log(mm);
   res.jsonp([]);
 };
