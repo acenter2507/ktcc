@@ -7,6 +7,7 @@ var monthsPolicy = require('../policies/months.server.policy'),
   months = require('../controllers/months.server.controller');
 
 module.exports = function (app) {
+  app.route('/api/months/byyear').all(monthsPolicy.isAllowed).get(months.byyear);
   // months Routes
   app.route('/api/months').all(monthsPolicy.isAllowed)
     .get(months.list)
@@ -16,9 +17,6 @@ module.exports = function (app) {
     .get(months.read)
     .put(months.update)
     .delete(months.delete);
-
-  app.route('/api/months/byyear').get(months.byyear);
-
   // Finish by binding the month middleware
   app.param('monthId', months.monthByID);
 };
