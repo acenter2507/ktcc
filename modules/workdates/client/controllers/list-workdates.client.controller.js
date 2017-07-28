@@ -20,11 +20,10 @@
     init_daysOfMonth();
     function init_daysOfMonth() {
       var durration = vm.endDate.diff(vm.startDate, 'days');
-      console.log(durration);
+      // console.log(durration);
       for (var index = 0; index <= durration; index++) {
         vm.daysOfMonth.push(vm.startDate.clone().add(index, 'days'));
       }
-      console.log(vm.daysOfMonth);
     }
 
     // console.log(vm.startDate.format('LLLL'));
