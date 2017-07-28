@@ -42,10 +42,12 @@ a:hover .header-profile-image {
   display: inline;
 }
 
+
 .ngdialog-open{
   height: auto !important; }
 .ngdialog.ngdialog-theme-default .ngdialog-close {
   display: none; }
 .ngdialog.ngdialog-theme-default .ngdialog-content {
+  padding: 1rem;
   border-radius: 0px;
   background-color: #fff; }
