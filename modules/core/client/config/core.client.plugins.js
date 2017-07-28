@@ -34,5 +34,6 @@
 
   function runConfig(amMoment) {
     amMoment.changeLocale('ja');
+    moment.locale('ja');
   }
 }());

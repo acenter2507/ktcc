@@ -11,5 +11,6 @@
     var vm = this;
 
     vm.workdates = WorkdatesService.query();
+    vm.currentMonth = moment(new Date(), 'YYYY/MM');
   }
 }());
