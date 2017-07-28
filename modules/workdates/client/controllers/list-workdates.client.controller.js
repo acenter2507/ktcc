@@ -18,8 +18,8 @@
 
 
 
-    console.log(vm.currentMonth.startOf('month'));
-    console.log(vm.currentMonth.endOf('month'));
+    console.log(vm.currentMonth.startOf('month').format('LLLL'));
+    console.log(vm.currentMonth.endOf('month').format('LLLL'));
     vm.workdates = WorkdatesService.query();
   }
 }());
