@@ -22,7 +22,8 @@
     "angular-loading-bar": "^0.9.0",
     "moment": "^2.18.1",
     "angular-moment": "^1.0.1",
-    "moment-timezone": "^0.5.13"
+    "moment-timezone": "^0.5.13",
+    "ng-dialog": "^1.3.0"
   },
   "overrides": {
     "bootstrap": {
