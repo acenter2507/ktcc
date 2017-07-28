@@ -19,7 +19,7 @@
     vm.daysOfMonth = [];
     init_daysOfMonth();
     function init_daysOfMonth() {
-      var durration = vm.startDate.diff(lastDate, 'days');
+      var durration = vm.startDate.diff(vm.endDate, 'days');
       console.log(durration);
 
       for (var index = 0; index <= durration; index++) {
