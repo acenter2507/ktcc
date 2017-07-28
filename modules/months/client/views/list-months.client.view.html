@@ -1,9 +1,9 @@
 <div class="animated fadeIn">
   <div class="row pb-3">
-    <div class="col-lg-12">
-        <button type="button" class="btn btn-outline-primary" ng-click="vm.lastYear()">前</button>
-        <span class="h2 mx-3" ng-bind="vm.currentYear.format('YYYY[年]')"></span>
-        <button type="button" class="btn btn-outline-primary" ng-click="vm.nextYear()">次</button>
+    <div class="col-lg-12 text-center">
+      <button type="button" class="btn btn-outline-primary" ng-click="vm.lastYear()">前</button>
+      <span class="h2 mx-3" ng-bind="vm.currentYear.format('YYYY[年]')"></span>
+      <button type="button" class="btn btn-outline-primary" ng-click="vm.nextYear()">次</button>
     </div>
   </div>
   <div class="row">
@@ -16,15 +16,15 @@
           <table class="table table-bordered table-sm">
             <thead>
               <tr>
-                <th>月</th>
-                <th>状態</th>
+                <th class="text-center">月</th>
+                <th class="text-center">状態</th>
                 <th>操作</th>
               </tr>
             </thead>
             <tbody>
               <tr ng-repeat="item in vm.datas">
-                <td ng-bind="item.month"></td>
-                <td>
+                <td ng-bind="item.month" class="text-center"></td>
+                <td class="text-center">
                   <span ng-if="!item.data._id">未作成</span>
                   <span ng-if="item.data.status === 1">見送信</span>
                   <span ng-if="item.data.status === 2">確認待ち</span>
@@ -36,7 +36,8 @@
                   <div class="form-group">
                     <button type="button" class="btn btn-primary" ng-if="!item.data._id" ng-click="vm.createMonth()">作成</button>
                     <button type="button" class="btn btn-primary" ng-if="item.data.status === 1" ng-click="vm.sendMonth()">送信</button></button>
-                    <button type="button" class="btn btn-primary" ng-if="item.data.status === 1 || item.data.status === 2 || item.data.status === 4" ng-click="vm.editMonth()">編集</button>
+                    <button type="button" class="btn btn-primary" ng-if="item.data.status === 1 || item.data.status === 2 || item.data.status === 4"
+                      ng-click="vm.editMonth()">編集</button>
                     <button type="button" class="btn btn-primary" ng-if="item.data.status === 2 || item.data.status === 4" ng-click="vm.editMonth()">再度送信</button>
                     <button type="button" class="btn btn-primary" ng-if="item.data._id" ng-click="vm.viewMonth()">詳細</button>
                   </div>

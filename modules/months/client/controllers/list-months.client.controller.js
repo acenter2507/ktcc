@@ -67,7 +67,7 @@
             break;
           }
         }
-        vm.datas.push({ month: monthNumber, data: hasItem });
+        vm.datas.push({ month: monthNumber + 1, data: hasItem });
       }
     }
 
