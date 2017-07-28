@@ -52,7 +52,7 @@
         var hasItem = {};
         for (var subIndex = 0; subIndex < vm.month.workdates.length; subIndex++) {
           let workdate = vm.month.workdates[subIndex];
-          var month = parseInt(workdate.date);
+          var month = parseInt(workdate.date, 10);
           if (date.date() === month) {
             hasItem = workdate;
             break;
