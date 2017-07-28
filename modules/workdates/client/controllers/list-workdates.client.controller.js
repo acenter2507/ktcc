@@ -12,7 +12,7 @@
     vm.user = Authentication.user;
     vm.isLogged = (vm.user);
     vm.currentMonth = moment(new Date(), 'YYYY/MM');
-    vm.startDate= vm.currentMonth.date(20);
+    vm.startDate = vm.currentMonth.date(20);
 
     vm.daysOfMonth = [];
     function init_daysOfMonth() { }
