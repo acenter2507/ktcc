@@ -25,7 +25,9 @@
       var durration = vm.endDate.diff(vm.startDate, 'days');
       // console.log(durration);
       for (var index = 0; index <= durration; index++) {
-        vm.daysOfMonth.push(vm.startDate.clone().add(index, 'days'));
+        var item = vm.startDate.clone().add(index, 'days');
+        vm.daysOfMonth.push(item);
+        console.log(item.day());
       }
     }
     vm.isWeeken = isWeeken;
