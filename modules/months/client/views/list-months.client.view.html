@@ -23,7 +23,7 @@
             </thead>
             <tbody>
               <tr ng-repeat="item in vm.datas">
-                <td ng-bind="item.month" class="text-center"></td>
+                <td class="text-center">{{ item.month + 1 }}</td>
                 <td class="text-center">
                   <span ng-if="!item.data._id">未作成</span>
                   <span ng-if="item.data.status === 1">見送信</span>
