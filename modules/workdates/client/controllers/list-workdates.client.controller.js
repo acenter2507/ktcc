@@ -37,10 +37,5 @@
     // console.log(vm.currentMonth.endOf('month').format('LLLL'));
     vm.workdates = WorkdatesService.query();
 
-
-    vm.lastMonth = () => {
-      var lastMonth = vm.currentMonth.subtract(1, 'months');
-
-    }
   }
 }());

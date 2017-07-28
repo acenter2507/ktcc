@@ -44,12 +44,12 @@
       $state.go({
         month: lastMonth.formart('YYYY/MM')
       });
-    }
+    };
     vm.nextMonth = () => {
       var nextMonth = vm.currentMonth.add(1, 'months');
       $state.go({
         month: nextMonth.formart('YYYY/MM')
       });
-    }
+    };
   }
 }());
