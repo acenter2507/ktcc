@@ -14,6 +14,11 @@ var MonthSchema = new Schema({
     type: Date,
     required: 'Please fill Month date'
   },
+  year: {
+    type: String,
+    default: '',
+    required: true
+  },
   // Unsend, Watting, Approve, reject, ok
   status: {
     type: Number,
