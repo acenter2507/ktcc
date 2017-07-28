@@ -11,7 +11,7 @@
     var vm = this;
     vm.user = Authentication.user;
     vm.isLogged = (vm.user);
-    vm.currentMonth = moment(new Date(), 'YYYY/MM');
+    vm.currentMonth = moment(new Date(), 'YYYY/MM').month(2);
 
     vm.startDate = moment(vm.currentMonth).subtract(1, 'months').date(21);
     vm.endDate = moment(vm.currentMonth).date(20);
