@@ -11,7 +11,6 @@
     var vm = this;
 
     vm.workdates = WorkdatesService.query();
-    moment.locale('ja');
     vm.currentMonth = moment(new Date()).tz('Asia/Tokyo').format('YYYY[年]MMMM');
   }
 }());
