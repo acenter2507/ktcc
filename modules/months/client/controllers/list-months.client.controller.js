@@ -32,7 +32,7 @@
     function init_monthsOfYear() {
       vm.startMonth = vm.currentYear.clone().startOf('year');
       console.log(vm.startMonth);
-      vm.endMonth = vm.currentYear.clone().endOf('year');
+      vm.endMonth = vm.currentYear.clone().endOf('year').subtract(1, 'days');
       console.log(vm.endMonth);
       var durration = vm.startMonth.diff(vm.endMonth, 'months');
       console.log(vm.durration);
@@ -72,7 +72,7 @@
     }
 
     vm.lastYear = () => {
-      var lastYear = vm.currentYear.years(1, 'years');
+      var lastYear = vm.currentYear.subtract(1, 'years');
       $state.go('months.list', {
         year: lastYear.format('YYYY')
       });
