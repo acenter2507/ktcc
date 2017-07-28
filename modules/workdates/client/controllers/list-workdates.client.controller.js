@@ -12,8 +12,9 @@
     vm.user = Authentication.user;
     vm.isLogged = (vm.user);
     vm.currentMonth = moment(new Date(), 'YYYY/MM');
-    vm.startDate = vm.currentMonth.subtract(1, 'months').date(21);
-    vm.endDate = vm.currentMonth.date(20);
+
+    vm.startDate = moment(vm.currentMonth).subtract(1, 'months').date(21);
+    vm.endDate = moment(vm.currentMonth).date(20);
 
     vm.daysOfMonth = [];
     function init_daysOfMonth() { }
