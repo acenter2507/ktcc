@@ -51,21 +51,18 @@
     }
 
     function mergeData() {
-
-      console.log(vm.monthsOfYear);
-      console.log(vm.months);
-      // for (var index = 0; index < vm.monthsOfYear.length; index++) {
-      //   let monthNumber = vm.monthsOfYear[index];
-      //   var hasItem = {};
-      //   for (var subIndex = 0; subIndex < vm.months.length; subIndex++) {
-      //     let month = parseInt(vm.months[subIndex].month, 10);
-      //     if (month === monthNumber) {
-      //       hasItem = vm.months[subIndex];
-      //       break;
-      //     }
-      //   }
-      //   vm.datas.push({ month: monthNumber + 1, data: hasItem });
-      // }
+      for (var index = 0; index < vm.monthsOfYear.length; index++) {
+        let monthNumber = vm.monthsOfYear[index] + 1;
+        var hasItem = {};
+        for (var subIndex = 0; subIndex < vm.months.length; subIndex++) {
+          let month = parseInt(vm.months[subIndex].month, 10);
+          if (monthNumber === month) {
+            hasItem = vm.months[subIndex];
+            break;
+          }
+        }
+        vm.datas.push({ month: monthNumber, data: hasItem });
+      }
     }
 
     vm.lastYear = () => {
