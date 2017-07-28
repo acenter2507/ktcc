@@ -34,7 +34,7 @@
       console.log(vm.startMonth);
       vm.endMonth = vm.currentYear.clone().endOf('year').subtract(1, 'days');
       console.log(vm.endMonth);
-      var durration = vm.startMonth.diff(vm.endMonth, 'months', true);
+      var durration = vm.endMonth.diff(vm.startMonth, 'months', true);
       console.log(vm.durration);
       for (var index = 0; index <= durration; index++) {
         var item = vm.startMonth.clone().add(index, 'months').month();
