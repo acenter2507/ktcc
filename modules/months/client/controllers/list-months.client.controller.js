@@ -74,13 +74,13 @@
     vm.lastYear = () => {
       var lastYear = vm.currentYear.subtract(1, 'years');
       $state.go('months.list', {
-        year: lastYear.format('YYYY')
+        year: lastYear.format()
       });
     };
     vm.nextYear = () => {
       var nextYear = vm.currentYear.add(1, 'years');
       $state.go('months.list', {
-        year: nextYear.format('YYYY')
+        year: nextYear.format()
       });
     };
   }
