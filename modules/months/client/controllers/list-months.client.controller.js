@@ -59,7 +59,7 @@
         var hasItem = {};
         for (var subIndex = 0; subIndex < vm.months.length; subIndex++) {
           let month = parseInt(vm.months[subIndex].month, 10);
-          if (month.month() === monthNumber) {
+          if (month === monthNumber) {
             hasItem = vm.months[subIndex];
             break;
           }
