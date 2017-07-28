@@ -17,8 +17,7 @@
     'MonthApi',
     'MonthApi',
     'WorkdateApi',
-    'SystemConfig',
-
+    'SystemConfig'
   ];
 
   function MonthsController($scope, $state, $window, Authentication, month, Notification, MonthsService, MonthApi, WorkdateApi, ngDialog, SystemConfig) {
@@ -54,7 +53,7 @@
         for (var subIndex = 0; subIndex < vm.month.workdates.length; subIndex++) {
           let workdate = vm.month.workdates[subIndex];
           var month = parseInt(workdate.date);
-          if (month === date.date()) {
+          if (date.date() === month) {
             hasItem = workdate;
             break;
           }
