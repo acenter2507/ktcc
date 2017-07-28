@@ -27,7 +27,6 @@
       for (var index = 0; index <= durration; index++) {
         var item = vm.startDate.clone().add(index, 'days');
         vm.daysOfMonth.push(item);
-        console.log(item.day());
       }
     }
     vm.isWeeken = isWeeken;
