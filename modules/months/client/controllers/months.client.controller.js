@@ -6,7 +6,7 @@
     .module('months')
     .controller('MonthsController', MonthsController);
 
-  MonthsController.$inject = ['$scope', '$state', '$window', 'Authentication', 'MonthResolve', 'Notification', 'MonthsService', 'MonthApi', 'ngDialog', 'SystemConfig'];
+  MonthsController.$inject = ['$scope', '$state', '$window', 'Authentication', 'monthResolve', 'Notification', 'MonthsService', 'MonthApi', 'ngDialog', 'SystemConfig'];
 
   function MonthsController ($scope, $state, $window, Authentication, month, Notification, MonthsService, MonthApi, ngDialog, SystemConfig) {
     var vm = this;
