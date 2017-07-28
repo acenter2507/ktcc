@@ -18,7 +18,8 @@
     vm.datas = [];
     initParams();
     init_monthsOfYear();
-    init_Months();
+    console.log();
+    init_Months(vm.monthsOfYear);
 
     function initParams() {
       var param = $stateParams.year;
