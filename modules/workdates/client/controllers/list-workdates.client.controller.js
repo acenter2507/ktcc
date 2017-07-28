@@ -11,7 +11,7 @@
     var vm = this;
     vm.user = Authentication.user;
     vm.isLogged = (vm.user);
-    vm.currentMonth = moment(new Date(), 'YYYY/MM/DD');
+    vm.currentMonth = moment(new Date(), 'YYYY/MM');
     console.log(vm.currentMonth);
     console.log(typeof vm.currentMonth);
     vm.workdates = WorkdatesService.query();
