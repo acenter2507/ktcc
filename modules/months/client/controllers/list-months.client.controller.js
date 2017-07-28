@@ -52,7 +52,7 @@
 
     function mergeData() {
 
-      console.log(vm.monthsOfYea);
+      console.log(vm.monthsOfYear);
       console.log(vm.months);
       // for (var index = 0; index < vm.monthsOfYear.length; index++) {
       //   let monthNumber = vm.monthsOfYear[index];
