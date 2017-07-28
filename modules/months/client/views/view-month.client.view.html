@@ -1,9 +1,9 @@
 <div class="animated fadeIn">
   <div class="row pb-3">
     <div class="col-lg-12 text-center">
-        <button type="button" class="btn btn-outline-primary" ng-click="vm.lastMonth()">前</button>
-        <span class="h2 mx-3" ng-bind="vm.currentMonth.format('YYYY[年]MMMM')"></span>
-        <button type="button" class="btn btn-outline-primary" ng-click="vm.nextMonth()">次</button>
+      <button type="button" class="btn btn-outline-primary" ng-click="vm.lastMonth()">前</button>
+      <span class="h2 mx-3" ng-bind="vm.currentMonth.format('YYYY[年]MMMM')"></span>
+      <button type="button" class="btn btn-outline-primary" ng-click="vm.nextMonth()">次</button>
     </div>
   </div>
   <div class="row">
@@ -18,12 +18,17 @@
               <tr>
                 <th>日付</th>
                 <th>曜日</th>
+                <th>作業</th>
               </tr>
             </thead>
             <tbody>
-              <tr ng-repeat="day in vm.daysOfMonth" ng-class="{'bg-danger': day.day() === 0, 'bg-warning': day.day() === 6 }">
-                <td ng-bind="day.format('MMMM D[日]')"></td>
-                <td ng-bind="day.format('dddd')"></td>
+              <tr ng-repeat="item in vm.datas" ng-class="{'bg-danger': day.day() === 0, 'bg-warning': day.day() === 6 }">
+                <td ng-class="{'bg-danger': item.date.day() === 0, 'bg-warning': item.date.day() === 6 }" ng-bind="item.date.format('MMMM D[日]')"></td>
+                <td ng-class="{'bg-danger': item.date.day() === 0, 'bg-warning': item.date.day() === 6 }" ng-bind="item.date.format('dddd')"></td>
+                <td>
+                  <button type="button" class="btn btn-outline-default" ng-if="!item.data._id" ng-click="vm.createMonth(item.date)">作成</button>
+                  <button type="button" class="btn btn-success" ng-if="item.data._id" ng-click="vm.viewMonth(item.data)">編集</button>
+                </td>
               </tr>
             </tbody>
           </table>

@@ -10,9 +10,9 @@ var mongoose = require('mongoose'),
  * Month Schema
  */
 var MonthSchema = new Schema({
-  time: {
-    type: Date,
-    required: 'Please fill Month date'
+  month: {
+    type: String,
+    required: 'Please fill Month month'
   },
   year: {
     type: String,

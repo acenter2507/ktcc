@@ -10,9 +10,13 @@ var mongoose = require('mongoose'),
  * Workdate Schema
  */
 var WorkdateSchema = new Schema({
+  month: {
+    type: Schema.ObjectId,
+    ref: 'Month'
+  },
   date: {
-    type: Date,
-    required: 'Please fill Workdate date'
+    type: Number,
+    default: 1
   },
   // 業務内容
   work: {
@@ -23,12 +27,12 @@ var WorkdateSchema = new Schema({
   },
   // 開始
   start: {
-    type: Date,
+    type: String,
     required: 'Please fill Workdate start'
   },
   // 終了
   end: {
-    type: Date,
+    type: String,
     required: 'Please fill Workdate end'
   },
   // 休憩 (hour)

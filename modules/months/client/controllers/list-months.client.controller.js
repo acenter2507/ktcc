@@ -64,7 +64,7 @@
             break;
           }
         }
-        vm.datas.push({ month: monthNumber, data: hasItem });
+        vm.datas.push({ month: monthNumber + 1, data: hasItem });
       }
     }
 
@@ -82,8 +82,7 @@
     };
     // Create mount
     vm.createMonth = month => {
-      var time = moment().utc().year(vm.currentYear.format('YYYY')).month(month).startOf('month');
-      var rs_month = new MonthsService({ time: time, year: vm.currentYear.format('YYYY') });
+      var rs_month = new MonthsService({ year: vm.currentYear.format('YYYY'), month: month + '' });
       rs_month.$save(res => {
         $state.go('months.view', { monthId: res._id });
       });

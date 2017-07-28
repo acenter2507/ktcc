@@ -39,8 +39,18 @@ exports.read = function (req, res) {
   // Add a custom field to the Article, for determining if the current User is the "owner".
   // NOTE: This field is NOT persisted to the database, since it doesn't exist in the Article model.
   month.isCurrentUserOwner = req.user && month.user && month.user._id.toString() === req.user._id.toString();
+  get_workdates_by_monthId(month._id)
+    .then(result => {
+      month.workdates = result || [];
+      res.jsonp(month);
+    })
+    .catch(handleError);
+  function handleError(err) {
+    return res.status(400).send({
+      message: errorHandler.getErrorMessage(err)
+    });
+  }
 
-  res.jsonp(month);
 };
 
 /**
