@@ -34,7 +34,7 @@
         }
       })
       .state('workdates.month', {
-        url: '/list?mounth',
+        url: '/list?month',
         templateUrl: '/modules/workdates/client/views/month-workdates.client.view.html',
         controller: 'MonthWorkdatesController',
         controllerAs: 'vm',

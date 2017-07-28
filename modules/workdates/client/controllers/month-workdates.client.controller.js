@@ -11,7 +11,7 @@
     var vm = this;
     vm.user = Authentication.user;
     vm.isLogged = (vm.user);
-    vm.currentMonth = ($stateParams.mounth) ? moment($stateParams.mounth, 'YYYY/MM') : moment(new Date(), 'YYYY/MM');
+    vm.currentMonth = ($stateParams.month) ? moment($stateParams.month, 'YYYY/MM') : moment(new Date(), 'YYYY/MM');
     console.log(vm.currentMonth);
     // vm.currentMonth = moment(new Date(), 'YYYY/MM');
     // if (vm.currentMonth.date() > 20) {
