@@ -17,6 +17,10 @@ module.exports = function(app) {
     .put(workdates.update)
     .delete(workdates.delete);
 
+  app.route('/api/workdates/:workdateId').all(workdatesPolicy.isAllowed)
+    .get(workdates.read)
+    .put(workdates.update)
+    .delete(workdates.delete);
   // Finish by binding the Workdate middleware
   app.param('workdateId', workdates.workdateByID);
 };

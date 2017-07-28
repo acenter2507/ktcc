@@ -1,0 +1,91 @@
+<div class="animated fadeIn">
+  <div class="row pb-3">
+    <div class="col-lg-12">
+        <button type="button" class="btn btn-outline-primary" ng-click="vm.lastYear()">前</button>
+        <span class="h2 mx-3" ng-bind="vm.currentYear.format('YYYY[年]')"></span>
+        <button type="button" class="btn btn-outline-primary" ng-click="vm.nextYear()">次</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-8">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-calendar"></i> 勤務表
+        </div>
+        <div class="card-block">
+          <table class="table table-bordered table-sm">
+            <thead>
+              <tr>
+                <th>月</th>
+                <th>状態</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="item in vm.datas">
+                <td ng-bind="item.month"></td>
+                <td>
+                  <span ng-if="!item.data._id">未作成</span>
+                  <span ng-if="item.data.status === 1">見送信</span>
+                  <span ng-if="item.data.status === 2">確認待ち</span>
+                  <span ng-if="item.data.status === 3">確認済</span>
+                  <span ng-if="item.data.status === 4">拒否</span>
+                  <span ng-if="item.data.status === 5">完成</span>
+                </td>
+                <td>
+                  <div class="form-group">
+                    <button type="button" class="btn btn-primary" ng-if="!item.data._id" ng-click="vm.createMonth()">作成</button>
+                    <button type="button" class="btn btn-primary" ng-if="item.data.status === 1" ng-click="vm.sendMonth()">送信</button></button>
+                    <button type="button" class="btn btn-primary" ng-if="item.data.status === 1 || item.data.status === 2 || item.data.status === 4" ng-click="vm.editMonth()">編集</button>
+                    <button type="button" class="btn btn-primary" ng-if="item.data.status === 2 || item.data.status === 4" ng-click="vm.editMonth()">再度送信</button>
+                    <button type="button" class="btn btn-primary" ng-if="item.data._id" ng-click="vm.viewMonth()">詳細</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <nav>
+            <ul class="pagination">
+              <li class="page-item"><a class="page-link" href="#">Prev</a>
+              </li>
+              <li class="page-item active">
+                <a class="page-link" href="#">1</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">2</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">3</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">4</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">Next</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="col-4 d-sm-down-none">
+    </div>
+  </div>
+</div>
+<!--
+<section>
+  <div class="page-header">
+    <h1>Workdates</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="workdate in vm.workdates" ui-sref="workdates.view({ workdateId: workdate._id })" class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="workdate.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="workdate.user" ng-bind="workdate.user.displayName"></span>
+        <span ng-if="!workdate.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="workdate.name"></h4>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" ng-if="vm.workdates.$resolved && !vm.workdates.length">
+    No Workdates yet, why don't you <a ui-sref="workdates.create">create one</a>?
+  </div>
+</section>-->
