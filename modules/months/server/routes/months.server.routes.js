@@ -17,11 +17,6 @@ module.exports = function (app) {
     .put(months.update)
     .delete(months.delete);
 
-  app.route('/api/months/:monthId').all(monthsPolicy.isAllowed)
-    .get(months.read)
-    .put(months.update)
-    .delete(months.delete);
-
   app.route('/api/months/byyear').all(monthsPolicy.isAllowed)
     .get(months.byyear);
   // Finish by binding the month middleware
