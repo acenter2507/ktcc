@@ -30,11 +30,11 @@
     }
 
     function init_monthsOfYear() {
-      vm.startMonth = vm.currentYear.clone().startOf('year').month();
-      vm.endMonth = vm.currentYear.clone().endOf('year').month();
+      vm.startMonth = vm.currentYear.clone().startOf('year');
+      vm.endMonth = vm.currentYear.clone().endOf('year');
       var durration = vm.startMonth.diff(vm.endMonth, 'months');
       for (var index = 0; index <= durration; index++) {
-        var item = vm.startMonth.clone().add(index, 'months');
+        var item = vm.startMonth.clone().add(index, 'months').month();
         vm.monthsOfYear.push(item);
       }
     }
