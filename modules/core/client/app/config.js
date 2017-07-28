@@ -13,7 +13,8 @@
     'ui-notification',
     'ncy-angular-breadcrumb',
     'angular-loading-bar',
-    'angularMoment'
+    'angularMoment',
+    'ngDialog'
   ];
   var service = {
     applicationEnvironment: window.env,

@@ -29,17 +29,17 @@
                   <span class="badge badge-warning" ng-if="item.data.status === 1">見送信</span>
                   <span class="badge badge-info" ng-if="item.data.status === 2">確認待ち</span>
                   <span class="badge badge-success" ng-if="item.data.status === 3">確認済</span>
-                  <span class="badge badge-danger" ng-if="item.data.status === 4">拒否</span>
-                  <span class="badge badge-primary" ng-if="item.data.status === 5">完成</span>
+                  <span class="badge badge-danger" ng-if="item.data.status === 4">リーダ拒否</span>
+                  <span class="badge badge-danger" ng-if="item.data.status === 5">経理部拒否</span>
+                  <span class="badge badge-primary" ng-if="item.data.status === 6">完成</span>
                 </td>
                 <td>
                   <div class="form-group mb-0">
                     <button type="button" class="btn btn-outline-default" ng-if="!item.data._id" ng-click="vm.createMonth(item.month)">作成</button>
-                    <button type="button" class="btn btn-primary" ng-if="item.data.status === 1" ng-click="vm.sendMonth()">送信</button></button>
+                    <button type="button" class="btn btn-primary" ng-if="item.data.status === 1" ng-click="vm.sendMonth(item)">送信</button>
                     <button type="button" class="btn btn-success" ng-if="item.data.status === 1 || item.data.status === 2 || item.data.status === 4"
-                      ng-click="vm.editMonth()">編集</button>
-                    <button type="button" class="btn btn-warning" ng-if="item.data.status === 2 || item.data.status === 4" ng-click="vm.editMonth()">再度送信</button>
-                    <button type="button" class="btn btn-info" ng-if="item.data._id" ng-click="vm.viewMonth()">詳細</button>
+                      ng-click="vm.viewMonth(item.data)">編集</button>
+                    <button type="button" class="btn btn-warning" ng-if="item.data.status === 2 || item.data.status === 4" ng-click="vm.sendOneMore(item)">再度送信</button>
                   </div>
                 </td>
               </tr>

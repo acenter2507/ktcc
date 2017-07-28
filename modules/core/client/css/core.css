@@ -41,3 +41,11 @@ a:hover .header-profile-image {
 .has-error .help-inline.error-text {
   display: inline;
 }
+
+.ngdialog-open{
+  height: auto !important; }
+.ngdialog.ngdialog-theme-default .ngdialog-close {
+  display: none; }
+.ngdialog.ngdialog-theme-default .ngdialog-content {
+  border-radius: 0px;
+  background-color: #fff; }

@@ -13,6 +13,8 @@ module.exports = {
         'public/lib/ng-img-crop/compile/unminified/ng-img-crop.css',
         'public/lib/angular-ui-notification/dist/angular-ui-notification.css',
         'public/lib/angular-loading-bar/build/loading-bar.css',
+        'public/lib/ng-dialog/css/ngDialog.min.css',
+        'public/lib/ng-dialog/css/ngDialog-theme-default.min.css',
         // endbower
       ],
       js: [
@@ -34,7 +36,8 @@ module.exports = {
         'public/lib/moment/moment.js',
         'public/lib/moment-timezone/moment-timezone.js',
         'public/lib/moment/locale/ja.js',
-        'public/lib/angular-moment/angular-moment.js'
+        'public/lib/angular-moment/angular-moment.js',
+        'public/lib/ng-dialog/js/ngDialog.min.js',
         // endbower
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']

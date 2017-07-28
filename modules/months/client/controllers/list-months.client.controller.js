@@ -5,9 +5,9 @@
     .module('months')
     .controller('MonthsListController', MonthsListController);
 
-  MonthsListController.$inject = ['$state', 'MonthsService', 'Authentication', '$stateParams', 'MonthApi', 'Notification'];
+  MonthsListController.$inject = ['$scope', '$state', 'MonthsService', 'Authentication', '$stateParams', 'MonthApi', 'Notification'];
 
-  function MonthsListController($state, MonthsService, Authentication, $stateParams, MonthApi, Notification) {
+  function MonthsListController($scope, $state, MonthsService, Authentication, $stateParams, MonthApi, Notification) {
     var vm = this;
     vm.user = Authentication.user;
     vm.isLogged = (vm.user);
@@ -46,7 +46,7 @@
           mergeData();
         })
         .catch(err => {
-          Notification.error({ message: err.message, title: '<i class="glyphicon glyphicon-remove"></i> Error!', delay: 6000 });
+          Notification.error({ message: err.message, title: '<i class="glyphicon glyphicon-remove"></i> エラー!', delay: 6000 });
         });
     }
 
@@ -80,12 +80,57 @@
         year: nextYear.format('YYYY')
       });
     };
+    // Create mount
     vm.createMonth = month => {
       var time = moment().utc().year(vm.currentYear.format('YYYY')).month(month).startOf('month');
       var rs_month = new MonthsService({ time: time, year: vm.currentYear.format('YYYY') });
       rs_month.$save(res => {
-        console.log(res);
+        $state.go('months.view', { monthId: res._id });
       });
+    };
+    // Send month to manager
+    vm.sendMonth = item => {
+      $scope.message_title = '確認！'
+      $scope.message_content = item.year + '年' + (item.month + 1) + '月の勤務表をマネージャに送信しますか？';
+      $scope.dialog_type = 2;
+      $scope.buton_label = '送信';
+      dialog.openConfirm({
+        scope: $scope,
+        templateUrl: '/modules/core/client/views/templates/confirm.dialog.template.html'
+      }).then(confirm => {
+        handle_delete();
+      }, reject => {
+      });
+      function handle_delete() {
+        item.data.status = 2;
+        item.data.$save(() => {
+          Notification.info({ message: '勤務表を送信済み！', delay: 5000 });
+        });
+      }
+    };
+    // Send month to manager
+    vm.sendOneMore = item => {
+      $scope.message_title = '確認！'
+      $scope.message_content = item.year + '年' + (item.month + 1) + '月の勤務表をマネージャに再度送信しますか？';
+      $scope.dialog_type = 2;
+      $scope.buton_label = '送信';
+      dialog.openConfirm({
+        scope: $scope,
+        templateUrl: '/modules/core/client/views/templates/confirm.dialog.template.html'
+      }).then(confirm => {
+        handle_delete();
+      }, reject => {
+      });
+      function handle_delete() {
+        item.data.status = 2;
+        item.data.$save(() => {
+          Notification.info({ message: '勤務表を送信済み！', delay: 5000 });
+        });
+      }
+    };
+    // Send
+    vm.viewMonth = month => {
+      $state.go('months.view', { monthId: res._id });
     };
   }
 }());
