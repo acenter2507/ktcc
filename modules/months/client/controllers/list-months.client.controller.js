@@ -5,9 +5,9 @@
     .module('months')
     .controller('MonthsListController', MonthsListController);
 
-  MonthsListController.$inject = ['$scope', '$state', 'MonthsService', 'Authentication', '$stateParams', 'MonthApi', 'Notification'];
+  MonthsListController.$inject = ['$scope', '$state', 'MonthsService', 'Authentication', '$stateParams', 'MonthApi', 'Notification', 'ngDialog'];
 
-  function MonthsListController($scope, $state, MonthsService, Authentication, $stateParams, MonthApi, Notification) {
+  function MonthsListController($scope, $state, MonthsService, Authentication, $stateParams, MonthApi, Notification, dialog) {
     var vm = this;
     vm.user = Authentication.user;
     vm.isLogged = (vm.user);
@@ -90,7 +90,7 @@
     };
     // Send month to manager
     vm.sendMonth = item => {
-      $scope.message_title = '確認！'
+      $scope.message_title = '確認！';
       $scope.message_content = item.year + '年' + (item.month + 1) + '月の勤務表をマネージャに送信しますか？';
       $scope.dialog_type = 2;
       $scope.buton_label = '送信';
@@ -110,7 +110,7 @@
     };
     // Send month to manager
     vm.sendOneMore = item => {
-      $scope.message_title = '確認！'
+      $scope.message_title = '確認！';
       $scope.message_content = item.year + '年' + (item.month + 1) + '月の勤務表をマネージャに再度送信しますか？';
       $scope.dialog_type = 2;
       $scope.buton_label = '送信';
@@ -130,7 +130,7 @@
     };
     // Send
     vm.viewMonth = month => {
-      $state.go('months.view', { monthId: res._id });
+      $state.go('months.view', { monthId: month._id });
     };
   }
 }());
