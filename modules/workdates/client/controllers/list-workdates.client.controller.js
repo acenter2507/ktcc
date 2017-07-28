@@ -5,12 +5,15 @@
     .module('workdates')
     .controller('WorkdatesListController', WorkdatesListController);
 
-  WorkdatesListController.$inject = ['WorkdatesService'];
+  WorkdatesListController.$inject = ['WorkdatesService', 'Authentication'];
 
-  function WorkdatesListController(WorkdatesService) {
+  function WorkdatesListController(WorkdatesService, Authentication) {
     var vm = this;
-
-    vm.workdates = WorkdatesService.query();
+    vm.user = Authentication.user;
+    vm.isLogged = (vm.user);
     vm.currentMonth = moment(new Date()).format('YYYY[年]MMMM');
+    console.log(vm.currentMonth);
+    console.log(typeof vm.currentMonth);
+    vm.workdates = WorkdatesService.query();
   }
 }());
