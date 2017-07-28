@@ -19,17 +19,25 @@
     vm.daysOfMonth = [];
     init_daysOfMonth();
     function init_daysOfMonth() {
-      var startDate = vm.startDate.clone().startOf('day');
-      var lastDate = vm.endDate.clone().startOf('day');
+      var durration = vm.startDate.diff(lastDate, 'days');
+      console.log(durration);
 
-      vm.daysOfMonth.push(startDate.clone());
-      while (startDate.add(1, 'days').diff(lastDate) < 0) {
-        console.log(startDate.add(1, 'days'));
-        vm.daysOfMonth.push(startDate.clone());
+      for (var index = 0; index <= durration; index++) {
+        vm.daysOfMonth.push(vm.startDate.clone().add(index, 'days'));
       }
-      vm.daysOfMonth.push(lastDate.clone());
-    }
+      
+      console.log(vm.daysOfMonth);
+      // var startDate = vm.startDate.clone().startOf('day');
+      // var lastDate = vm.endDate.clone().startOf('day');
 
+
+      // vm.daysOfMonth.push(startDate.clone());
+      // while (startDate.add(1, 'days').diff(lastDate) < 0) {
+      //   console.log(startDate.add(1, 'days'));
+      //   vm.daysOfMonth.push(startDate.clone());
+      // }
+      // vm.daysOfMonth.push(lastDate.clone());
+    }
 
     // console.log(vm.startDate.format('LLLL'));
     // console.log(vm.endDate.format('LLLL'));
