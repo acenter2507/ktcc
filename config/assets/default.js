@@ -32,9 +32,9 @@ module.exports = {
         'public/lib/angular-ui-router/release/angular-ui-router.js',
         'public/lib/owasp-password-strength-test/owasp-password-strength-test.js',
         'public/lib/moment/moment.js',
+        'public/lib/moment-timezone/moment-timezone.js',
         'public/lib/moment/locale/ja.js',
         'public/lib/angular-moment/angular-moment.js',
-        'public/lib/moment-timezone/moment-timezone.js',
         // endbower
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']
