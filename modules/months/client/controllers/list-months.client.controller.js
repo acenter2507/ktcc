@@ -82,8 +82,10 @@
     };
     vm.createMonth = month => {
       var time = moment().year(vm.currentYear.format('YYYY')).month(month).startOf('month');
-      console.log(time);
-      // var rs_month = new MonthsService({ time:  });
+      var rs_month = new MonthsService({ time: time.formart() });
+      rs_month.$save(res => {
+        console.log(res);
+      });
     };
   }
 }());
