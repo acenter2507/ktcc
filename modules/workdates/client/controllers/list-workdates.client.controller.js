@@ -19,16 +19,15 @@
     vm.daysOfMonth = [];
     init_daysOfMonth();
     function init_daysOfMonth() {
-      var dates = [];
-
       var startDate = vm.startDate.clone().startOf('day');
       var lastDate = vm.endDate.clone().startOf('day');
 
+      vm.daysOfMonth.push(startDate.clone().toDate());
       while (startDate.add(1, 'days').diff(lastDate) < 0) {
         console.log(startDate.toDate());
         vm.daysOfMonth.push(startDate.clone().toDate());
       }
-      return dates;
+      vm.daysOfMonth.push(lastDate.clone().toDate());
     }
 
 
