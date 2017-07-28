@@ -19,7 +19,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr ng-repeat="day in vm.daysOfMonth">
+              <tr ng-repeat="day in vm.daysOfMonth" ng-class="{'bg-danger': vm.isWeeken(day) }">
                 <td ng-bind="day.format('MMMM D[日]')"></td>
                 <td ng-bind="day.format('dddd')"></td>
               </tr>

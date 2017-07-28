@@ -28,7 +28,10 @@
         vm.daysOfMonth.push(vm.startDate.clone().add(index, 'days'));
       }
     }
-
+    vm.isWeeken = isWeeken;
+    function isWeeken(date) {
+      return date.day() > 5;
+    }
     // console.log(vm.startDate.format('LLLL'));
     // console.log(vm.endDate.format('LLLL'));
     // console.log(vm.currentMonth.startOf('month').format('LLLL'));
