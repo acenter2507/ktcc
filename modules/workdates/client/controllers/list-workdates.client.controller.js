@@ -20,6 +20,7 @@
 
 
     console.log(vm.startDate.format('LLLL'));
+    console.log(vm.endDate.format('LLLL'));
     console.log(vm.currentMonth.startOf('month').format('LLLL'));
     console.log(vm.currentMonth.endOf('month').format('LLLL'));
     vm.workdates = WorkdatesService.query();
