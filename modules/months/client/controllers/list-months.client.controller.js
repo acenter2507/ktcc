@@ -18,7 +18,6 @@
     vm.datas = [];
     initParams();
     init_monthsOfYear();
-    console.log(vm.monthsOfYear);
     init_Months();
 
     function initParams() {
@@ -31,6 +30,7 @@
     }
 
     function init_monthsOfYear() {
+      console.log(vm.currentYear);
       vm.startMonth = vm.currentYear.clone().startOf('year');
       vm.endMonth = vm.currentYear.clone().endOf('year');
       var durration = vm.startMonth.diff(vm.endMonth, 'months');
