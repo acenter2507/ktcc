@@ -98,8 +98,9 @@
       }, reject => {
       });
       function handle_delete() {
-        item.data.status = 2;
-        item.data.$save(() => {
+        var rs_month = new MonthsService(item.data);
+        rs_month.status = 2;
+        rs_month.$save(() => {
           Notification.info({ message: '勤務表を送信済み！', delay: 5000 });
         });
       }
@@ -118,8 +119,9 @@
       }, reject => {
       });
       function handle_delete() {
-        item.data.status = 2;
-        item.data.$save(() => {
+        var rs_month = new MonthsService(item.data);
+        rs_month.status = 2;
+        rs_month.$save(() => {
           Notification.info({ message: '勤務表を送信済み！', delay: 5000 });
         });
       }
