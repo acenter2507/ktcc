@@ -123,7 +123,7 @@ exports.monthByID = function (req, res, next, id) {
  */
 exports.byyear = function (req, res) {
   var year = req.query.year;
-  var mm = moment().year(year).utc().startOf('month');
+  var mm = moment().utc().year(year).startOf('month');
   console.log(mm);
   Month.find({ time: mm.format(), user: req.user._id }).exec()
     .then(months => {
