@@ -55,7 +55,7 @@
         month.time = moment(month.time).tz('Asia/Tokyo');
       });
       for (var index = 0; index < vm.monthsOfYear.length; index++) {
-        let monthNumber = vm.monthsOfYear[index];
+        let monthNumber = vm.monthsOfYear[index] + 1;
         var hasItem = {};
         for (var subIndex = 0; subIndex < vm.months.length; subIndex++) {
           let month = parseInt(vm.months[subIndex].month, 10);
