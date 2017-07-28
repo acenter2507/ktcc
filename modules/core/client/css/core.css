@@ -48,6 +48,6 @@ a:hover .header-profile-image {
 .ngdialog.ngdialog-theme-default .ngdialog-close {
   display: none; }
 .ngdialog.ngdialog-theme-default .ngdialog-content {
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: 0px;
   background-color: #fff; }
