@@ -23,10 +23,12 @@ exports.renderIndex = function (req, res) {
       additionalProvidersData: req.user.additionalProvidersData
     };
   }
+  systemConfig = {};
 
   res.render('modules/core/server/views/index', {
     user: JSON.stringify(safeUserObject),
-    sharedConfig: JSON.stringify(config.shared)
+    sharedConfig: JSON.stringify(config.shared),
+    systemConfig: JSON.stringify(systemConfig),
   });
 };
 

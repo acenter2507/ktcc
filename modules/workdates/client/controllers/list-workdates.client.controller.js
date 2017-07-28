@@ -12,12 +12,13 @@
     vm.user = Authentication.user;
     vm.isLogged = (vm.user);
     vm.currentMonth = moment(new Date(), 'YYYY/MM');
+    vm.startDate= vm.currentMonth.date(20);
 
     vm.daysOfMonth = [];
     function init_daysOfMonth() { }
 
 
-    console.log($window.xxx);
+    console.log(vm.startDate.format('LLLL'));
     console.log(vm.currentMonth.startOf('month').format('LLLL'));
     console.log(vm.currentMonth.endOf('month').format('LLLL'));
     vm.workdates = WorkdatesService.query();
