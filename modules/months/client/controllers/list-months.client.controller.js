@@ -40,7 +40,7 @@
     }
 
     function init_Months() {
-      MonthApi.get_months_by_month(vm.currentYear.format())
+      MonthApi.get_months_by_year(vm.currentYear.format())
         .then(res => {
           vm.months = res.data || [];
           mergeData();

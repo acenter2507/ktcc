@@ -7,7 +7,8 @@ var path = require('path'),
   mongoose = require('mongoose'),
   Month = mongoose.model('Month'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
-  _ = require('lodash');
+  _ = require('lodash')
+  moment = require('moment');
 
 /**
  * Create a month
@@ -114,4 +115,14 @@ exports.monthByID = function(req, res, next, id) {
     req.month = month;
     next();
   });
+};
+
+
+/**
+ * Get list of month by year
+ */
+exports.byyear = function(req, res) {
+  var year = req.params.year;
+  console.log(year);
+  res.jsonp([]);
 };

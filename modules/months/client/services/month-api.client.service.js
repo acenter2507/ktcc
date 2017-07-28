@@ -9,8 +9,8 @@
  MonthApi.$inject = ['$http'];
 
   function MonthApi($http) {
-    this.get_months_by_month = month => {
-      return $http.get('/api/months/months', { params: { month: month } });
+    this.get_months_by_year = year => {
+      return $http.get('/api/months/byyear', { params: { year: year } });
     };
   }
 }());

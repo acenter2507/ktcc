@@ -20,6 +20,9 @@ exports.invokeRolesPolicies = function () {
     }, {
       resources: '/api/months/:monthId',
       permissions: '*'
+    }, {
+      resources: '/api/months/byyear',
+      permissions: '*'
     }]
   }, {
     roles: ['user'],
@@ -29,6 +32,9 @@ exports.invokeRolesPolicies = function () {
     }, {
       resources: '/api/months/:monthId',
       permissions: ['get']
+    }, {
+      resources: '/api/months/byyear',
+      permissions: '*'
     }]
   }]);
 };
