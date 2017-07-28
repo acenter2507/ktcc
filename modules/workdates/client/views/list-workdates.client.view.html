@@ -20,8 +20,8 @@
             </thead>
             <tbody>
               <tr ng-repeat="day in vm.daysOfMonth">
-                <td ng-bind="day.format('MMMM D')"></td>
-                <td ng-bind="day.format('DDDD')"></td>
+                <td ng-bind="day.format('MMMM D[日]')"></td>
+                <td ng-bind="day.format('dddd')"></td>
               </tr>
             </tbody>
           </table>
