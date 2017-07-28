@@ -19,20 +19,18 @@
     vm.daysOfMonth = [];
     init_daysOfMonth();
     function init_daysOfMonth() {
-      var startDate = vm.startDate.clone().startOf('day');
-      var lastDate = vm.endDate.clone().startOf('day');
+      // var startDate = vm.startDate.clone().startOf('day');
+      // var lastDate = vm.endDate.clone().startOf('day');
 
-      vm.daysOfMonth.push(startDate.clone().toDate());
-      while (startDate.add(1, 'days').diff(lastDate) < 0) {
-        console.log(startDate.toDate());
-        console.log(typeof startDate.toDate());
-        vm.daysOfMonth.push(startDate.clone().toDate());
+      vm.daysOfMonth.push(vm.startDate.clone());
+      while (vm.startDate.clone().add(1, 'days').diff(vm.endDate) < 0) {
+        vm.daysOfMonth.push(vm.startDate.clone());
       }
-      vm.daysOfMonth.push(lastDate.clone().toDate());
+      vm.daysOfMonth.push(vm.endDate.clone());
     }
 
 
-    // console.log(vm.startDate.format('LLLL'));
+    console.log(vm.daysOfMonth);
     // console.log(vm.endDate.format('LLLL'));
     // console.log(vm.currentMonth.startOf('month').format('LLLL'));
     // console.log(vm.currentMonth.endOf('month').format('LLLL'));
