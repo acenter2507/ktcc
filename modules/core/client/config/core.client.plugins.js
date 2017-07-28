@@ -3,7 +3,8 @@
 
   angular
     .module('core')
-    .config(pluginConfig);
+    .config(pluginConfig)
+    .run(runConfig);
 
   pluginConfig.$inject = ['cfpLoadingBarProvider', '$breadcrumbProvider', 'NotificationProvider'];
 
@@ -29,5 +30,9 @@
       positionX: 'right',
       positionY: 'bottom'
     });
+  }
+
+  function runConfig(amMoment) {
+    amMoment.changeLocale('ja');
   }
 }());
