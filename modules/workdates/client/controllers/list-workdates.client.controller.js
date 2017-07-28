@@ -17,13 +17,25 @@
     vm.endDate = moment(vm.currentMonth).date(20);
 
     vm.daysOfMonth = [];
-    function init_daysOfMonth() { }
+    init_daysOfMonth();
+    function init_daysOfMonth() {
+      var dates = [];
+
+      var startDate = vm.startDate.clone().startOf('day');
+      var lastDate = vm.endDate.clone().startOf('day');
+
+      while (currDate.add(1, 'days').diff(lastDate) < 0) {
+        console.log(currDate.toDate());
+        vm.daysOfMonth.push(currDate.clone().toDate());
+      }
+      return dates;
+    }
 
 
-    console.log(vm.startDate.format('LLLL'));
-    console.log(vm.endDate.format('LLLL'));
-    console.log(vm.currentMonth.startOf('month').format('LLLL'));
-    console.log(vm.currentMonth.endOf('month').format('LLLL'));
+    // console.log(vm.startDate.format('LLLL'));
+    // console.log(vm.endDate.format('LLLL'));
+    // console.log(vm.currentMonth.startOf('month').format('LLLL'));
+    // console.log(vm.currentMonth.endOf('month').format('LLLL'));
     vm.workdates = WorkdatesService.query();
   }
 }());
