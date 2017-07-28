@@ -80,5 +80,10 @@
         year: nextYear.format('YYYY')
       });
     };
+    vm.createMonth = month => {
+      var time = moment().year(vm.currentYear.format('YYYY')).month(month).startOf('month');
+      console.log(time);
+      // var rs_month = new MonthsService({ time:  });
+    };
   }
 }());

@@ -122,9 +122,11 @@ exports.monthByID = function (req, res, next, id) {
  * Get list of month by year
  */
 exports.byyear = function (req, res) {
-  console.log(req.query);
   var year = req.query.year;
-  var mm = moment().year(year).utc();
-  console.log(mm);
+  var mm = moment().year(year).utc().startOf('month');
+  Month.find({ time: mm.format(), user: req.user._id }).exec()
+    .then(months => {
+
+    });
   res.jsonp([]);
 };

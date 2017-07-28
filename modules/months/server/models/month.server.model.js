@@ -14,7 +14,7 @@ var MonthSchema = new Schema({
     type: Date,
     required: 'Please fill Month date'
   },
-  // Approve, reject, waiting
+  // Unsend, Watting, Approve, reject, ok
   status: {
     type: Number,
     default: 1
