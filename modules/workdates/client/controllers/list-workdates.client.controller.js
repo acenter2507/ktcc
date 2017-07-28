@@ -25,6 +25,7 @@
       vm.daysOfMonth.push(startDate.clone().toDate());
       while (startDate.add(1, 'days').diff(lastDate) < 0) {
         console.log(startDate.toDate());
+        console.log(typeof startDate.toDate());
         vm.daysOfMonth.push(startDate.clone().toDate());
       }
       vm.daysOfMonth.push(lastDate.clone().toDate());
