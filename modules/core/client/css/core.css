@@ -57,12 +57,12 @@ a:hover .header-profile-image {
 .stats {
   text-align: center;
   font-size: 35px;
-  margin-left: auto;
-  margin-right: auto;
   line-height: 25px;
   margin-top: 10px; }
   .stats .stat {
     display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
     min-width: 100px;
     margin-bottom: 20px; }
   .stats .stat .stat-value {
