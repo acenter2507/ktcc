@@ -17,10 +17,11 @@
     'MonthApi',
     'MonthApi',
     'WorkdateApi',
-    'SystemConfig'
+    'SystemConfig',
+    'ngDialog'
   ];
 
-  function MonthsController($scope, $state, $window, Authentication, month, Notification, MonthsService, MonthApi, WorkdateApi, ngDialog, SystemConfig) {
+  function MonthsController($scope, $state, $window, Authentication, month, Notification, MonthsService, MonthApi, WorkdateApi, ngDialog, SystemConfig, dialog) {
     var vm = this;
 
     vm.month = month;
