@@ -79,17 +79,17 @@
             }).then(confirm => {
               handle_create();
             });
-            function handle_create() {
-              var rs_month = new MonthsService({ year: vm.currentMonth.format('YYYY'), month: lastMonth + '' });
-              rs_month.$save(res => {
-                $state.go('months.view', { monthId: res._id });
-              });
-            }
           }
         })
         .catch(err => {
           Notification.error({ message: '先月の勤務表を取れませんでした！', delay: 6000 });
         });
+      function handle_create() {
+        var rs_month = new MonthsService({ year: vm.currentMonth.format('YYYY'), month: lastMonth + '' });
+        rs_month.$save(res => {
+          $state.go('months.view', { monthId: res._id });
+        });
+      }
     };
     vm.nextMonth = () => {
       var nextMonth = vm.currentMonth.clone().add(1, 'months').month();
@@ -108,17 +108,17 @@
             }).then(confirm => {
               handle_create();
             });
-            function handle_create() {
-              var rs_month = new MonthsService({ year: vm.currentMonth.format('YYYY'), month: nextMonth + '' });
-              rs_month.$save(res => {
-                $state.go('months.view', { monthId: res._id });
-              });
-            }
           }
         })
         .catch(err => {
           Notification.error({ message: '来月の勤務表を取れませんでした！', delay: 6000 });
         });
+      function handle_create() {
+        var rs_month = new MonthsService({ year: vm.currentMonth.format('YYYY'), month: nextMonth + '' });
+        rs_month.$save(res => {
+          $state.go('months.view', { monthId: res._id });
+        });
+      }
     };
 
     // Remove existing month
