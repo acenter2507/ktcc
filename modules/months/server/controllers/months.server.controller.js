@@ -167,7 +167,7 @@ exports.bymonth = function (req, res) {
   // var mm = moment().utc().year(year).startOf('month');
   Month.findOne({ month: month, user: req.user._id }).exec()
     .then(month => {
-      res.jsonp(months);
+      res.jsonp(month);
     }, handleError);
   function handleError(err) {
     return res.status(400).send({

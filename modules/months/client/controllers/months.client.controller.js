@@ -78,7 +78,6 @@
               templateUrl: '/modules/core/client/views/templates/confirm.dialog.template.html'
             }).then(confirm => {
               handle_create();
-            }, reject => {
             });
             function handle_create() {
               var rs_month = new MonthsService({ year: vm.currentMonth.format('YYYY'), month: lastMonth + '' });
@@ -108,7 +107,6 @@
               templateUrl: '/modules/core/client/views/templates/confirm.dialog.template.html'
             }).then(confirm => {
               handle_create();
-            }, reject => {
             });
             function handle_create() {
               var rs_month = new MonthsService({ year: vm.currentMonth.format('YYYY'), month: nextMonth + '' });
