@@ -11,18 +11,17 @@ var mongoose = require('mongoose'),
  */
 var WorkdateSchema = new Schema({
   month: {
-    type: Schema.ObjectId,
-    ref: 'Month'
+    type: String,
+    default: ''
   },
   date: {
-    type: Number,
-    default: 1
+    type: String,
+    default: ''
   },
   // 業務内容
   work: {
     type: String,
     default: '',
-    required: 'Please fill Workdate work content',
     trim: true
   },
   // 開始

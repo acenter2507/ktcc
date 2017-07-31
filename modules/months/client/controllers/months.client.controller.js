@@ -125,12 +125,10 @@
     vm.createWorkdate = date => {
       var _month = date.month() + '';
       var _date = date.date() + '';
-      // var rs_month = new Workdates({ month: vm.currentMonth.month(), month: lastMonth + '' });
-      // rs_month.$save(res => {
-      //   $state.go('months.view', { monthId: res._id });
-      // });
-      console.log(_month);
-      console.log(_date);
+      var rs_wd = new Workdates({ month: _month, date: _date });
+      rs_wd.$save(res => {
+        $state.go('workdates.view', { workdateId: res._id });
+      });
     };
     vm.viewWorkdate = date => {
       console.log(date.format());
