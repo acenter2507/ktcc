@@ -23,7 +23,7 @@
             </thead>
             <tbody>
               <tr ng-repeat="item in vm.datas">
-                <td class="text-center" ng-bind="item.month"></td>
+                <td class="text-center" ng-bind="item.month + 1"></td>
                 <td class="text-center">
                   <span class="badge badge-default" ng-if="!item.data._id">未作成</span>
                   <span class="badge badge-warning" ng-if="item.data.status === 1">見送信</span>
