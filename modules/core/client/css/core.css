@@ -42,7 +42,6 @@ a:hover .header-profile-image {
   display: inline;
 }
 
-
 .ngdialog-open{
   height: auto !important; }
 .ngdialog.ngdialog-theme-default .ngdialog-close {
@@ -51,3 +50,6 @@ a:hover .header-profile-image {
   padding: 1.5rem;
   border-radius: 0px;
   background-color: #fff; }
+
+.uib-time input {
+  width: 60px !important; }
