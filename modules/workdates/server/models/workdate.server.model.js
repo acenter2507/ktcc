@@ -18,6 +18,10 @@ var WorkdateSchema = new Schema({
     type: String,
     default: ''
   },
+  monthdb: {
+    type: Schema.ObjectId,
+    ref: 'Month'
+  },
   date: {
     type: String,
     default: ''
