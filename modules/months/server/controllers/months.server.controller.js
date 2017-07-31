@@ -178,7 +178,7 @@ exports.bymonth = function (req, res) {
 exports.get_workdates_by_monthId = get_workdates_by_monthId;
 function get_workdates_by_monthId(monthId) {
   return new Promise((resolve, reject) => {
-    Workdate.find({ month: monthId }).sort('time').exec((err, workdates) => {
+    Workdate.find({ monthdb: monthId }).sort('time').exec((err, workdates) => {
       if (err) {
         return reject(err);
       } else {
