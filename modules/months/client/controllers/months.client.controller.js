@@ -52,8 +52,8 @@
         var hasItem = {};
         for (var subIndex = 0; subIndex < vm.month.workdates.length; subIndex++) {
           let workdate = vm.month.workdates[subIndex];
-          var month = parseInt(workdate.date, 10);
-          if (date.date() === month) {
+          var date = parseInt(workdate.date, 10);
+          if (date.date() === date) {
             hasItem = workdate;
             break;
           }
@@ -63,24 +63,26 @@
     }
 
     vm.lastMonth = () => {
-      var lastMonth = vm.currentMonth.subtract(1, 'months').utc().startOf('months');
-      MonthApi.get_month_by_time(lastMonth.format())
-        .then(res => {
-          $state.go('months.view', { monthId: res.data._id });
-        })
-        .catch(err => {
-          Notification.error({ message: '先月の勤務表を取れませんでした！', delay: 6000 });
-        });
+      var lastMonth = vm.currentMonth.subtract(1, 'months').month();
+      console.log(lastMonth);
+      // MonthApi.get_month_by_time(lastMonth.format())
+      //   .then(res => {
+      //     $state.go('months.view', { monthId: res.data._id });
+      //   })
+      //   .catch(err => {
+      //     Notification.error({ message: '先月の勤務表を取れませんでした！', delay: 6000 });
+      //   });
     };
     vm.nextMonth = () => {
-      var nextMonth = vm.currentMonth.add(1, 'months').utc().startOf('months');
-      MonthApi.get_month_by_time(nextMonth.format())
-        .then(res => {
-          $state.go('months.view', { monthId: res.data._id });
-        })
-        .catch(err => {
-          Notification.error({ message: '来月の勤務表を取れませんでした！', delay: 6000 });
-        });
+      var nextMonth = vm.currentMonth.add(1, 'months').month();
+      console.log(nextMonth);
+      // MonthApi.get_month_by_month(nextMonth.format())
+      //   .then(res => {
+      //     $state.go('months.view', { monthId: res.data._id });
+      //   })
+      //   .catch(err => {
+      //     Notification.error({ message: '来月の勤務表を取れませんでした！', delay: 6000 });
+      //   });
     };
 
     // Remove existing month
