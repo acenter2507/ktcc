@@ -10,6 +10,10 @@ var mongoose = require('mongoose'),
  * Workdate Schema
  */
 var WorkdateSchema = new Schema({
+  year: {
+    type: String,
+    default: ''
+  },
   month: {
     type: String,
     default: ''
@@ -27,12 +31,12 @@ var WorkdateSchema = new Schema({
   // 開始
   start: {
     type: String,
-    required: 'Please fill Workdate start'
+    default: ''
   },
   // 終了
   end: {
     type: String,
-    required: 'Please fill Workdate end'
+    default: ''
   },
   // 休憩 (hour)
   middleRest: {

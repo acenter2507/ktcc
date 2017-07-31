@@ -10,13 +10,18 @@
 
   function WorkdatesController ($scope, $state, $window, Authentication, workdate, Notification) {
     var vm = this;
+    vm.user = Authentication.user;
 
     vm.workdate = workdate;
-    vm.authentication = Authentication;
     vm.form = {};
     vm.remove = remove;
     vm.save = save;
 
+    vm.currentDate = {};
+    init();
+    function init() {
+      vm.currentDate = moment().year(vm.workdate.year).month(vm.workdate.month).date(vm.workdate.date);
+    }
     // Remove existing Workdate
     function remove() {
       if ($window.confirm('Are you sure you want to delete?')) {

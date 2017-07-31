@@ -24,9 +24,14 @@
 
   function MonthsController($scope, $state, $window, Authentication, month, Notification, MonthsService, MonthApi, WorkdateApi, ngDialog, SystemConfig, dialog, Workdates) {
     var vm = this;
+    vm.user = Authentication.user;
+    // TODO Dummy config user
+    vm.user.config = {
+      start: 9,
+      end: 17.5
+    };
 
     vm.month = month;
-    vm.authentication = Authentication;
     vm.remove = remove;
     vm.save = save;
 
@@ -129,6 +134,24 @@
       rs_wd.$save(res => {
         $state.go('workdates.view', { workdateId: res._id });
       });
+    };
+    // Tạo tất cả các workdate
+    vm.createAll = date => {
+      var _month, _date, rs_wd;
+      vm.datas.forEach(function (item) {
+        if (!item.data._id) {
+          _month = item.date.month() + '';
+          _date = item.date.date() + '';
+          rs_wd = new Workdates({ month: _month, date: _date });
+          rs_wd.$save(res => {
+            item.data = res;
+          });
+        }
+      });
+    };
+
+    vm.resetAll = date => {
+
     };
     vm.viewWorkdate = date => {
       console.log(date.format());
