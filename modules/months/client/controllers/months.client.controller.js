@@ -122,10 +122,10 @@
     };
 
     vm.createWorkdate = date => {
-      console.log(date);
+      console.log(date.format());
     };
     vm.viewWorkdate = date => {
-      console.log(date);
+      console.log(date.format());
     };
     // Remove existing month
     function remove() {
