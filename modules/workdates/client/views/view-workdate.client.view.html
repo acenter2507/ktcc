@@ -5,57 +5,29 @@
       <span class="h2 mx-3" ng-bind="vm.currentDate.format('LL')"></span>
     </div>
   </div>
-  <!--<div class="row">
+  <div class="row">
     <div class="col-sm-12">
       <div class="card">
-        <div class="card-header">
-          <i class="fa fa-calendar"></i> 勤務表
-          <span class="pull-right" uib-dropdown>
-            <a href id="simple-dropdown" uib-dropdown-toggle>メニュー</a>
-            <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
-              <li><a ng-click="vm.createAll()">全て作成</a></li>
-              <li><a ng-click="vm.resetAll()">全て削除</a></li>
-              <li><a href>ああああああああああああ</a></li>
-              <li><a href>いいいいいいいいいいいいい</a></li>
-            </ul>
-          </span>
-        </div>
+        <div class="card-header">入力</div>
         <div class="card-block">
-          <table class="table table-bordered table-sm">
-            <thead>
-              <tr>
-                <th rowspan="2">日付</th>
-                <th rowspan="2">曜日</th>
-                <th rowspan="2" class="d-md-down-none">作業</th>
-                <th colspan="2" class="d-md-down-none">勤務時間</th>
-                <th rowspan="2" class="d-md-down-none">休憩時間</th>
-                <th rowspan="2" class="d-md-down-none">時間外</th>
-                <th rowspan="2" class="d-md-down-none">深夜</th>
-                <th rowspan="2" class="d-md-down-none">休出</th>
-                <th rowspan="2" class="d-md-down-none">休深</th>
-                <th rowspan="2" class="d-md-down-none">振替</th>
-                <th rowspan="2" class="d-md-down-none">休日形態</th>
-                <th rowspan="2">操作</th>
-              </tr>
-              <tr class="d-md-down-none">
-                <th>開始</th>
-                <th>終了</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr ng-repeat="item in vm.datas" ng-class="{'bg-danger': day.day() === 0, 'bg-warning': day.day() === 6 }">
-                <td ng-class="{'bg-danger': item.date.day() === 0, 'bg-warning': item.date.day() === 6 }" ng-bind="item.date.format('MMMM D[日]')"></td>
-                <td ng-class="{'bg-danger': item.date.day() === 0, 'bg-warning': item.date.day() === 6 }" ng-bind="item.date.format('dddd')"></td>
-                <td colspan="11">
-                  <button type="button" class="btn btn-outline-default" ng-if="!item.data._id" ng-click="vm.createWorkdate(item.date)">作成</button>
-                  <button type="button" class="btn btn-success" ng-if="item.data._id" ng-click="vm.viewWorkdate(item.data)">編集</button>
-                </td>
-
-              </tr>
-            </tbody>
-          </table>
+          <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+            <div class="form-group row">
+              <label class="col-md-3 form-control-label" for="textarea-input">作業内容</label>
+              <div class="col-md-9">
+                <textarea id="textarea-input" name="textarea-input" rows="3" class="form-control" placeholder="作業内容を記入してください"></textarea>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-6">
+                <div uib-timepicker ng-model="start" ng-change="start_changed()" hour-step="1" minute-step="5" show-meridian="ismeridian"></div>
+              </div>
+              <div class="col-md-6">
+                <div uib-timepicker ng-model="end" ng-change="end_changed()" hour-step="1" minute-step="5" show-meridian="ismeridian"></div>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
-  </div>-->
+  </div>
 </div>
