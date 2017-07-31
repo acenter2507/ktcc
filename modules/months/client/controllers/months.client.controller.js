@@ -138,9 +138,10 @@
     };
     // Tạo tất cả các workdate
     vm.createAll = date => {
-      var _year, _month, _date, rs_wd;
-      _year = vm.currentMonth.year() + '';
-      _month = vm.currentMonth.month() + '';
+      var _date;
+      var rs_wd;
+      var _year = vm.currentMonth.year() + '';
+      var _month = vm.currentMonth.month() + '';
       vm.datas.forEach(function (item) {
         if (!item.data._id) {
           _date = item.date.date() + '';
