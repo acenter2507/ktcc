@@ -63,7 +63,7 @@
     }
 
     vm.lastMonth = () => {
-      var lastMonth = vm.currentMonth.clone().subtract(1, 'months').month() + 1;
+      var lastMonth = vm.currentMonth.clone().subtract(1, 'months').month();
       MonthApi.get_month_by_month(lastMonth)
         .then(res => {
           if (res.data && res.data._id) {
@@ -92,7 +92,7 @@
         });
     };
     vm.nextMonth = () => {
-      var nextMonth = vm.currentMonth.clone().add(1, 'months').month() + 1;
+      var nextMonth = vm.currentMonth.clone().add(1, 'months').month();
       MonthApi.get_month_by_month(nextMonth)
         .then(res => {
           if (res.data && res.data._id) {

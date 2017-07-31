@@ -52,11 +52,11 @@
 
     function mergeData() {
       for (var index = 0; index < vm.monthsOfYear.length; index++) {
-        let monthNumber = vm.monthsOfYear[index] + 1;
+        let monthNumber = vm.monthsOfYear[index];
         var hasItem = {};
         for (var subIndex = 0; subIndex < vm.months.length; subIndex++) {
           let month = parseInt(vm.months[subIndex].month, 10);
-          if (monthNumber === month) {
+          if ((monthNumber + 1) === month) {
             hasItem = vm.months[subIndex];
             break;
           }
