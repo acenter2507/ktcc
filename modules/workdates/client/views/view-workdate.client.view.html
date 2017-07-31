@@ -12,7 +12,7 @@
         <div class="card-block">
           <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
             <div class="form-group">
-              <p>作業内容</p>
+              <p class="mb-1">作業内容</p>
               <textarea id="work" name="work" rows="3" class="form-control" placeholder="作業内容を記入してください"></textarea>
             </div>
             <div class="form-group">
@@ -24,6 +24,15 @@
                 <p class="text-center mb-1">終了</p>
                 <div class="mx-auto" uib-timepicker ng-model="end" ng-change="vm.end_changed()" hour-step="1" minute-step="5" show-meridian="false"></div>
               </div>
+            </div>
+            <div class="form-group">
+              <p class="mb-1">休日形態</p>
+              <select class="form-control">
+                <option value="1">年次有給</option>
+                <option value="2">午前半休</option>
+                <option value="3">午後半休</option>
+                <option value="4">振替休日</option>
+              </select>
             </div>
           </form>
         </div>
