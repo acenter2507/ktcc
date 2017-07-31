@@ -22,7 +22,7 @@
     'ngDialog'
   ];
 
-  function MonthsController($scope, $state, $window, Authentication, month, Notification, MonthsService, MonthApi, WorkdateApi, ngDialog, SystemConfig, dialog, Workdates) {
+  function MonthsController($scope, $state, $window, Authentication, month, Notification, MonthsService, MonthApi, WorkdateApi, ngDialog, SystemConfig, Workdates, dialog) {
     var vm = this;
     vm.user = Authentication.user;
     // TODO Dummy config user
