@@ -23,8 +23,6 @@
       vm.currentDate = moment().year(vm.workdate.year).month(vm.workdate.month).date(vm.workdate.date);
     }
 
-    $scope.start = {};
-    $scope.end = {};
     vm.start_changed = () => {
       console.log($scope.start);
     };
