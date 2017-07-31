@@ -42,7 +42,6 @@
     init_daysOfMonth();
     mergeDate();
     function init() {
-      console.log(vm.month);
       vm.currentMonth = moment().year(vm.month.year).month(vm.month.month);
     }
     function init_daysOfMonth() {
@@ -157,8 +156,8 @@
     vm.resetAll = date => {
 
     };
-    vm.viewWorkdate = date => {
-      console.log(date.format());
+    vm.viewWorkdate = data => {
+      $state.go('workdates.view', { workdateId: data._id });
     };
     // Remove existing month
     function remove() {
