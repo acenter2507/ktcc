@@ -7,7 +7,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-sm-12 col-md-8">
+    <div class="col-sm-12">
       <div class="card">
         <div class="card-header">
           <i class="fa fa-calendar"></i> 勤務表
@@ -38,7 +38,7 @@
               <tr ng-repeat="item in vm.datas" ng-class="{'bg-danger': day.day() === 0, 'bg-warning': day.day() === 6 }">
                 <td ng-class="{'bg-danger': item.date.day() === 0, 'bg-warning': item.date.day() === 6 }" ng-bind="item.date.format('MMMM D[日]')"></td>
                 <td ng-class="{'bg-danger': item.date.day() === 0, 'bg-warning': item.date.day() === 6 }" ng-bind="item.date.format('dddd')"></td>
-                <td colspan="10">
+                <td colspan="11">
                   <button type="button" class="btn btn-outline-default" ng-if="!item.data._id" ng-click="vm.createWorkdate(item.date)">作成</button>
                   <button type="button" class="btn btn-success" ng-if="item.data._id" ng-click="vm.viewWorkdate(item.data)">編集</button>
                 </td>
@@ -65,8 +65,6 @@
           </nav>
         </div>
       </div>
-    </div>
-    <div class="col-4 d-sm-down-none">
     </div>
   </div>
 </div>
