@@ -131,7 +131,7 @@
       var _year = date.year() + '';
       var _month = date.month() + '';
       var _date = date.date() + '';
-      var rs_wd = new Workdates({ year: _year, month: _month, date: _date });
+      var rs_wd = new Workdates({ year: _year, month: _month, date: _date, monthdb: vm.month._id });
       rs_wd.$save(res => {
         $state.go('workdates.view', { workdateId: res._id });
       });
@@ -145,7 +145,7 @@
       vm.datas.forEach(function (item) {
         if (!item.data._id) {
           _date = item.date.date() + '';
-          rs_wd = new Workdates({ year: _year, month: _month, date: _date });
+          rs_wd = new Workdates({ year: _year, month: _month, date: _date, monthdb: vm.month._id });
           rs_wd.$save(res => {
             item.data = res;
           });
