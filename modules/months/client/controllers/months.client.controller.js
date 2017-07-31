@@ -42,6 +42,7 @@
     init_daysOfMonth();
     mergeDate();
     function init() {
+      console.log(vm.month);
       vm.currentMonth = moment().year(vm.month.year).month(vm.month.month);
     }
     function init_daysOfMonth() {
