@@ -12,10 +12,10 @@
         <div class="card-header">
           <i class="fa fa-calendar"></i> 勤務表
           <span class="pull-right" uib-dropdown>
-            <a href id="simple-dropdown" uib-dropdown-toggle>Menu</a>
+            <a href id="simple-dropdown" uib-dropdown-toggle>メニュー</a>
             <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
-              <li><a href>全て作成</a></li>
-              <li><a href>全て削除</a></li>
+              <li><a ng-click="vm.createAll()">全て作成</a></li>
+              <li><a ng-click="vm.resetAll()">全て削除</a></li>
               <li><a href>ああああああああああああ</a></li>
               <li><a href>いいいいいいいいいいいいい</a></li>
             </ul>
