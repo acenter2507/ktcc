@@ -128,21 +128,23 @@
     };
 
     vm.createWorkdate = date => {
+      var _year = date.year() + '';
       var _month = date.month() + '';
       var _date = date.date() + '';
-      var rs_wd = new Workdates({ month: _month, date: _date });
+      var rs_wd = new Workdates({ year: _year, month: _month, date: _date });
       rs_wd.$save(res => {
         $state.go('workdates.view', { workdateId: res._id });
       });
     };
     // Tạo tất cả các workdate
     vm.createAll = date => {
-      var _month, _date, rs_wd;
+      var _year, _month, _date, rs_wd;
+      _year = vm.currentMonth.year() + '';
+      _month = vm.currentMonth.month() + '';
       vm.datas.forEach(function (item) {
         if (!item.data._id) {
-          _month = item.date.month() + '';
           _date = item.date.date() + '';
-          rs_wd = new Workdates({ month: _month, date: _date });
+          rs_wd = new Workdates({ year: _year, month: _month, date: _date });
           rs_wd.$save(res => {
             item.data = res;
           });
