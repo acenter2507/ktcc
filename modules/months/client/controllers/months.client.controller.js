@@ -121,6 +121,12 @@
       }
     };
 
+    vm.createWorkdate = date => {
+      console.log(date);
+    };
+    vm.viewWorkdate = date => {
+      console.log(date);
+    };
     // Remove existing month
     function remove() {
       if ($window.confirm('Are you sure you want to delete?')) {

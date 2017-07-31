@@ -46,74 +46,8 @@
               </tr>
             </tbody>
           </table>
-          <nav>
-            <ul class="pagination">
-              <li class="page-item"><a class="page-link" href="#">Prev</a>
-              </li>
-              <li class="page-item active">
-                <a class="page-link" href="#">1</a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">2</a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">3</a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">4</a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">Next</a>
-              </li>
-            </ul>
-          </nav>
         </div>
       </div>
     </div>
   </div>
 </div>
-<!--
-<section>
-  <div class="page-header">
-    <h1>Workdates</h1>
-  </div>
-  <div class="list-group">
-    <a ng-repeat="workdate in vm.workdates" ui-sref="workdates.view({ workdateId: workdate._id })" class="list-group-item">
-      <small class="list-group-item-text">
-        Posted on
-        <span ng-bind="workdate.created | date:'mediumDate'"></span>
-        by
-        <span ng-if="workdate.user" ng-bind="workdate.user.displayName"></span>
-        <span ng-if="!workdate.user">Deleted User</span>
-      </small>
-      <h4 class="list-group-item-heading" ng-bind="workdate.name"></h4>
-    </a>
-  </div>
-  <div class="alert alert-warning text-center" ng-if="vm.workdates.$resolved && !vm.workdates.length">
-    No Workdates yet, why don't you <a ui-sref="workdates.create">create one</a>?
-  </div>
-</section>-->
-
-
-<!--<section>
-  <div class="page-header">
-    <h1 ng-bind="vm.workdate.name"></h1>
-  </div>
-  <div class="pull-right"
-       ng-show="vm.workdate.isCurrentUserOwner">
-    <a class="btn btn-primary"
-       ui-sref="workdates.edit({ workdateId: vm.workdate._id })">
-      <i class="glyphicon glyphicon-edit"></i>
-    </a>
-    <a class="btn btn-primary" ng-click="vm.remove()">
-      <i class="glyphicon glyphicon-trash"></i>
-    </a>
-  </div>
-  <small>
-    <em class="text-muted">
-      Posted on
-      <span ng-bind="vm.workdate.created | date:'mediumDate'"></span>
-      by
-      <span ng-if="vm.workdate.user"
-            ng-bind="vm.workdate.user.displayName"></span>
-      <span ng-if="!vm.workdate.user">Deleted User</span>
-    </em>
-  </small>
-  <p class="lead" ng-bind="vm.workdate.content"></p>
-</section>-->
