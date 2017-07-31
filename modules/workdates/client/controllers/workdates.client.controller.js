@@ -22,6 +22,15 @@
     function init() {
       vm.currentDate = moment().year(vm.workdate.year).month(vm.workdate.month).date(vm.workdate.date);
     }
+
+    $scope.start = {};
+    $scope.end = {};
+    vm.start_changed = () => {
+      console.log($scope.start);
+    };
+    vm.end_changed = () => {
+      console.log($scope.end);
+    };
     // Remove existing Workdate
     function remove() {
       if ($window.confirm('Are you sure you want to delete?')) {
