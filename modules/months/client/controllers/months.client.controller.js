@@ -18,10 +18,11 @@
     'MonthApi',
     'WorkdateApi',
     'SystemConfig',
+    'WorkdatesService',
     'ngDialog'
   ];
 
-  function MonthsController($scope, $state, $window, Authentication, month, Notification, MonthsService, MonthApi, WorkdateApi, ngDialog, SystemConfig, dialog) {
+  function MonthsController($scope, $state, $window, Authentication, month, Notification, MonthsService, MonthApi, WorkdateApi, ngDialog, SystemConfig, dialog, Workdates) {
     var vm = this;
 
     vm.month = month;
@@ -122,7 +123,14 @@
     };
 
     vm.createWorkdate = date => {
-      console.log(date.format());
+      var _month = vm.currentMonth.month() + '';
+      var _date = vm.currentMonth.date() + '';
+      // var rs_month = new Workdates({ month: vm.currentMonth.month(), month: lastMonth + '' });
+      // rs_month.$save(res => {
+      //   $state.go('months.view', { monthId: res._id });
+      // });
+      console.log(_month);
+      console.log(_date);
     };
     vm.viewWorkdate = date => {
       console.log(date.format());
