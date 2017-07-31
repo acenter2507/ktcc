@@ -12,6 +12,9 @@
     this.get_months_by_year = year => {
       return $http.get('/api/months/byyear', { params: { year: year } });
     };
+    this.get_month_by_month = month => {
+      return $http.get('/api/months/bymonth', { params: { month: month } });
+    };
     return this;
   }
 }());

@@ -66,13 +66,13 @@
     }
 
     vm.lastYear = () => {
-      var lastYear = vm.currentYear.subtract(1, 'years');
+      var lastYear = vm.currentYear.clone().subtract(1, 'years');
       $state.go('months.list', {
         year: lastYear.format('YYYY')
       });
     };
     vm.nextYear = () => {
-      var nextYear = vm.currentYear.add(1, 'years');
+      var nextYear = vm.currentYear.clone().add(1, 'years');
       $state.go('months.list', {
         year: nextYear.format('YYYY')
       });

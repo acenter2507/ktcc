@@ -159,6 +159,22 @@ exports.byyear = function (req, res) {
   }
 };
 
+/**
+ * Get month by month
+ */
+exports.bymonth = function (req, res) {
+  var month = req.query.month + '';
+  // var mm = moment().utc().year(year).startOf('month');
+  Month.findOne({ month: month, user: req.user._id }).exec()
+    .then(month => {
+      res.jsonp(months);
+    }, handleError);
+  function handleError(err) {
+    return res.status(400).send({
+      message: errorHandler.getErrorMessage(err)
+    });
+  }
+};
 exports.get_workdates_by_monthId = get_workdates_by_monthId;
 function get_workdates_by_monthId(monthId) {
   return new Promise((resolve, reject) => {

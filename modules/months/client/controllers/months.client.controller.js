@@ -62,26 +62,64 @@
     }
 
     vm.lastMonth = () => {
-      var lastMonth = vm.currentMonth.subtract(1, 'months').month();
-      console.log(lastMonth);
-      // MonthApi.get_month_by_time(lastMonth.format())
-      //   .then(res => {
-      //     $state.go('months.view', { monthId: res.data._id });
-      //   })
-      //   .catch(err => {
-      //     Notification.error({ message: '先月の勤務表を取れませんでした！', delay: 6000 });
-      //   });
+      var lastMonth = vm.currentMonth.clone().subtract(1, 'months').month() + 1;
+      MonthApi.get_month_by_month(lastMonth)
+        .then(res => {
+          if (res.data && res.data._id) {
+            $state.go('months.view', { monthId: res.data._id });
+          } else {
+            $scope.message_title = '確認！';
+            $scope.message_content = lastMonth + '月の勤務表を存在していません。すぐ作成しますか？';
+            $scope.dialog_type = 1;
+            $scope.buton_label = '作成';
+            dialog.openConfirm({
+              scope: $scope,
+              templateUrl: '/modules/core/client/views/templates/confirm.dialog.template.html'
+            }).then(confirm => {
+              handle_create();
+            }, reject => {
+            });
+            function handle_create() {
+              var rs_month = new MonthsService({ year: vm.currentMonth.format('YYYY'), month: lastMonth + '' });
+              rs_month.$save(res => {
+                $state.go('months.view', { monthId: res._id });
+              });
+            }
+          }
+        })
+        .catch(err => {
+          Notification.error({ message: '先月の勤務表を取れませんでした！', delay: 6000 });
+        });
     };
     vm.nextMonth = () => {
-      var nextMonth = vm.currentMonth.add(1, 'months').month();
-      console.log(nextMonth);
-      // MonthApi.get_month_by_month(nextMonth.format())
-      //   .then(res => {
-      //     $state.go('months.view', { monthId: res.data._id });
-      //   })
-      //   .catch(err => {
-      //     Notification.error({ message: '来月の勤務表を取れませんでした！', delay: 6000 });
-      //   });
+      var nextMonth = vm.currentMonth.clone().add(1, 'months').month() + 1;
+      MonthApi.get_month_by_month(nextMonth)
+        .then(res => {
+          if (res.data && res.data._id) {
+            $state.go('months.view', { monthId: res.data._id });
+          } else {
+            $scope.message_title = '確認！';
+            $scope.message_content = nextMonth + '月の勤務表を存在していません。すぐ作成しますか？';
+            $scope.dialog_type = 1;
+            $scope.buton_label = '作成';
+            dialog.openConfirm({
+              scope: $scope,
+              templateUrl: '/modules/core/client/views/templates/confirm.dialog.template.html'
+            }).then(confirm => {
+              handle_create();
+            }, reject => {
+            });
+            function handle_create() {
+              var rs_month = new MonthsService({ year: vm.currentMonth.format('YYYY'), month: nextMonth + '' });
+              rs_month.$save(res => {
+                $state.go('months.view', { monthId: res._id });
+              });
+            }
+          }
+        })
+        .catch(err => {
+          Notification.error({ message: '来月の勤務表を取れませんでした！', delay: 6000 });
+        });
     };
 
     // Remove existing month
