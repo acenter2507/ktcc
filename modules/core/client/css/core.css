@@ -53,3 +53,24 @@ a:hover .header-profile-image {
 
 .uib-time input {
   width: 60px !important; }
+
+.stats {
+  text-align: center;
+  font-size: 35px;
+  line-height: 25px;
+  margin-top: 10px;
+  /*margin-bottom: -20px;*/
+}
+.stats .stat {
+  display: inline-block;
+  min-width: 100px;
+  margin-bottom: 20px;
+}
+.stats .stat .stat-value {
+  color: #555;
+}
+.stats .stat .stat-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #777;
+}
