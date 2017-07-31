@@ -70,7 +70,7 @@
             $state.go('months.view', { monthId: res.data._id });
           } else {
             $scope.message_title = '確認！';
-            $scope.message_content = lastMonth + '月の勤務表を存在していません。すぐ作成しますか？';
+            $scope.message_content = (lastMonth + 1) + '月の勤務表を存在していません。すぐ作成しますか？';
             $scope.dialog_type = 1;
             $scope.buton_label = '作成';
             dialog.openConfirm({
@@ -99,7 +99,7 @@
             $state.go('months.view', { monthId: res.data._id });
           } else {
             $scope.message_title = '確認！';
-            $scope.message_content = nextMonth + '月の勤務表を存在していません。すぐ作成しますか？';
+            $scope.message_content = (nextMonth + 1) + '月の勤務表を存在していません。すぐ作成しますか？';
             $scope.dialog_type = 1;
             $scope.buton_label = '作成';
             dialog.openConfirm({
