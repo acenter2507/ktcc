@@ -62,7 +62,7 @@
           pageTitle: '部署詳細'
         }
       })
-      .state('departments.create', {
+      .state('admins.departments.create', {
         url: '/departments/create',
         templateUrl: '/modules/departments/client/views/form-department.client.view.html',
         controller: 'DepartmentsController',
