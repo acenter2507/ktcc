@@ -33,7 +33,7 @@
         }
       })
       .state('admins.departments.edit', {
-        url: '/departments/:departmentId/edit',
+        url: '/:departmentId/edit',
         templateUrl: '/modules/departments/client/views/form-department.client.view.html',
         controller: 'DepartmentsController',
         controllerAs: 'vm',
@@ -48,7 +48,7 @@
         }
       })
       .state('admins.departments.view', {
-        url: '/departments/:departmentId',
+        url: '/:departmentId',
         templateUrl: '/modules/departments/client/views/view-department.client.view.html',
         controller: 'DepartmentsController',
         controllerAs: 'vm',
@@ -63,7 +63,7 @@
         }
       })
       .state('admins.departments.create', {
-        url: '/departments/create',
+        url: '/create',
         templateUrl: '/modules/departments/client/views/form-department.client.view.html',
         controller: 'DepartmentsController',
         controllerAs: 'vm',
