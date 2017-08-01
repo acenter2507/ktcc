@@ -9,7 +9,7 @@
   DepartmentsService.$inject = ['$resource'];
 
   function DepartmentsService($resource) {
-    return $resource('api/departments/:departmentId', {
+    return $resource('/api/departments/:departmentId', {
       departmentId: '@_id'
     }, {
       update: {

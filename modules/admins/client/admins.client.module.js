@@ -1,5 +1,5 @@
 (function (app) {
   'use strict';
 
-  app.registerModule('combonents');
+  app.registerModule('admins');
 }(ApplicationConfiguration));

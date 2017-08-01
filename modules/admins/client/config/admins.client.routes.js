@@ -2,63 +2,80 @@
   'use strict';
 
   angular
-    .module('departments')
+    .module('admins')
     .config(routeConfig);
 
   routeConfig.$inject = ['$stateProvider'];
 
   function routeConfig($stateProvider) {
     $stateProvider
-      .state('departments', {
+      .state('admins', {
         abstract: true,
-        url: '/departments',
-        template: '<ui-view/>'
+        url: '/admin',
+        template: '<ui-view/>',
+        ncyBreadcrumb: {
+          label: 'システム管理'
+        },
+        data: {
+          roles: ['admin']
+        }
       })
-      .state('departments.list', {
-        url: '',
+      .state('admins.departments', {
+        url: '/departments',
         templateUrl: '/modules/departments/client/views/list-departments.client.view.html',
         controller: 'DepartmentsListController',
         controllerAs: 'vm',
+        ncyBreadcrumb: {
+          label: '部門管理'
+        },
         data: {
-          pageTitle: 'Departments List'
+          pageTitle: '部門一覧'
         }
       })
-      .state('departments.create', {
-        url: '/create',
+      .state('admins.departments.edit', {
+        url: '/departments/:departmentId/edit',
         templateUrl: '/modules/departments/client/views/form-department.client.view.html',
         controller: 'DepartmentsController',
         controllerAs: 'vm',
+        ncyBreadcrumb: {
+          label: '部門編集'
+        },
+        resolve: {
+          departmentResolve: getDepartment
+        },
+        data: {
+          pageTitle: '部門編集'
+        }
+      })
+      .state('admins.departments.view', {
+        url: '/departments/:departmentId',
+        templateUrl: '/modules/departments/client/views/view-department.client.view.html',
+        controller: 'DepartmentsController',
+        controllerAs: 'vm',
+        ncyBreadcrumb: {
+          label: '部門詳細'
+        },
+        resolve: {
+          departmentResolve: getDepartment
+        },
+        data: {
+          pageTitle: '部門詳細'
+        }
+      })
+      .state('departments.create', {
+        url: '/departments/create',
+        templateUrl: '/modules/departments/client/views/form-department.client.view.html',
+        controller: 'DepartmentsController',
+        controllerAs: 'vm',
+        ncyBreadcrumb: {
+          label: '部門作成'
+        },
         resolve: {
           departmentResolve: newDepartment
         },
         data: {
-          roles: ['user', 'admin'],
-          pageTitle: 'Departments Create'
-        }
-      })
-      .state('departments.edit', {
-        url: '/:departmentId/edit',
-        templateUrl: '/modules/departments/client/views/form-department.client.view.html',
-        controller: 'DepartmentsController',
-        controllerAs: 'vm',
-        resolve: {
-          departmentResolve: getDepartment
-        },
-        data: {
-          roles: ['user', 'admin'],
-          pageTitle: 'Edit Department {{ departmentResolve.name }}'
-        }
-      })
-      .state('departments.view', {
-        url: '/:departmentId',
-        templateUrl: '/modules/departments/client/views/view-department.client.view.html',
-        controller: 'DepartmentsController',
-        controllerAs: 'vm',
-        resolve: {
-          departmentResolve: getDepartment
-        },
-        data: {
-          pageTitle: 'Department {{ departmentResolve.name }}'
+          roles: ['admin'],
+          pageTitle: '部門作成'
         }
       });
   }

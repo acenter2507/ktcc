@@ -78,6 +78,10 @@ var UserSchema = new Schema({
     default: '',
     validate: [validateLocalStrategyEmail, 'Please fill a valid email address']
   },
+  department: {
+    type: Schema.ObjectId,
+    ref: 'Department'
+  },
   username: {
     type: String,
     unique: 'Username already exists',
@@ -106,7 +110,7 @@ var UserSchema = new Schema({
   roles: {
     type: [{
       type: String,
-      enum: ['user', 'admin']
+      enum: ['user', 'admin', 'manage']
     }],
     default: ['user'],
     required: 'Please provide at least one role'
