@@ -1,22 +1,43 @@
-<section>
-  <div class="page-header">
-    <h1>Departments</h1>
+<div class="animated fadeIn">
+  <div class="row">
+    <button type="button" class="btn btn-primary">Primary</button>
+    <button type="button" class="btn btn-secondary">Secondary</button>
+    <button type="button" class="btn btn-success">Success</button>
+    <button type="button" class="btn btn-warning">Warning</button>
+    <button type="button" class="btn btn-danger">Danger</button>
+    <button type="button" class="btn btn-link">Link</button>
   </div>
-  <div class="list-group">
-    <a ng-repeat="department in vm.departments"
-       ui-sref="departments.view({ departmentId: department._id })"
-       class="list-group-item">
-      <small class="list-group-item-text">
-        Posted on
-        <span ng-bind="department.created | date:'mediumDate'"></span>
-        by
-        <span ng-if="department.user" ng-bind="department.user.displayName"></span>
-        <span ng-if="!department.user">Deleted User</span>
-      </small>
-      <h4 class="list-group-item-heading" ng-bind="department.name"></h4>
-    </a>
+  <div class="row">
+    <div class="card">
+      <div class="card-header">
+        <i class="fa fa-align-justify"></i> 部署一覧
+      </div>
+      <div class="card-block">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>部署名</th>
+              <th>場所</th>
+              <th>メンバー数</th>
+              <th>リーダ</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="department in vm.departments">
+              <td>{{department.name}}</td>
+              <td>{{department.location}}</td>
+              <td>{{department.memberCnt}}</td>
+              <td>{{department.leader.displayName}}</td>
+              <td>
+                <button type="button" class="btn btn-success">編集</button>
+                <button type="button" class="btn btn-danger">削除</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
   </div>
-  <div class="alert alert-warning text-center" ng-if="vm.departments.$resolved && !vm.departments.length">
-    No Departments yet, why don't you <a ui-sref="departments.create">create one</a>?
-  </div>
-</section>
+</div>
