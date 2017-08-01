@@ -32,6 +32,22 @@
           pageTitle: '部署一覧'
         }
       })
+      .state('admins.departments.create', {
+        url: '/create',
+        templateUrl: '/modules/departments/client/views/form-department.client.view.html',
+        controller: 'DepartmentsController',
+        controllerAs: 'vm',
+        ncyBreadcrumb: {
+          label: '部署作成'
+        },
+        resolve: {
+          departmentResolve: newDepartment
+        },
+        data: {
+          roles: ['admin'],
+          pageTitle: '部署作成'
+        }
+      })
       .state('admins.departments.edit', {
         url: '/:departmentId/edit',
         templateUrl: '/modules/departments/client/views/form-department.client.view.html',
@@ -60,22 +76,6 @@
         },
         data: {
           pageTitle: '部署詳細'
-        }
-      })
-      .state('admins.departments.create', {
-        url: '/create',
-        templateUrl: '/modules/departments/client/views/form-department.client.view.html',
-        controller: 'DepartmentsController',
-        controllerAs: 'vm',
-        ncyBreadcrumb: {
-          label: '部署作成'
-        },
-        resolve: {
-          departmentResolve: newDepartment
-        },
-        data: {
-          roles: ['admin'],
-          pageTitle: '部署作成'
         }
       });
   }
