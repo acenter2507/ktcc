@@ -26,10 +26,10 @@
         controller: 'DepartmentsListController',
         controllerAs: 'vm',
         ncyBreadcrumb: {
-          label: '部門管理'
+          label: '部署管理'
         },
         data: {
-          pageTitle: '部門一覧'
+          pageTitle: '部署一覧'
         }
       })
       .state('admins.departments.edit', {
@@ -38,13 +38,13 @@
         controller: 'DepartmentsController',
         controllerAs: 'vm',
         ncyBreadcrumb: {
-          label: '部門編集'
+          label: '部署編集'
         },
         resolve: {
           departmentResolve: getDepartment
         },
         data: {
-          pageTitle: '部門編集'
+          pageTitle: '部署編集'
         }
       })
       .state('admins.departments.view', {
@@ -53,13 +53,13 @@
         controller: 'DepartmentsController',
         controllerAs: 'vm',
         ncyBreadcrumb: {
-          label: '部門詳細'
+          label: '部署詳細'
         },
         resolve: {
           departmentResolve: getDepartment
         },
         data: {
-          pageTitle: '部門詳細'
+          pageTitle: '部署詳細'
         }
       })
       .state('departments.create', {
@@ -68,14 +68,14 @@
         controller: 'DepartmentsController',
         controllerAs: 'vm',
         ncyBreadcrumb: {
-          label: '部門作成'
+          label: '部署作成'
         },
         resolve: {
           departmentResolve: newDepartment
         },
         data: {
           roles: ['admin'],
-          pageTitle: '部門作成'
+          pageTitle: '部署作成'
         }
       });
   }
