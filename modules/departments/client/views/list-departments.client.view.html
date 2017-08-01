@@ -1,7 +1,7 @@
 <div class="animated fadeIn">
   <div class="row mb-3">
     <div class="col-sm-12">
-      <a class="btn btn-primary pull-right" ui-sref="admins.departments.create">Primary</a>
+      <a class="btn btn-outline-primary pull-right" ui-sref="admins.departments.create">作成</a>
     </div>
   </div>
   <div class="row">
@@ -24,7 +24,7 @@
               </thead>
               <tbody>
                 <tr ng-if="vm.departments.length === 0">
-                  <td colspan="5">データが見つかりません。</td>
+                  <td colspan="5" class="text-center">データが見つかりません。</td>
                 </tr>
                 <tr ng-repeat="department in vm.departments">
                   <td>{{department.name}}</td>
