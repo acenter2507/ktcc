@@ -24,6 +24,9 @@
             </tr>
           </thead>
           <tbody>
+            <tr ng-if="vm.departments.length === 0">
+              <td colspan="5">データが見つかりません。</td>
+            </tr>
             <tr ng-repeat="department in vm.departments">
               <td>{{department.name}}</td>
               <td>{{department.location}}</td>
