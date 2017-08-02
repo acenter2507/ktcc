@@ -14,7 +14,8 @@
     'ncy-angular-breadcrumb',
     'angular-loading-bar',
     'angularMoment',
-    'ngDialog'
+    'ngDialog',
+    'angucomplete-alt'
   ];
   var service = {
     applicationEnvironment: window.env,
