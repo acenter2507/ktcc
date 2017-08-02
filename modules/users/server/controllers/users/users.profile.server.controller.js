@@ -163,7 +163,6 @@ exports.me = function (req, res) {
   res.json(safeUserObject || null);
 };
 
-
 exports.search_user_by_name = function (req, res) {
   const name = req.query.s;
   if (!name || name === '') {
