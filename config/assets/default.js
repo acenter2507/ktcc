@@ -15,6 +15,7 @@ module.exports = {
         'public/lib/angular-loading-bar/build/loading-bar.css',
         'public/lib/ng-dialog/css/ngDialog.min.css',
         'public/lib/ng-dialog/css/ngDialog-theme-default.min.css',
+        'public/lib/angucomplete/angucomplete-alt.css'
         // endbower
       ],
       js: [
@@ -38,6 +39,8 @@ module.exports = {
         'public/lib/moment/locale/ja.js',
         'public/lib/angular-moment/angular-moment.js',
         'public/lib/ng-dialog/js/ngDialog.min.js',
+        'public/lib/angucomplete/angucomplete.js',
+        'public/lib/angucomplete/angucomplete-alt.js'
         // endbower
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']
