@@ -8,7 +8,7 @@
 
   DepartmentsService.$inject = ['$resource', '$log'];
 
-  function DepartmentsService($resource) {
+  function DepartmentsService($resource, $log) {
     var Department = $resource('/api/departments/:departmentId', {
       departmentId: '@_id'
     }, {
