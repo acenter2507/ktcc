@@ -13,7 +13,7 @@
     function init() {
       vm.user = Authentication.user;
       vm.isLogged = (vm.user);
-      vm.isAdmin = vm.user.roles.indexOf('admin') > -1;
+      vm.isAdmin = vm.isLogged ? vm.user.roles.indexOf('admin') > -1 : false;
     }
     $rootScope.$on('loginSuccess', () => {
       init();
