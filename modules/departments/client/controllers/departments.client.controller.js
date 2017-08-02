@@ -18,6 +18,9 @@
     vm.remove = remove;
     vm.save = save;
 
+    if (vm.department._id && vm.department.leader) {
+      $scope.selectedUser = vm.department.leader;
+    }
     // Remove existing Department
     function remove() {
       if ($window.confirm('Are you sure you want to delete?')) {
@@ -49,5 +52,15 @@
         vm.error = res.data.message;
       }
     }
+
+    $scope.selectedUserFn = function (selected) {
+      if (selected) {
+        vm.department.leader = selected.originalObject._id;
+        $scope.selectedUser = selected.originalObject;
+      } else {
+        vm.department.leader = undefined;
+        $scope.selectedUser = undefined;
+      }
+    };
   }
 }());
