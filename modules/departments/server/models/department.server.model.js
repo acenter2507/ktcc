@@ -16,6 +16,10 @@ var DepartmentSchema = new Schema({
     required: 'Please fill Department name',
     trim: true
   },
+  location: {
+    type: String,
+    default: ''
+  },
   leader: {
     type: Schema.ObjectId,
     ref: 'User'
