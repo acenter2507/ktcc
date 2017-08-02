@@ -9,13 +9,11 @@
   DepartmentsService.$inject = ['$resource', '$log'];
 
   function DepartmentsService($resource, $log) {
-    var Department = $resource('/api/departments/:departmentId', {
-      departmentId: '@_id'
-    }, {
-        update: {
-          method: 'PUT'
-        }
-      });
+    var Department = $resource('/api/departments/:departmentId', { departmentId: '@_id' }, {
+      update: {
+        method: 'PUT'
+      }
+    });
 
     angular.extend(Department.prototype, {
       createOrUpdate: function () {
