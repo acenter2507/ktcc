@@ -49,13 +49,8 @@
           </li>
         </ul>
       </li>
-      <li class="nav-item nav-dropdown" ng-class="{open: $state.includes('admins')}" ng-if="vm.isAdmin">
-        <a class="nav-link nav-dropdown-toggle" ng-class="{active: $state.includes('admins')}" href="#"><i class="fa fa-cogs"></i> システム管理</a>
-        <ul class="nav-dropdown-items">
-          <li class="nav-item">
-            <a class="nav-link" ui-sref-active="active" ui-sref="admins.departments"><i class="fa fa-users"></i> 部署管理</a>
-          </li>
-        </ul>
+      <li class="nav-item">
+        <a class="nav-link" ui-sref-active="active" ui-sref="departments.list"><i class="fa fa-users"></i> 部署管理</a>
       </li>
       
       <li class="nav-item">
