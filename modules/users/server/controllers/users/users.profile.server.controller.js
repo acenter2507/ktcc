@@ -162,3 +162,23 @@ exports.me = function (req, res) {
 
   res.json(safeUserObject || null);
 };
+
+
+exports.search_user_by_name = function (req, res) {
+  const name = req.query.s;
+  if (!name || name === '') {
+    return res.jsonp();
+  }
+  User.find({ displayName: { $regex: '.*' + name + '.*' } })
+    .select('displayName profileImageURL email')
+    .exec(function (err, users) {
+      if (err) {
+        return res.status(400).send({
+          message: errorHandler.getErrorMessage(err)
+        });
+      } else {
+        // res.jsonp(users);
+        res.send(JSON.stringify({ users: users }));
+      }
+    });
+};
