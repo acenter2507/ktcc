@@ -103,7 +103,9 @@ exports.departmentByID = function(req, res, next, id) {
     });
   }
 
-  Department.findById(id).populate('user', 'displayName').exec(function (err, department) {
+  Department.findById(id)
+    .populate('leader', 'displayName email')
+    .exec(function (err, department) {
     if (err) {
       return next(err);
     } else if (!department) {
