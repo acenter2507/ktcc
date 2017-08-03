@@ -34,6 +34,7 @@ module.exports = {
         'public/lib/angular-ui-notification/dist/angular-ui-notification.js',
         'public/lib/angular-ui-router/release/angular-ui-router.js',
         'public/lib/owasp-password-strength-test/owasp-password-strength-test.js',
+        'public/lib/underscore/underscore.js',
         'public/lib/moment/moment.js',
         'public/lib/moment-timezone/moment-timezone.js',
         'public/lib/moment/locale/ja.js',
