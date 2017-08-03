@@ -5,9 +5,9 @@
     .module('departments')
     .controller('DepartmentsListController', DepartmentsListController);
 
-  DepartmentsListController.$inject = ['DepartmentsService', 'ngDialog'];
+  DepartmentsListController.$inject = ['$scope', 'DepartmentsService', 'ngDialog'];
 
-  function DepartmentsListController(DepartmentsService, dialog) {
+  function DepartmentsListController($scope, DepartmentsService, dialog) {
     var vm = this;
 
     vm.departments = DepartmentsService.query();
