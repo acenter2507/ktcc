@@ -32,8 +32,8 @@
                   <td>{{department.memberCnt}}</td>
                   <td>{{department.leader.displayName}}</td>
                   <td>
-                    <button type="button" class="btn btn-success">編集</button>
-                    <button type="button" class="btn btn-danger">削除</button>
+                    <button type="button" class="btn btn-success" ui-sref="departments.edit({departmentId: department._id})">編集</button>
+                    <button type="button" class="btn btn-danger" ng-click="vm.remove(department)">削除</button>
                   </td>
                 </tr>
               </tbody>

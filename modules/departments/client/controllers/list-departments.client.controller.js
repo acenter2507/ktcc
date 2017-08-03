@@ -11,5 +11,8 @@
     var vm = this;
 
     vm.departments = DepartmentsService.query();
+    vm.remove = department => {
+      
+    };
   }
 }());
