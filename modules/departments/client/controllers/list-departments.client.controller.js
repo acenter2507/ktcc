@@ -12,7 +12,7 @@
 
     vm.departments = DepartmentsService.query();
     vm.remove = department => {
-      
+      console.log(department);
     };
   }
 }());
