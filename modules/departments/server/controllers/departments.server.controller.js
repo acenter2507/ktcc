@@ -104,6 +104,7 @@ exports.departmentByID = function (req, res, next, id) {
   }
 
   Department.findById(id)
+    .populate('user', 'displayName')
     .populate('leader', 'displayName email')
     .exec(function (err, department) {
       if (err) {
