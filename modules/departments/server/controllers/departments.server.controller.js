@@ -81,7 +81,9 @@ exports.delete = function (req, res) {
  * List of Departments
  */
 exports.list = function (req, res) {
-  Department.find().sort('-created').populate('user', 'displayName').exec(function (err, departments) {
+  Department.find().sort('-created')
+  .populate('leader', 'displayName email')
+  .populate('user', 'displayName').exec(function (err, departments) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
