@@ -91,7 +91,7 @@ exports.list = function (req, res) {
       var counter = 0;
       departments.forEach(function (instance, index, array) {
         array[index] = instance.toObject();
-        count_user_by_departmentId(array[index]._id, userId)
+        count_user_by_departmentId(array[index]._id)
           .then(result => {
             array[index].memberCnt = result || 0;
             if (++counter === length) {
@@ -138,7 +138,8 @@ exports.departmentByID = function (req, res, next, id) {
 /**
  * Count user in department
  */
-exports.count_user_by_departmentId = departmentId => {
+exports.count_user_by_departmentId = count_user_by_departmentId;
+function count_user_by_departmentId(departmentId) {
   return new Promise((resolve, reject) => {
     User.find({ department: departmentId }).count(function (err, count) {
       if (err) {
