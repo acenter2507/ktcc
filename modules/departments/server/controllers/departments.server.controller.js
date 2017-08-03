@@ -82,16 +82,30 @@ exports.delete = function (req, res) {
  */
 exports.list = function (req, res) {
   Department.find().sort('-created')
-  .populate('leader', 'displayName email')
-  .populate('user', 'displayName').exec(function (err, departments) {
-    if (err) {
-      return res.status(400).send({
-        message: errorHandler.getErrorMessage(err)
+    .populate('leader', 'displayName email')
+    .populate('user', 'displayName')
+    .exec()
+    .then(departments => {
+      if (departments.length === 0) return res.jsonp([]);
+      var length = departments.length;
+      var counter = 0;
+      departments.forEach(function (instance, index, array) {
+        array[index] = instance.toObject();
+        count_user_by_departmentId(array[index]._id, userId)
+          .then(result => {
+            array[index].memberCnt = result || 0;
+            if (++counter === length) {
+              res.jsonp(departments);
+            }
+          })
+          .catch(handleError);
       });
-    } else {
-      res.jsonp(departments);
-    }
-  });
+    }, handleError);
+  function handleError(err) {
+    return res.status(400).send({
+      message: errorHandler.getErrorMessage(err)
+    });
+  }
 };
 
 /**
@@ -120,3 +134,18 @@ exports.departmentByID = function (req, res, next, id) {
       next();
     });
 };
+
+/**
+ * Count user in department
+ */
+exports.count_user_by_departmentId = departmentId => {
+  return new Promise((resolve, reject) => {
+    User.find({ department: departmentId }).count(function (err, count) {
+      if (err) {
+        return reject(err);
+      } else {
+        return resolve(count);
+      }
+    });
+  });
+}
