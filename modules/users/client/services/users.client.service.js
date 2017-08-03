@@ -3,7 +3,7 @@
 
   // Users service used for communicating with the users REST endpoint
   angular
-    .module('users.services')
+    .module('users')
     .factory('UsersService', UsersService);
 
   UsersService.$inject = ['$resource'];

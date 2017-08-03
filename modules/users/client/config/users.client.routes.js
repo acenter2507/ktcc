@@ -3,7 +3,7 @@
 
   // Setting up route
   angular
-    .module('users.routes')
+    .module('users')
     .config(routeConfig);
 
   routeConfig.$inject = ['$stateProvider'];

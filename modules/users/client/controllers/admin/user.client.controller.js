@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('users.admin')
+    .module('users')
     .controller('UserController', UserController);
 
   UserController.$inject = ['$scope', '$state', '$window', 'Authentication', 'userResolve', 'Notification'];
