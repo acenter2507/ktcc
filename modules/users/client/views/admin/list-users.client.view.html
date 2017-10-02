@@ -50,7 +50,7 @@
         </div>
         <div class="clearfix"></div>
       </div>
-      <div class="form-group">
+      <div class="form-group mgnb">
         <div class="col-sm-12">
           <button class="btn btn-primary btn-sm pull-right" ng-click="vm.handleSearch()">Search</button>
           <button class="btn btn-default btn-sm pull-right mg10r" ng-click="vm.handleClearCondition()">Clear</button>
@@ -61,7 +61,6 @@
   </div>
 
   <div class="col-xs-12">
-
     <div class="table-responsive">
       <table class="table table-bordered">
         <thead class="bg-primary">
@@ -77,25 +76,24 @@
         <tbody>
           <tr ng-repeat="item in vm.users">
             <td class="text-center">
-              <img src="/{{:: item.profileImageURL }}" class="user-common-avatar-small">
+              <a ui-sref="admin.users.view({ userId: item._id })">
+                <img src="/{{:: item.profileImageURL }}" class="user-common-avatar-small">
+              </a>
             </td>
 
-            <td>{{:: item.displayName }}</td>
+            <td><a ui-sref="admin.users.view({ userId: item._id })">{{:: item.displayName }}</a></td>
             <td>{{:: item.email }}</td>
             <td>{{:: item.created }}</td>
-            <td>{{:: item.roles }}</td>
+            <td>{{:: item.roles | RoleFilter }}</td>
             <td>
               <div class="dropdown" uib-dropdown>
-                <a class="btn btn-primary btn-sm" role="button" uib-dropdown-toggle>Options</a>
+                <a class="btn btn-primary btn-sm" role="button" uib-dropdown-toggle>操作&nbsp;<span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu" style="left: -100px; z-index: 2;">
-                  <li><a href="#">Detail</a></li>
-                  <li><a href="#">Detail 1</a></li>
-                  <li><a href="#">Detail 2</a></li>
-                  <li><a href="#">Detail 3</a></li>
-                  <li><a href="#">Detail 4</a></li>
-                  <li><a href="#">Detail 5</a></li>
-                  <li><a href="#">Detail 6</a></li>
-                  <li><a href="#">Detail 7</a></li>
+                  <li ng-if="isVip"><a ng-click="vm.handleDeleteUser()">削除</a></li>
+                  <li ng-if="isVip || isAdmin || (isManager && item.roles.length === 1)"><a ui-sref="users.months({ userId: item._id })">勤務表レビュー</a></li>
+                  <li ng-if="isVip || isAdmin || (isManager && item.roles.length === 1)"><a ui-sref="users.workoff({ userId: item._id })">休暇レビュー</a></li>
+                  <li><a ui-sref="users.edit({ userId: item._id })">編集</a></li>
+                  <li><a ng-click="vm.sendMessage()">メッセージ送信</a></li>
                 </ul>
               </div>
             </td>

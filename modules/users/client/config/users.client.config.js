@@ -11,15 +11,15 @@
     // Set top bar menu items
     menuService.addMenuItem('topbar', {
       title: 'Users',
-      state: 'admin.users',
+      state: 'users',
       type: 'dropdown',
       roles: ['admin', 'manage', 'vip']
     });
 
     // Add the dropdown list item
-    menuService.addSubMenuItem('topbar', 'admin.users', {
+    menuService.addSubMenuItem('topbar', 'users', {
       title: 'List Users',
-      state: 'admin.users.list'
+      state: 'users.list'
     });
   }
 }());
