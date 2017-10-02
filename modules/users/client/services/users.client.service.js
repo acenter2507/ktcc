@@ -32,10 +32,6 @@
         method: 'POST',
         url: '/api/auth/reset/:token'
       },
-      signup: {
-        method: 'POST',
-        url: '/api/auth/signup'
-      },
       signin: {
         method: 'POST',
         url: '/api/auth/signin'
