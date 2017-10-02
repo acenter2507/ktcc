@@ -112,13 +112,36 @@ exports.loadAdminUsers = function (req, res) {
     if (condition.roles === 'user') {
       and_arr.push({
         $and: [
-        { roles: { $ne: 'admin' } },
-        { roles: { $ne: 'manager' } }]}
+          { roles: { $ne: 'admin' } },
+          { roles: { $ne: 'manager' } },
+          { roles: { $ne: 'vip' } }
+        ]
+      });
+    } else if (condition.roles === 'admin') {
+      and_arr.push({
+        $and: [
+          { roles: 'admin' },
+          { roles: { $ne: 'manager' } },
+          { roles: { $ne: 'vip' } }
+        ]
+      });
+    } else if (condition.roles === 'manage') {
+      and_arr.push({
+        $and: [
+          { roles: 'manager' },
+          { roles: { $ne: 'admin' } },
+          { roles: { $ne: 'vip' } }
+        ]
+      });
+    }
   }
   if (condition.department) {
     and_arr.push({ department: condition.department });
   }
-  User.paginate({ roles: { $ne: 'vip' } }, {
+  if (and_arr.length > 0) {
+    query = { $and: and_arr };
+  }
+  User.paginate(query, {
     sort: sort,
     page: page,
     limit: 10
