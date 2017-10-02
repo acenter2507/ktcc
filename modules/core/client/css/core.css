@@ -42,10 +42,10 @@ a {
 
 .header-profile-image {
   border-radius: 50%;
-  height: 32px;
+  height: 34px;
   margin-right: 5px;
   opacity: 0.8;
-  width: 32px;
+  width: 34px;
 }
 .open .header-profile-image,
 a:hover .header-profile-image {
