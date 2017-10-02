@@ -22,7 +22,7 @@ module.exports = function (app) {
   /**
    * Admin page
    */
-  app.route('/api/admins/users').post(adminPolicy.isAllowed, admin.loadAdminUsers)
+  app.route('/api/admins/users').post(adminPolicy.isAllowed, admin.loadAdminUsers);
 
   // Finish by binding the user middleware
   app.param('userId', admin.userByID);
