@@ -17,6 +17,7 @@
       $scope.isLogged = ($scope.user);
       $scope.isAdmin = $scope.isLogged && _.contains($scope.user.roles, 'admin');
       $scope.isManager = $scope.isLogged && _.contains($scope.user.roles, 'manage');
+      $scope.isVip = $scope.isLogged && _.contains($scope.user.roles, 'vip');
     }
 
     function preapareScopeListener() {

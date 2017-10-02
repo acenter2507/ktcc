@@ -27,5 +27,17 @@
       title: 'Create Month',
       state: 'months.create'
     });
+    // Add the dropdown create item
+    menuService.addSubMenuItem('topbar', 'months', {
+      title: 'Approve months',
+      state: 'months.manage',
+      roles: ['manage', 'vip']
+    });
+    // Add the dropdown create item
+    menuService.addSubMenuItem('topbar', 'months', {
+      title: 'Approve months',
+      state: 'months.admin',
+      roles: ['admin', 'vip']
+    });
   }
 }());

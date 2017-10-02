@@ -13,7 +13,7 @@
       state: 'admin',
       class: 'nav-item',
       type: 'dropdown',
-      roles: ['admin']
+      roles: ['admin', 'manage', 'vip']
     });
   }
 }());

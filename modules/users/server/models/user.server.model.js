@@ -48,60 +48,41 @@ var validateLocalStrategyEmail = function (email) {
  * User Schema
  */
 var UserSchema = new Schema({
-  firstName: {
-    type: String,
-    trim: true,
-    default: '',
-    validate: [validateLocalStrategyProperty, 'Please fill in your first name']
-  },
-  lastName: {
-    type: String,
-    trim: true,
-    default: '',
-    validate: [validateLocalStrategyProperty, 'Please fill in your last name']
-  },
-  displayName: {
-    type: String,
-    trim: true
-  },
+  username: { type: String, unique: 'Username already exists', required: true, lowercase: true, trim: true },
+  // validate: [validateUsername, 'Please enter a valid username: 3+ characters long, non restricted word, characters "_-.", no consecutive dots, does not begin or end with dots, letters a-z and numbers 0-9.'],
+  password: { type: String, default: '' },
+  firstName: { type: String, trim: true, default: '', required: true },
+  lastName: { type: String, trim: true, default: '', required: true },
+  displayName: { type: String, trim: true },
   email: {
     type: String,
     index: {
       unique: true,
-      sparse: true // For this to work on a previously indexed field, the index must be dropped & the application restarted.
+      sparse: true
     },
     lowercase: true,
     trim: true,
     default: '',
     validate: [validateLocalStrategyEmail, 'Please fill a valid email address']
   },
-  department: {
-    type: Schema.ObjectId,
-    ref: 'Department'
+  private: {
+    sex: { type: Number, default: 1 },
+    birthdate: { type: Date },
+    introduct: { type: String }
   },
-  username: {
-    type: String,
-    unique: 'Username already exists',
-    required: 'Please fill in a username',
-    // validate: [validateUsername, 'Please enter a valid username: 3+ characters long, non restricted word, characters "_-.", no consecutive dots, does not begin or end with dots, letters a-z and numbers 0-9.'],
-    lowercase: true,
-    trim: true
+  profileImageURL: { type: String, default: 'modules/users/client/img/profile/default.png' },
+  department: { type: Schema.ObjectId, ref: 'Department' },
+  company: {
+    employeeId: { type: String },
+    taxId: { type: String },
+    duty: { type: String },
+    salary: { type: Number }
   },
-  password: {
-    type: String,
-    default: ''
+  report: {
+    holidayCnt: { type: Number, default: 0 }
   },
-  salt: {
-    type: String
-  },
-  profileImageURL: {
-    type: String,
-    default: 'modules/users/client/img/profile/default.png'
-  },
-  provider: {
-    type: String,
-    required: 'Provider is required'
-  },
+  salt: { type: String },
+  provider: { type: String, required: 'Provider is required' },
   providerData: {},
   additionalProvidersData: {},
   roles: {
@@ -112,20 +93,11 @@ var UserSchema = new Schema({
     default: ['user'],
     required: 'Please provide at least one role'
   },
-  updated: {
-    type: Date
-  },
-  created: {
-    type: Date,
-    default: Date.now
-  },
+  updated: { type: Date },
+  created: { type: Date, default: Date.now },
   /* For reset password */
-  resetPasswordToken: {
-    type: String
-  },
-  resetPasswordExpires: {
-    type: Date
-  }
+  resetPasswordToken: { type: String },
+  resetPasswordExpires: { type: Date }
 });
 
 /**

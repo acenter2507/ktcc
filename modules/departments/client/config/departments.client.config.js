@@ -13,7 +13,7 @@
       title: 'Departments',
       state: 'departments',
       type: 'dropdown',
-      roles: ['user']
+      roles: ['admin', 'manage', 'vip']
     });
 
     // Add the dropdown list item
