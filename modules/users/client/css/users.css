@@ -3,31 +3,22 @@
     position: fixed;
   }
 }
-.social-account-container {
-  display: inline-block;
-  position: relative;
-}
-.btn-add-remove-account {
-  pointer-events: none;
-  position: absolute;
-  right: 10px;
-  top: 10px;
-}
+
 .user-profile-picture {
   max-height: 150px;
   min-height: 150px;
 }
+
 .cropArea {
   background: #E4E4E4;
   height: 300px;
   width: 300px;
 }
-.social-button {
-  -webkit-transition-duration: 0.4s;
-  -moz-transition-duration: 0.4s;
-  -o-transition-duration: 0.4s;
-  transition-duration: 0.4s;
-}
-.social-button:hover {
-  opacity: 0.65;
-}
+.user-common-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%; }
+.user-common-avatar-small {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%; }
