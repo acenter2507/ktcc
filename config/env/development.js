@@ -90,7 +90,25 @@ module.exports = {
         firstName: 'Admin',
         lastName: 'Local',
         displayName: 'Admin Local',
-        roles: ['user', 'admin', 'manage', 'vip']
+        roles: ['user', 'admin']
+      },
+      seedManage: {
+        username: process.env.MONGO_SEED_MANAGE_USERNAME || 'seedmanage',
+        provider: 'local',
+        email: process.env.MONGO_SEED_MANAGE_EMAIL || 'manage@localhost.com',
+        firstName: 'Manage',
+        lastName: 'Local',
+        displayName: 'Manage Local',
+        roles: ['user', 'manage']
+      },
+      seedVip: {
+        username: process.env.MONGO_SEED_VIP_USERNAME || 'seedvip',
+        provider: 'local',
+        email: process.env.MONGO_SEED_VIP_EMAIL || 'vip@localhost.com',
+        firstName: 'Vip',
+        lastName: 'Local',
+        displayName: 'Vip Local',
+        roles: ['user', 'manage', 'admin', 'vip']
       }
     }
   }
