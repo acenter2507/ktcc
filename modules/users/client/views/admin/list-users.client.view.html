@@ -80,13 +80,14 @@
                 <img src="/{{:: item.profileImageURL }}" class="user-common-avatar-small">
               </a>
             </td>
+
             <td><a ui-sref="admin.users.view({ userId: item._id })">{{:: item.displayName }}</a></td>
-            <td>{{:: item.email }} {{user.displayName}}</td>
+            <td>{{:: item.email }}</td>
             <td>{{:: item.created }}</td>
             <td>{{:: item.roles | RoleFilter }}</td>
             <td>
-              <div class="dropdown" uib-dropdown>
-                <a ng-if="user._id !== item._id" class="btn btn-primary btn-sm" role="button" uib-dropdown-toggle>操作&nbsp;<span class="caret"></span></a>
+              <div class="dropdown" uib-dropdown ng-if="user._id !== item._id">
+                <a class="btn btn-primary btn-sm" role="button" uib-dropdown-toggle>操作&nbsp;<span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu" style="left: -100px; z-index: 2;">
                   <li ng-if="isVip"><a ng-click="vm.handleDeleteUser()">削除</a></li>
                   <li ng-if="isVip || isAdmin || (isManager && item.roles.length === 1)"><a ui-sref="users.months({ userId: item._id })">勤務表レビュー</a></li>
