@@ -13,7 +13,6 @@
     vm.users = [];
     vm.condition = {};
     vm.page = 1;
-    console.log($scope.user);
     onCreate();
 
     function onCreate() {

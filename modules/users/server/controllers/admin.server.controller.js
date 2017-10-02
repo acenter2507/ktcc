@@ -5,6 +5,7 @@
  */
 var path = require('path'),
   mongoose = require('mongoose'),
+  _ = require('underscore'),
   User = mongoose.model('User'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller'));
 
@@ -99,6 +100,24 @@ exports.loadAdminUsers = function (req, res) {
   var page = req.body.page || 1;
   var condition = req.body.condition || {};
   var sort = condition.sort || '-created';
+  var and_arr = [];
+  var query = {};
+  if (condition.search && condition.search !== '') {
+    and_arr.push({ $or: [{ displayName: { $regex: '.*' + condition.search + '.*' } }, { email: { $regex: '.*' + condition.search + '.*' } }] });
+  }
+  if (condition.status) {
+    and_arr.push({ status: condition.status });
+  }
+  if (condition.roles) {
+    if (condition.roles === 'user') {
+      and_arr.push({
+        $and: [
+        { roles: { $ne: 'admin' } },
+        { roles: { $ne: 'manager' } }]}
+  }
+  if (condition.department) {
+    and_arr.push({ department: condition.department });
+  }
   User.paginate({ roles: { $ne: 'vip' } }, {
     sort: sort,
     page: page,
