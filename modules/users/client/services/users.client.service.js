@@ -69,11 +69,11 @@
   // TODO this should be Users service
   angular
     .module('users')
-    .factory('AdminService', AdminService);
+    .factory('AdminUserService', AdminUserService);
 
-  AdminService.$inject = ['$resource'];
+  AdminUserService.$inject = ['$resource'];
 
-  function AdminService($resource) {
+  function AdminUserService($resource) {
     return $resource('/api/users/:userId', {
       userId: '@_id'
     }, {
