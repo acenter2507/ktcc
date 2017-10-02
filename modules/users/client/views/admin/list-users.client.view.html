@@ -6,63 +6,58 @@
   </div>
 
   <div class="col-xs-12">
-    <uib-accordion close-others="true">
-      <uib-accordion-group>
-        <uib-accordion-heading>
-          <i class="fa fa-arrow-circle-down"></i> 検索ツール
-        </uib-accordion-heading>
-        <div class="form-group">
-          <div class="col-sm-12">
-            <label for="search">検索</label>
-            <input name="search" id="search" class="form-control" type="text" ng-model="vm.condition.search" placeholder="検索キー" />
-          </div>
-          <div class="clearfix"></div>
+    <div class="well">
+      <div class="form-group">
+        <div class="col-sm-12">
+          <label for="search">検索</label>
+          <input name="search" id="search" class="form-control" type="text" ng-model="vm.condition.search" placeholder="検索キー" />
         </div>
-        <div class="form-group">
-          <div class="col-sm-6">
-            <label for="status">状態</label>
-            <select id="status" name="status" class="form-control" ng-model="vm.condition.status">
+        <div class="clearfix"></div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-6">
+          <label for="status">状態</label>
+          <select id="status" name="status" class="form-control" ng-model="vm.condition.status">
               <option value>指定しない</option>
               <option value="1">働いている</option></option>
               <option value="2">退社済</option>
             </select>
-          </div>
-          <div class="col-sm-6">
-            <label for="roles">役割</label>
-            <select id="roles" name="roles" class="form-control" ng-model="vm.condition.roles">
+        </div>
+        <div class="col-sm-6">
+          <label for="roles">役割</label>
+          <select id="roles" name="roles" class="form-control" ng-model="vm.condition.roles">
               <option value>指定しない</option>
               <option value="user">一般社員</option>
               <option value="admin">経理部</option>
               <option value="manage">マネージャ</option>
             </select>
-          </div>
-          <div class="clearfix"></div>
         </div>
-        <div class="form-group">
-          <div class="col-sm-6">
-            <label for="department">部署</label>
-            <select id="department" name="department" class="form-control" ng-model="vm.condition.department">
+        <div class="clearfix"></div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-6">
+          <label for="department">部署</label>
+          <select id="department" name="department" class="form-control" ng-model="vm.condition.department">
               <option value>指定しない</option>
               <option ng-repeat="dep in vm.departments" value="{{dep._id}}" ng-selected="dep._id.toString() === vm.condition.department.toString()">{{:: dep.name}}</option>
             </select>
-          </div>
-          <div class="col-sm-6">
-            <label for="sort">並び順</label>
-            <select id="sort" name="sort" class="form-control" ng-model="vm.condition.sort">
+        </div>
+        <div class="col-sm-6">
+          <label for="sort">並び順</label>
+          <select id="sort" name="sort" class="form-control" ng-model="vm.condition.sort">
               <option value>デフォルト</option>
             </select>
-          </div>
-          <div class="clearfix"></div>
         </div>
-        <div class="form-group">
-          <div class="col-sm-12">
-            <button class="btn btn-primary btn-sm pull-right" ng-click="vm.handleSearch()">Search</button>
-            <button class="btn btn-default btn-sm pull-right mg10r" ng-click="vm.handleClearCondition()">Clear</button>
-          </div>
-          <div class="clearfix"></div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-12">
+          <button class="btn btn-primary btn-sm pull-right" ng-click="vm.handleSearch()">Search</button>
+          <button class="btn btn-default btn-sm pull-right mg10r" ng-click="vm.handleClearCondition()">Clear</button>
         </div>
-      </uib-accordion-group>
-    </uib-accordion>
+        <div class="clearfix"></div>
+      </div>
+    </div>
   </div>
 
   <div class="col-xs-12 mg12t">
