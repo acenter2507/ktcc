@@ -20,9 +20,6 @@ var noReturnUrls = [
  */
 exports.signin = function (req, res, next) {
   passport.authenticate('local', function (err, user, info) {
-    console.log(err);
-    console.log(user);
-    console.log(info);
     if (err || !user) {
       res.status(422).send(info);
     } else {

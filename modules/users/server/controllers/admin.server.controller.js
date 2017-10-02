@@ -140,6 +140,8 @@ exports.loadAdminUsers = function (req, res) {
   }
   if (and_arr.length > 0) {
     query = { $and: and_arr };
+  } else {
+    query = { roles: { $ne: 'vip' } };
   }
   User.paginate(query, {
     sort: sort,
