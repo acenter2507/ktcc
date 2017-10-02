@@ -9,25 +9,19 @@
   PasswordValidator.$inject = ['$window'];
 
   function PasswordValidator($window) {
-    var owaspPasswordStrengthTest = $window.owaspPasswordStrengthTest;
-
-    var service = {
-      getResult: getResult,
-      getPopoverMsg: getPopoverMsg
+    return {
+      getResult: function (password) {
+        var result = { errors: [] };
+        var check = 0;
+        if (password.length < 8) {
+          result.errors.push('8 digit');
+        }
+        if (password.length > 32) {
+          result.errors.push('32 digit');
+        }
+        return result;
+      }
     };
-
-    return service;
-
-    function getResult(password) {
-      var result = owaspPasswordStrengthTest.test(password);
-      return result;
-    }
-
-    function getPopoverMsg() {
-      var popoverMsg = 'Please enter a passphrase or password with ' + owaspPasswordStrengthTest.configs.minLength + ' or more characters, numbers, lowercase, uppercase, and special characters.';
-
-      return popoverMsg;
-    }
   }
 
 }());

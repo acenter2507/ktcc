@@ -67,18 +67,6 @@
           label: '認証'
         }
       })
-      .state('authentication.signup', {
-        url: '/signup',
-        templateUrl: '/modules/users/client/views/authentication/signup.client.view.html',
-        controller: 'AuthenticationController',
-        controllerAs: 'vm',
-        ncyBreadcrumb: {
-          label: '登録'
-        },
-        data: {
-          pageTitle: '登録'
-        }
-      })
       .state('authentication.signin', {
         url: '/signin?err',
         templateUrl: '/modules/users/client/views/authentication/signin.client.view.html',

@@ -11,7 +11,6 @@
     var vm = this;
 
     vm.authentication = Authentication;
-    vm.getPopoverMsg = PasswordValidator.getPopoverMsg;
     vm.signup = signup;
     vm.signin = signin;
     vm.callOauthProvider = callOauthProvider;
