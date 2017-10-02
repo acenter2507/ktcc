@@ -91,3 +91,19 @@ exports.userByID = function (req, res, next, id) {
     next();
   });
 };
+
+/**
+ * Admin page
+ */
+exports.loadAdminUsers = function (req, res) {
+  var page = req.body.page || 1;
+  var condition = req.body.condition || {};
+  var sort = condition.sort || '-created';
+  User.paginate({ roles: { $ne: 'vip' } }, {
+    sort: sort,
+    page: page,
+    limit: 10
+  }).then(function (users) {
+    res.jsonp(users);
+  });
+};

@@ -9,7 +9,7 @@ var mongoose = require('mongoose'),
   Schema = mongoose.Schema,
   crypto = require('crypto'),
   validator = require('validator'),
-  generatePassword = require('generate-password');
+  paginate = require('mongoose-paginate');
 
 
 /**
@@ -99,7 +99,7 @@ var UserSchema = new Schema({
   resetPasswordToken: { type: String },
   resetPasswordExpires: { type: Date }
 });
-
+UserSchema.plugin(paginate);
 /**
  * Hook a pre save method to hash the password
  */
