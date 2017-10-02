@@ -1,0 +1,69 @@
+<header class="app-header navbar" ng-controller="HeaderController as vm">
+  <a class="navbar-brand" ui-sref="home"></a>
+
+  <ul class="nav navbar-nav d-md-down-none">
+    <!--<ul class="nav navbar-nav">-->
+    <li class="nav-item">
+      <a class="nav-link navbar-toggler sidebar-toggler" href="#"><i class="fa fa-bars"></i></a>
+    </li>
+
+    <li class="nav-item px-3">
+      <a class="nav-link" ui-sref="home">ホーム</a>
+    </li>
+    <li class="nav-item px-3" ng-show="vm.isLogged">
+      <a class="nav-link" ui-sref="months.list">勤務時間</a>
+    </li>
+    <li class="nav-item px-3" ng-show="vm.isLogged">
+      <a class="nav-link" ui-sref="home">休暇申告</a>
+    </li>
+  </ul>
+  <!--<ul class="nav navbar-nav ml-auto d-md-down-none">-->
+  <ul class="nav navbar-nav ml-auto d-md-down-none" ng-hide="vm.isLogged">
+    <li class="nav-item" ui-sref-active="active">
+      <a class="nav-link" ui-sref="authentication.signin">ログイン</a>
+    </li>
+    <!--<li class="nav-item" ui-sref-active="active">
+      <a class="nav-link" ui-sref="authentication.signup">Sign Up</a>
+    </li>-->
+    <!--<li class="nav-item d-md-down-none">
+      <a class="nav-link navbar-toggler aside-menu-toggler" href="#"><i class="fa fa-outdent"></i></a>
+    </li>-->
+  </ul>
+  <ul class="nav navbar-nav ml-auto d-md-down-none" ng-show="vm.isLogged">
+    <li class="nav-item">
+      <a class="nav-link" href="#"><i class="icon-bell"></i><span class="badge badge-pill badge-danger">5</span></a>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+        <img ng-src="/{{vm.user.profileImageURL}}" alt="{{vm.user.displayName}}" class="img-avatar">
+          <!--<span class="d-md-down-none">admin</span>-->
+        <span ng-bind="vm.user.displayName"></span>
+      </a>
+      <div class="dropdown-menu dropdown-menu-right mt-2">
+        <div class="dropdown-header text-center">
+          <strong>アカウント</strong>
+        </div>
+
+        <a class="dropdown-item" href="#"><i class="fa fa-bell-o"></i> お知らせ<span class="badge badge-info">42</span></a>
+        <a class="dropdown-item" href="#"><i class="fa fa-envelope-o"></i> メッセージ<span class="badge badge-success">42</span></a>
+        <a class="dropdown-item" href="#"><i class="fa fa-tasks"></i> タスク<span class="badge badge-danger">42</span></a>
+        <a class="dropdown-item" href="#"><i class="fa fa-comments"></i> チャット<span class="badge badge-danger">42</span></a>
+
+        <div class="dropdown-header text-center">
+          <strong>システム</strong>
+        </div>
+
+        <a class="dropdown-item" href="#"><i class="fa fa-user"></i> プロファイル管理</a>
+        <a class="dropdown-item" href="#"><i class="fa fa-wrench"></i> 設定</a>
+        <a class="dropdown-item" href="#"><i class="fa fa-file"></i> プロジェクト<span class="badge badge-primary">42</span></a>
+        <a class="dropdown-item" href="/api/auth/signout" target="_self"><i class="fa fa-sign-out"></i> ログアウト</a>
+      </div>
+    </li>
+    <!--<li class="nav-item d-md-down-none">
+      <a class="nav-link navbar-toggler aside-menu-toggler" href="#"><i class="fa fa-outdent"></i></a>
+    </li>-->
+  </ul>
+  <button class="navbar-toggler mobile-sidebar-toggler d-lg-none" type="button">
+    <i class="fa fa-bars"></i>
+  </button>
+</header>
