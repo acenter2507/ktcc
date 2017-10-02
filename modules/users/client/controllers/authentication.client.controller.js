@@ -10,7 +10,6 @@
   function AuthenticationController($rootScope, $scope, $state, UsersService, $location, $window, Authentication, Notification) {
     var vm = this;
 
-    vm.signup = signup;
     vm.signin = signin;
     vm.usernameRegex = /^(?=[\w.-]+$)(?!.*[._-]{2})(?!\.)(?!.*\.$).{3,34}$/;
 
