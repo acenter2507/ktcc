@@ -14,6 +14,10 @@
     vm.page = 1;
     onCreate();
 
+    function onCreate() {
+      handleLoadUsers();
+    }
+
     function handleLoadUsers() {
       AdminUserApi.loadAdminUsers(vm.condition, vm.page)
         .success(res => {
