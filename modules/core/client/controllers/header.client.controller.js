@@ -20,8 +20,5 @@
       // Collapsing the menu after navigation
       vm.isCollapsed = false;
     }
-    $rootScope.$on('loginSuccess', () => {
-      init();
-    });
   }
 }());
