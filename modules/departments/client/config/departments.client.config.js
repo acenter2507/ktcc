@@ -19,13 +19,15 @@
     // Add the dropdown list item
     menuService.addSubMenuItem('topbar', 'departments', {
       title: 'List Departments',
-      state: 'departments.list'
+      state: 'departments.list',
+      roles: ['user']
     });
 
     // Add the dropdown create item
     menuService.addSubMenuItem('topbar', 'months', {
       title: 'Create Departments',
-      state: 'departments.create'
+      state: 'departments.create',
+      roles: ['user']
     });
   }
 }());
