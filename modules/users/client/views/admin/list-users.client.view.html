@@ -80,9 +80,8 @@
                 <img src="/{{:: item.profileImageURL }}" class="user-common-avatar-small">
               </a>
             </td>
-
             <td><a ui-sref="admin.users.view({ userId: item._id })">{{:: item.displayName }}</a></td>
-            <td>{{:: item.email }}</td>
+            <td>{{:: item.email }} {{user.displayName}}</td>
             <td>{{:: item.created }}</td>
             <td>{{:: item.roles | RoleFilter }}</td>
             <td>
