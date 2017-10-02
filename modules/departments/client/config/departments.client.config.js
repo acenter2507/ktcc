@@ -23,7 +23,7 @@
     });
 
     // Add the dropdown create item
-    menuService.addSubMenuItem('topbar', 'months', {
+    menuService.addSubMenuItem('topbar', 'departments', {
       title: 'Create Departments',
       state: 'departments.create'
     });

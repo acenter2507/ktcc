@@ -90,7 +90,7 @@ module.exports = {
         firstName: 'Admin',
         lastName: 'Local',
         displayName: 'Admin Local',
-        roles: ['user', 'admin']
+        roles: ['user', 'admin', 'manage', 'vip']
       }
     }
   }
