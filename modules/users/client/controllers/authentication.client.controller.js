@@ -11,7 +11,7 @@
     var vm = this;
 
     vm.signin = signin;
-    vm.usernameRegex = /^(?=[\w.-]+$)(?!.*[._-]{2})(?!\.)(?!.*\.$).{3,34}$/;
+    // vm.usernameRegex = /^(?=[\w.-]+$)(?!.*[._-]{2})(?!\.)(?!.*\.$).{3,34}$/;
 
     // Get an eventual error defined in the URL query string:
     if ($location.search().err) {
@@ -29,7 +29,6 @@
         $scope.$broadcast('show-errors-check-validity', 'vm.userForm');
         return false;
       }
-      console.log(vm.credentials);
       UsersService.userSignin(vm.credentials)
         .then(onUserSigninSuccess)
         .catch(onUserSigninError);
