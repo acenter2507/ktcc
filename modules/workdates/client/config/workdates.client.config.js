@@ -13,7 +13,7 @@
       title: 'Workdates',
       state: 'workdates',
       type: 'dropdown',
-      roles: ['*']
+      roles: ['user']
     });
 
     // Add the dropdown list item
@@ -25,8 +25,7 @@
     // Add the dropdown create item
     menuService.addSubMenuItem('topbar', 'workdates', {
       title: 'Create Workdate',
-      state: 'workdates.create',
-      roles: ['user']
+      state: 'workdates.create'
     });
   }
 }());

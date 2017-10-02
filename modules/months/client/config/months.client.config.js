@@ -13,7 +13,7 @@
       title: 'Months',
       state: 'months',
       type: 'dropdown',
-      roles: ['*']
+      roles: ['user']
     });
 
     // Add the dropdown list item
