@@ -9,11 +9,6 @@
 
   function HeaderController($rootScope, $scope, $state, Authentication, menuService) {
     var vm = this;
-    init();
-    function init() {
-      vm.user = Authentication.user;
-      vm.isLogged = (vm.user);
-    }
 
     vm.accountMenu = menuService.getMenu('account').items[0];
     vm.isCollapsed = false;
