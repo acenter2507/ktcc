@@ -47,6 +47,18 @@
         data: {
           pageTitle: 'Edit User {{ userResolve.displayName }}'
         }
+      })
+      .state('users.new', {
+        url: '/new',
+        templateUrl: '/modules/users/client/views/admin/input-user.client.view.html',
+        controller: 'UserInputController',
+        controllerAs: 'vm',
+        resolve: {
+          userResolve: newUser
+        },
+        data: {
+          pageTitle: 'New User'
+        }
       });
 
     getUser.$inject = ['$stateParams', 'AdminUserService'];
@@ -55,6 +67,11 @@
       return AdminUserService.get({
         userId: $stateParams.userId
       }).$promise;
+    }
+    newUser.$inject = ['AdminUserService'];
+
+    function newUser(AdminUserService) {
+      return new AdminUserService();
     }
   }
 }());

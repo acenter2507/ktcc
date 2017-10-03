@@ -128,7 +128,7 @@ exports.loadAdminUsers = function (req, res) {
     } else if (condition.roles === 'manage') {
       and_arr.push({
         $and: [
-          { roles: 'manager' },
+          { roles: 'manage' },
           { roles: { $ne: 'admin' } },
           { roles: { $ne: 'vip' } }
         ]

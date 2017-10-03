@@ -38,9 +38,9 @@
         <div class="col-sm-6">
           <label for="department">部署</label>
           <select id="department" name="department" class="form-control" ng-model="vm.condition.department">
-              <option value>指定しない</option>
-              <option ng-repeat="dep in vm.departments" value="{{dep._id}}" ng-selected="dep._id.toString() === vm.condition.department.toString()">{{:: dep.name}}</option>
-            </select>
+            <option value>指定しない</option>
+            <option ng-repeat="dep in vm.departments" value="{{dep._id}}" ng-selected="dep._id.toString() === vm.condition.department.toString()">{{:: dep.name}}</option>
+          </select>
         </div>
         <div class="col-sm-6">
           <label for="sort">並び順</label>
