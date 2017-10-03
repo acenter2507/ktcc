@@ -1,7 +1,7 @@
 <div class="row animated fadeIn mg12t">
   <div class="col-xs-12">
     <div class="form-group">
-      <a ui-sref="admin.users.new" class="btn btn-primary pull-right mg10r">Add new</a>
+      <a ng-if="isVip || isAdmin" ui-sref="users.new" class="btn btn-primary pull-right mg10r">Add new</a>
     </div>
   </div>
 
@@ -76,12 +76,12 @@
         <tbody>
           <tr ng-repeat="item in vm.users">
             <td class="text-center">
-              <a ui-sref="admin.users.view({ userId: item._id })">
+              <a ui-sref="users.view({ userId: item._id })">
                 <img src="/{{:: item.profileImageURL }}" class="user-common-avatar-small">
               </a>
             </td>
 
-            <td><a ui-sref="admin.users.view({ userId: item._id })">{{:: item.displayName }}</a></td>
+            <td><a ui-sref="users.view({ userId: item._id })">{{:: item.displayName }}</a></td>
             <td>{{:: item.email }}</td>
             <td>{{:: item.created }}</td>
             <td>{{:: item.roles | RoleFilter }}</td>

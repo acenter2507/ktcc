@@ -113,7 +113,7 @@ exports.loadAdminUsers = function (req, res) {
       and_arr.push({
         $and: [
           { roles: { $ne: 'admin' } },
-          { roles: { $ne: 'manager' } },
+          { roles: { $ne: 'manage' } },
           { roles: { $ne: 'vip' } }
         ]
       });
@@ -121,7 +121,7 @@ exports.loadAdminUsers = function (req, res) {
       and_arr.push({
         $and: [
           { roles: 'admin' },
-          { roles: { $ne: 'manager' } },
+          { roles: { $ne: 'manage' } },
           { roles: { $ne: 'vip' } }
         ]
       });
